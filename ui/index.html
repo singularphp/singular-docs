@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Interface de Usuário - SisGeop</title>
+      
+      
+      
+        <link rel="canonical" href="http://www.sisgeop.com.br/ui/">
+      
+      
+        <meta name="author" content="Otávio Fernandes">
+      
+    
+    <meta property="og:url" content="http://www.sisgeop.com.br/ui/">
+    <meta property="og:title" content="SisGeop">
+    <meta property="og:image" content="http://www.sisgeop.com.br/ui//../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="SisGeop">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../images/logo.png">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../assets/fonts/icon.eot?52m981');
+      	src: url('../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/stylesheets/application-b64b728552.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-indigo ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+          </span>
+        
+        Interface de Usuário
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/oaugustus" title="@oaugustus on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Procurar" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Procurar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>SisGeop 0.1</strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Introdução" href="..">
+      Introdução
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Login" href="../login/">
+      Login
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Recuperar senha" href="../senha/">
+      Recuperar senha
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="current" title="Interface de Usuário" href="./">
+      Interface de Usuário
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Protótipo" href="#prototipo">
+                Protótipo
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Especificação" href="#especificacao">
+                Especificação
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Dashboard" href="../dashboard/">
+      Dashboard
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Clientes" href="../cadastro/cliente/cliente/">
+      Cadastrar > Clientes
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Contratos" href="../cadastro/contrato/contrato/">
+      Cadastrar > Contratos
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Filiais" href="../cadastro/filial/filial/">
+      Cadastrar > Filiais
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Itens de LPU" href="../cadastro/lpu/lpu/">
+      Cadastrar > Itens de LPU
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Administração > Usuários" href="../administracao/usuario/usuario/">
+      Administração > Usuários
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Funcionalidade > Importar Itens de LPU" href="../funcionalidade/lpu/">
+      Funcionalidade > Importar Itens de LPU
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Funcionalidade > Gerenciar grupos de Itens de LPU" href="../funcionalidade/grupo/">
+      Funcionalidade > Gerenciar grupos de Itens de LPU
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Funcionalidade > Gerenciar subgrupos de Itens de LPU" href="../funcionalidade/subgrupo/">
+      Funcionalidade > Gerenciar subgrupos de Itens de LPU
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">Autor</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/oaugustus" target="_blank" title="@oaugustus on GitHub">
+                  @oaugustus no GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="interface-de-usuario">Interface de Usuário<a class="headerlink" href="#interface-de-usuario" title="Permanent link">#</a></h1>
+<p>A interface de usuário do SisGeop será definida de acordo com o protótipo abaixo.</p>
+<h2 id="prototipo">Protótipo<a class="headerlink" href="#prototipo" title="Permanent link">#</a></h2>
+<p><img alt="Dashboard" src="../images/ui.png" /></p>
+<h2 id="especificacao">Especificação<a class="headerlink" href="#especificacao" title="Permanent link">#</a></h2>
+<h3 id="1-sair-do-sistema">1. SAIR DO SISTEMA<a class="headerlink" href="#1-sair-do-sistema" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Sair</strong></p>
+<p><strong>ENTÃO</strong> o sistema exibe a seguinte mensagem para o usuário <strong>"Deseja realmente sair do sistema?"</strong> </p>
+<p><strong>CASO</strong> o usuário clique no botão <strong>Sim</strong> </p>
+<p><strong>ENTÃO</strong> o sistema fecha a sessão do usuário e volta para a tela de Login</p>
+<hr />
+<h3 id="2-alterar-senha">2. ALTERAR SENHA<a class="headerlink" href="#2-alterar-senha" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Alterar senha</strong></p>
+<p><strong>ENTÃO</strong> o sistema exibe uma janela para o usuário informar sua senha atual, a nova senha e a confirmação da senha</p>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Alterar</strong> </p>
+<p><strong>ENTÃO</strong> o sistema valida o formulário </p>
+<p><strong>CASO</strong> a senha atual informada seja diferente da senha atual do usuário o sistema exibe a mensagem <strong>"Senha atual está incorreta"</strong></p>
+<p><strong>CASO</strong> a nova senha e a confirmação estejam diferentes o sistema exibe a mensagem <strong>"A nova senha e a confirmação estão diferentes"</strong></p>
+<p><strong>CASO</strong> o formulário seja validado o sistema altera a senha do usuário</p>
+<p><strong>E</strong> fecha a tela de alteração de senha </p>
+<p><strong>E</strong> exibe a mensagem <strong>"Senha alterada com sucesso"</strong></p>
+<hr />
+<h3 id="3-barra-de-tarefas-do-sistema">3. BARRA DE TAREFAS DO SISTEMA<a class="headerlink" href="#3-barra-de-tarefas-do-sistema" title="Permanent link">#</a></h3>
+<p>Na barra de títulos do sistema será exibido o nome, logo e a versão atual do SisGeop.</p>
+<hr />
+<h3 id="4-logomarca-da-jtel">4. LOGOMARCA DA JTEL<a class="headerlink" href="#4-logomarca-da-jtel" title="Permanent link">#</a></h3>
+<p>Abaixo da barra de títulos ficará a logomarca da JTEL.</p>
+<hr />
+<h3 id="5-identificacao-do-usuario">5. IDENTIFICAÇÃO DO USUÁRIO<a class="headerlink" href="#5-identificacao-do-usuario" title="Permanent link">#</a></h3>
+<p>Abaixo da logomarca da JTEL ficará a identificação do usuário logado no SisGeop. A identificação sera composta por:</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foto</td>
+<td>Foto que identifica o usuário que está logado no sistema</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td>Nome do usuário que está logado no sistema</td>
+</tr>
+<tr>
+<td>Perfil</td>
+<td>Perfil de acesso do usuário que está logado no sistema</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="6-menu-da-aplicacao">6. MENU DA APLICAÇÃO<a class="headerlink" href="#6-menu-da-aplicacao" title="Permanent link">#</a></h3>
+<p>O menu da aplicação será estruturado em submódulos que estarão agrupados em módulos de acordo com a correlação das
+funcionalidades. </p>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Submódulo</th>
+<th>Funcionalidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Projetos</td>
+<td>-</td>
+<td>Agrupa os submódulos relacionados ao gerenciamento e acompanhamento de projetos da empresa</td>
+</tr>
+<tr>
+<td>Projetos</td>
+<td>Dashboard</td>
+<td>Abre a tela de visualização das informações estatísticas de orçamentos e obras</td>
+</tr>
+<tr>
+<td>Projetos</td>
+<td>Orçamentos</td>
+<td>Abre o módulo para criação e gerenciamento dos orçamentos</td>
+</tr>
+<tr>
+<td>Relatórios</td>
+<td>-</td>
+<td>Agrupa os submódulos de relatórios do sistema</td>
+</tr>
+<tr>
+<td>Relatórios</td>
+<td>Relatório de orçamentos</td>
+<td>Abre a tela de emissão de relatórios relacionados aos orçamentos da empresa</td>
+</tr>
+<tr>
+<td>Cadastros</td>
+<td>-</td>
+<td>Agrupa os submódulos de cadastros necessários para a utilização das funcionalidades do SisGeop</td>
+</tr>
+<tr>
+<td>Cadastros</td>
+<td>Clientes</td>
+<td>Abre o módulo para gerenciamento dos clientes da JTEL</td>
+</tr>
+<tr>
+<td>Cadastros</td>
+<td>Contratos</td>
+<td>Abre o módulo para o gerenciamento dos contratos da JTEL com seus clientes</td>
+</tr>
+<tr>
+<td>Cadastros</td>
+<td>Itens de LPU</td>
+<td>Abre o módulo para o gerenciamento dos itens de LPU que serão vinculados aos contratos e orçamentos</td>
+</tr>
+<tr>
+<td>Cadastros</td>
+<td>Filiais</td>
+<td>abre o módulo para o gerenciamento das Filiais da JTEL</td>
+</tr>
+<tr>
+<td>Administração</td>
+<td>-</td>
+<td>Agrupa os submódulos relacionados às configurações do sistema para a JTEL</td>
+</tr>
+<tr>
+<td>Administração</td>
+<td>Usuários</td>
+<td>Abre o módulo para o gerenciamento de usuários que utilizarão o SisGeop</td>
+</tr>
+<tr>
+<td>Administração</td>
+<td>Configurações</td>
+<td>Abre o módulo para a configuração de parâmetros e variáveis do SisGeop para a JTEL</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="7-filtro-de-modulo">7. FILTRO DE MÓDULO<a class="headerlink" href="#7-filtro-de-modulo" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário digitar no campo <strong>Filtrar módulo</strong></p>
+<p><strong>ENTÃO</strong> o sistema aplica o filtro digitado pelo usuário no menu da aplicação exibindo apenas módulos que combinam com 
+o filtro aplicado pelo usuário</p>
+<p><strong>CASO</strong> nenhum módulo combine com o filtro</p>
+<p><strong>ENTÃO</strong> o sistema exibe a mensagem <strong>"Nenhum módulo encontrado"</strong>_</p>
+<hr />
+<h3 id="8-barra-de-ferramentas-do-modulo">8. BARRA DE FERRAMENTAS DO MÓDULO<a class="headerlink" href="#8-barra-de-ferramentas-do-modulo" title="Permanent link">#</a></h3>
+<p>A barra de Ferramentas do módulo será personalizada de acordo com o módulo em utilização pelo usuário. A barra de ferramenas
+do módulo irá conter os seguintes componentes:</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Título do módulo</td>
+<td>Ícone + título de identificação do módulo no sistema, para que o usuário saiba em qual módulo ele está</td>
+</tr>
+<tr>
+<td>Botões de ação</td>
+<td>Botões de ação específicos do módulo utilizado pelo usuário no momento</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="9-container-do-modulo">9. CONTAINER DO MÓDULO<a class="headerlink" href="#9-container-do-modulo" title="Permanent link">#</a></h3>
+<p>A área de container do módulo será onde todos os módulos do sistema serão carregados e exibidos para o usuário ele for 
+acessado através do menu principal ou de botões de ação internamente nos módulos.</p>
+          <aside class="copyright" role="note">
+            
+              Copyright (c) 2016 Net On Soluções &ndash;
+            
+            Documentação gerada pelo
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../senha/" title="Recuperar senha">
+          <span class="direction">
+            Voltar
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Recuperar senha
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../dashboard/" title="Dashboard">
+          <span class="direction">
+            Proximo
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Dashboard
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '..';
+      var repo_id  = '';
+    </script>
+    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>

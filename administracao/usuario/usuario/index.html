@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Administração > Usuários - SisGeop</title>
+      
+      
+      
+        <link rel="canonical" href="http://www.sisgeop.com.br/administracao/usuario/usuario/">
+      
+      
+        <meta name="author" content="Otávio Fernandes">
+      
+    
+    <meta property="og:url" content="http://www.sisgeop.com.br/administracao/usuario/usuario/">
+    <meta property="og:title" content="SisGeop">
+    <meta property="og:image" content="http://www.sisgeop.com.br/administracao/usuario/usuario//../../../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="SisGeop">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../../images/logo.png">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../../assets/fonts/icon.eot?52m981');
+      	src: url('../../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../../assets/stylesheets/application-b64b728552.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    <script src="../../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-indigo ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+          </span>
+        
+        Administração > Usuários
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/oaugustus" title="@oaugustus on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Procurar" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Procurar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>SisGeop 0.1</strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Introdução" href="../../..">
+      Introdução
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Login" href="../../../login/">
+      Login
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Recuperar senha" href="../../../senha/">
+      Recuperar senha
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Interface de Usuário" href="../../../ui/">
+      Interface de Usuário
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Dashboard" href="../../../dashboard/">
+      Dashboard
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Clientes" href="../../../cadastro/cliente/cliente/">
+      Cadastrar > Clientes
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Contratos" href="../../../cadastro/contrato/contrato/">
+      Cadastrar > Contratos
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Filiais" href="../../../cadastro/filial/filial/">
+      Cadastrar > Filiais
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Cadastrar > Itens de LPU" href="../../../cadastro/lpu/lpu/">
+      Cadastrar > Itens de LPU
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="current" title="Administração > Usuários" href="./">
+      Administração > Usuários
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Modelo de dados" href="#modelo-de-dados">
+                Modelo de dados
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Listar Usuários" href="#listar-usuarios">
+                Listar Usuários
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Incluir Usuário" href="#incluir-usuario">
+                Incluir Usuário
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Editar Usuário" href="#editar-usuario">
+                Editar Usuário
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Excluir Usuário" href="#excluir-usuario">
+                Excluir Usuário
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Funcionalidade > Importar Itens de LPU" href="../../../funcionalidade/lpu/">
+      Funcionalidade > Importar Itens de LPU
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Funcionalidade > Gerenciar grupos de Itens de LPU" href="../../../funcionalidade/grupo/">
+      Funcionalidade > Gerenciar grupos de Itens de LPU
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Funcionalidade > Gerenciar subgrupos de Itens de LPU" href="../../../funcionalidade/subgrupo/">
+      Funcionalidade > Gerenciar subgrupos de Itens de LPU
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">Autor</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/oaugustus" target="_blank" title="@oaugustus on GitHub">
+                  @oaugustus no GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="funcionalidade-administracao-de-usuarios">Funcionalidade: Administração de Usuários<a class="headerlink" href="#funcionalidade-administracao-de-usuarios" title="Permanent link">#</a></h1>
+<p>Como usuário com perfil (1. <strong>Diretor</strong>, 2. <strong>Gerente</strong>) no SisGeop, eu quero gerenciar os usuários que terão acesso ao SisGeop.</p>
+<h2 id="modelo-de-dados">Modelo de dados<a class="headerlink" href="#modelo-de-dados" title="Permanent link">#</a></h2>
+<p><img alt="Modelo de dados" src="../der.png" /></p>
+<h3 id="tabelas-relacionadas">Tabelas relacionadas<a class="headerlink" href="#tabelas-relacionadas" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tabela</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>usuario</strong></td>
+<td>Armazena os registros de usuários do sistema</td>
+</tr>
+<tr>
+<td><strong>filial</strong></td>
+<td>Armazena os registros de filiais da JTEL no sistema.</td>
+</tr>
+<tr>
+<td><strong>acesso_filial</strong></td>
+<td>Armazena os vínculos entre um usuário e as filiais a que ele tem acesso</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="listar-usuarios">Listar Usuários<a class="headerlink" href="#listar-usuarios" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Contexto</p>
+<ul>
+<li>Para acessar essa funcionalidade o usuário acessa o menu <strong>Administração &gt; Usuários</strong>;</li>
+<li>O sistema deverá exibir a lista de todos os registros cadastrados quando o usuário entrar na tela de acordo com o 
+perfil de acesso às filiais do usuário logado;</li>
+<li>Para usuários com perfil de diretor, todos os registros de usuário serão exibidos;</li>
+</ul>
+</div>
+<h3 id="prototipo">PROTÓTIPO<a class="headerlink" href="#prototipo" title="Permanent link">#</a></h3>
+<p><img alt="Lista de usuários" src="../usuario.list.png" /></p>
+<h3 id="1-lista-de-usuarios">1. LISTA DE USUÁRIOS<a class="headerlink" href="#1-lista-de-usuarios" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário acessar a tela de listagem de usuários </p>
+<p><strong>ENTÃO</strong> o sistema exibirá os todos os usuários cadastrados no sistema em uma tabela com as colunas definidas no 
+protótipo seguindo a mesma ordem de exibição de acordo com o seu perfil de acesso nas filiais.</p>
+<hr />
+<h3 id="2-filtro-de-usuarios">2. FILTRO DE USUÁRIOS<a class="headerlink" href="#2-filtro-de-usuarios" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário preencher os campos do formulário <strong>Filtro</strong> e clicar no botão <strong>Pesquisar</strong></p>
+<p><strong>ENTÃO</strong> o sistema irá aplicar o filtro desejado na lista de usuários, retornando apenas usuários que combinam
+com o grupo de filtros aplicado</p>
+<div class="admonition note">
+<p class="admonition-title">Regras</p>
+<p>O formulário <strong>Filtro</strong> pode ser expandido ou encolhido sempre ao clicar na barra de títulos do formulário. 
+E o status encolhido/expandido deverá ficar salvo na sessão do usuário na máquina, mantendo uma memória sempre que 
+o usuário utilizar o SisGeop na mesma máquina.</p>
+</div>
+<hr />
+<h3 id="3-limpar-filtro">3. LIMPAR FILTRO<a class="headerlink" href="#3-limpar-filtro" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Limpar</strong></p>
+<p><strong>ENTÃO</strong> o sistema limpa o formulário <strong>Filtro</strong> e atualiza a lista de usuários</p>
+<hr />
+<h3 id="4-aplicar-filtro">4. APLICAR FILTRO<a class="headerlink" href="#4-aplicar-filtro" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Pesquisar</strong></p>
+<p><strong>ENTÃO</strong> o sistema aplica o filtro preenchido pelo usuário no formulário <strong>Filtro</strong> e atualiza a lista de usuários</p>
+<hr />
+<h3 id="5-totalizacao-de-registros">5. TOTALIZAÇÃO DE REGISTROS<a class="headerlink" href="#5-totalizacao-de-registros" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário acessar a lista de usuários</p>
+<p><strong>ENTÃO</strong> o sistema apresenta o resultado da consulta</p>
+<p><strong>E</strong> a totalização de registros com a mensagem <strong>Mostrando x de y registros</strong></p>
+<hr />
+<h3 id="6-paginacao">6. PAGINAÇÃO<a class="headerlink" href="#6-paginacao" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário acessar a lista de usuários</p>
+<p><strong>ENTÃO</strong> o sistema apresenta o resultado da consulta</p>
+<p><strong>E</strong> um componente de paginação que possibilita navegar entre as páginas dos resultados</p>
+<p><strong>REGRAS</strong> devem ser exibidos em cada página, 25 registros</p>
+<hr />
+<h3 id="7-editar-filial">7. EDITAR FILIAL<a class="headerlink" href="#7-editar-filial" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar na opção <strong>Editar</strong></p>
+<p><strong>ENTÃO</strong> o sistema aciona o caso <strong>Editar Usuário</strong> </p>
+<hr />
+<h3 id="8-excluir-usuario">8. EXCLUIR USUÁRIO<a class="headerlink" href="#8-excluir-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar na opção <strong>Excluir</strong></p>
+<p><strong>ENTÃO</strong> o sistema aciona o caso <strong>Excluir Usuário</strong> </p>
+<hr />
+<h3 id="9-novo-usuario">9. NOVO USUÁRIO<a class="headerlink" href="#9-novo-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Novo Usuário</strong></p>
+<p><strong>ENTÃO</strong> o sistema aciona o caso <strong>Incluir Usuário</strong> </p>
+<hr />
+<h2 id="incluir-usuario">Incluir Usuário<a class="headerlink" href="#incluir-usuario" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Contexto</p>
+<ul>
+<li>Para acessar essa funcionalidade o usuário aciona o botão <strong>Novo usuário</strong> a partir da tela de listagem de 
+usuários;</li>
+<li>O sistema deverá exibir o formulário para a criação de um novo usuário;</li>
+</ul>
+</div>
+<h3 id="prototipo_1">PROTÓTIPO<a class="headerlink" href="#prototipo_1" title="Permanent link">#</a></h3>
+<p><img alt="Formulário de inclusão de usuário" src="../usuario.create.png" /></p>
+<h3 id="1-formulario-de-inclusao-de-usuario">1. FORMULÁRIO DE INCLUSÃO DE USUÁRIO<a class="headerlink" href="#1-formulario-de-inclusao-de-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário acionao o botão <strong>Novo Usuário</strong> a partir da tela de listagem de usuários</p>
+<p><strong>ENTÃO</strong> o sistema exibe o formulário de inclusão de usuário</p>
+<hr />
+<h3 id="2-cancelar-inclusao-de-usuario">2. CANCELAR INCLUSÃO DE USUÁRIO<a class="headerlink" href="#2-cancelar-inclusao-de-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Cancelar</strong></p>
+<p><strong>ENTÃO</strong> o sistema sai da tela de inclusão de usuário e retorna para a tela de listagem de usuários </p>
+<hr />
+<h3 id="3-salvar-usuario">3. SALVAR USUÁRIO<a class="headerlink" href="#3-salvar-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Salvar</strong></p>
+<p><strong>ENTÃO</strong> o sistema valida o preenchimento do formulário </p>
+<p><strong>E</strong> Salva os dados preenchidos no formulário criando um novo registro de usuário no banco de dados</p>
+<p><strong>E</strong> Exibe a mensagem <strong>"Registro incluído com sucesso"</strong> e redirecionando o usuário para a edição do usuário criado</p>
+<h4 id="31-formulario-invalido">3.1 Formulário inválido<a class="headerlink" href="#31-formulario-invalido" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o formulário não esteja devidamente preenchido </p>
+<p><strong>ENTÃO</strong> o sistema apresenta a seguinte mensagem <strong>"Os campos destacados são de preenchimento obrigatório"</strong></p>
+<p><strong>E</strong> destaca os campos que precisam ser preenchidos para o usuário</p>
+<h4 id="32-email-de-usuario-duplicado">3.2 Email de usuário duplicado<a class="headerlink" href="#32-email-de-usuario-duplicado" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o email informado no registro que o usuário estiver inserindo já esteja em utilização por outro usuário</p>
+<p><strong>ENTÃO</strong> o sistema exibirá a seguinte mensagem <strong>"Já existe um usuário com este email"</strong></p>
+<p><strong>E</strong> interromperá a inserção do registro do usuário.</p>
+<hr />
+<h3 id="4-trocar-foto">4. TROCAR FOTO<a class="headerlink" href="#4-trocar-foto" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Trocar foto</strong></p>
+<p><strong>ENTÃO</strong> o sistema exibe janela para seleção de um arquivo de imagem na máquina do usuário</p>
+<h4 id="41-formato-invaldio">4.1 Formato inváldio<a class="headerlink" href="#41-formato-invaldio" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o usuário selecione um arquivo que não seja um formato de imagem válido (png, jpg, gif, bmp)</p>
+<p><strong>ENTÃO</strong> o sistema exibe a mensagem __"Formato de arquivo inválido. As extensões permitidas são (png, jpg, gif e bmp)</p>
+<h4 id="42-formato-valido">4.2 Formáto válido<a class="headerlink" href="#42-formato-valido" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o usuário selecione um arquivo que seja um formato de imagem válido</p>
+<p><strong>ENTÃO</strong> o sistema atualiza a foto do usuário na tela de inclusão de usuários</p>
+<hr />
+<h3 id="geracao-de-senha-automatica">GERAÇÃO DE SENHA AUTOMÁTICA<a class="headerlink" href="#geracao-de-senha-automatica" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário criar um novo registro de usuário</p>
+<p><strong>ENTÃO</strong> o sistema irá gerar automaticamente uma senha para o usuário criado</p>
+<p><strong>E</strong> enviará a senha desse usuário para o email cadastrado</p>
+<hr />
+<h3 id="obrigatoriedade-de-campos">OBRIGATORIEDADE DE CAMPOS<a class="headerlink" href="#obrigatoriedade-de-campos" title="Permanent link">#</a></h3>
+<p>O sistema deverá exibir de forma destacada os campos do formulário que são de preenchimento obrigatório</p>
+<hr />
+<h2 id="editar-usuario">Editar Usuário<a class="headerlink" href="#editar-usuario" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Contexto</p>
+<ul>
+<li>Para acessar essa funcionalidade o usuário aciona o botão <strong>Editar</strong> a partir da tela de listagem de 
+usuários;</li>
+<li>O sistema deverá exibir o formulário para a edição de um usuário carregando todos os dados cadastrados para 
+o usuário nos respectivos campos de edição do formulário;</li>
+</ul>
+</div>
+<h3 id="prototipo_2">PROTÓTIPO<a class="headerlink" href="#prototipo_2" title="Permanent link">#</a></h3>
+<p><img alt="Edição de usuário" src="../usuario.edit.png" /></p>
+<h3 id="1-formulario-de-edicao-de-usuario">1. FORMULÁRIO DE EDIÇÃO DE USUÁRIO<a class="headerlink" href="#1-formulario-de-edicao-de-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário aciona o botão <strong>Editar</strong> na tela de listagem de usuários</p>
+<p><strong>ENTÃO</strong> o sistema exibe o formulário de edição de usuários com os dados do usuário selecionado carregados no formulário
+para edição.</p>
+<hr />
+<h3 id="2-cancelar-edicao-de-usuario">2. CANCELAR EDIÇÃO DE USUÁRIO<a class="headerlink" href="#2-cancelar-edicao-de-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Cancelar</strong></p>
+<p><strong>ENTÃO</strong> o sistema sai da tela de edição de usuário e retorna para a tela de listagem de usuários </p>
+<hr />
+<h3 id="3-salvar-usuario_1">3. SALVAR USUÁRIO<a class="headerlink" href="#3-salvar-usuario_1" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Salvar</strong></p>
+<p><strong>ENTÃO</strong> o sistema valida o preenchimento do formulário </p>
+<p><strong>E</strong> Salva os dados preenchidos no formulário atualizando o registro do usuário no banco de dados</p>
+<p><strong>E</strong> Exibe a mensagem <strong>"Registro atualizado com sucesso"</strong> e redirecionando o usuário para a listagem de usuários</p>
+<h4 id="31-formulario-invalido_1">3.1 Formulário inválido<a class="headerlink" href="#31-formulario-invalido_1" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o formulário não esteja devidamente preenchido </p>
+<p><strong>ENTÃO</strong> o sistema apresenta a seguinte mensagem <strong>"Os campos destacados são de preenchimento obrigatório"</strong></p>
+<p><strong>E</strong> destaca os campos que precisam ser preenchidos para o usuário</p>
+<h4 id="32-email-de-usuario-duplicado_1">3.2 Email de usuário duplicado<a class="headerlink" href="#32-email-de-usuario-duplicado_1" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o email que o usuário estiver inserindo já esteja em utilização por outro usuário</p>
+<p><strong>ENTÃO</strong> o sistema exibirá a seguinte mensagem <strong>"Já existe um usuário com este nome"</strong></p>
+<p><strong>E</strong> interromperá a inserção do registro do usuário.</p>
+<hr />
+<h3 id="4-trocar-foto_1">4. TROCAR FOTO<a class="headerlink" href="#4-trocar-foto_1" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Trocar foto</strong></p>
+<p><strong>ENTÃO</strong> o sistema exibe janela para seleção de um arquivo de imagem na máquina do usuário</p>
+<h4 id="41-formato-invaldio_1">4.1 Formato inváldio<a class="headerlink" href="#41-formato-invaldio_1" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o usuário selecione um arquivo que não seja um formato de imagem válido (png, jpg, gif, bmp)</p>
+<p><strong>ENTÃO</strong> o sistema exibe a mensagem __"Formato de arquivo inválido. As extensões permitidas são (png, jpg, gif e bmp)</p>
+<h4 id="42-formato-valido_1">4.2 Formáto válido<a class="headerlink" href="#42-formato-valido_1" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o usuário selecione um arquivo que seja um formato de imagem válido</p>
+<p><strong>ENTÃO</strong> o sistema atualiza a foto do usuário na tela de edição de usuários</p>
+<hr />
+<h3 id="5-reenviar-senha">5. REENVIAR SENHA<a class="headerlink" href="#5-reenviar-senha" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no botão <strong>Reenviar senha</strong></p>
+<p><strong>ENTÃO</strong> o sistema exibe a seguinte mensagem para o usuário <strong>"Deseja reenviar a senha deste usuário?"</strong>_</p>
+<h4 id="51-confirmar-reenvio-da-senha">5.1 Confirmar reenvio da senha<a class="headerlink" href="#51-confirmar-reenvio-da-senha" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o usuário clique no botão <strong>Sim</strong> </p>
+<p><strong>ENTÃO</strong> o sistema reenvia a senha do usuário por email</p>
+<p><strong>E</strong> fecha a mensagem de confirmação</p>
+<h4 id="52-cancelar-reenvio-de-senha">5.2 Cancelar reenvio de senha<a class="headerlink" href="#52-cancelar-reenvio-de-senha" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o usuário clique no botão <strong>Não</strong> </p>
+<p><strong>ENTÃO</strong> o sistema fecha a mensagem de confirmação sem reenviar a senha para o usuário editado.</p>
+<hr />
+<h3 id="6-aba-de-acesso-a-filiais">6. ABA DE ACESSO A FILIAIS<a class="headerlink" href="#6-aba-de-acesso-a-filiais" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuario clicar na aba <strong>Acesso a filiais</strong> </p>
+<p><strong>ENTÃO</strong> o sistema deverá carregar uma lista com as filiais que o usuário editado tem acesso selecionadas</p>
+<hr />
+<h3 id="7-identificacao-do-usuario-editado">7. IDENTIFICAÇÃO DO USUÁRIO EDITADO<a class="headerlink" href="#7-identificacao-do-usuario-editado" title="Permanent link">#</a></h3>
+<p>O sistema irá exibir o nome do usuário editado ao lado do ícone de identificação do usuário juntamente com o perfil 
+deste usuário para que o usuário logado consiga identificar qual é o registro do usuário que está tendo o acesso 
+às filiais definido.</p>
+<hr />
+<h3 id="8-lista-de-filiais">8. LISTA DE FILIAIS<a class="headerlink" href="#8-lista-de-filiais" title="Permanent link">#</a></h3>
+<p>O sistema irá exibir a relação de todas as filiais cadastradas na listagem de filiais</p>
+<hr />
+<h3 id="9-alterar-acesso-a-filial">9. ALTERAR ACESSO A FILIAL<a class="headerlink" href="#9-alterar-acesso-a-filial" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário clicar no checkbox na linha de uma filial</p>
+<h4 id="91-conceder-acesso">9.1 Conceder acesso<a class="headerlink" href="#91-conceder-acesso" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o checkbox seja <strong>Marcado</strong> </p>
+<p><strong>ENTÃO</strong> o sistema salva o acesso do usuário editado na filial selecionada</p>
+<h4 id="92-revogar-acesso">9.2 Revogar acesso<a class="headerlink" href="#92-revogar-acesso" title="Permanent link">#</a></h4>
+<p><strong>CASO</strong> o checkox seja <strong>Desmarcado</strong></p>
+<p><strong>ENTÃO</strong> o sistema exclui o acesso do usuário editado na filial selecionada</p>
+<h4 id="93-acesso-do-proprio-usuario-logado">9.3 Acesso do próprio usuário logado<a class="headerlink" href="#93-acesso-do-proprio-usuario-logado" title="Permanent link">#</a></h4>
+<p><strong>QUANDO</strong> o usuário editado for o mesmo usuário logado no sistema</p>
+<p><strong>ENTÃO</strong> os checkbox deverão vir desabilitados não permitindo a sua alteração</p>
+<h4 id="94-acesso-do-usuario-com-perfil-diretor">9.4 Acesso do usuário com perfil DIRETOR<a class="headerlink" href="#94-acesso-do-usuario-com-perfil-diretor" title="Permanent link">#</a></h4>
+<p><strong>QUANDO</strong> o usuário tiver o perfil de <strong>Diretor</strong></p>
+<p><strong>ENTÃO</strong> por default ele sempre terá acesso a todas as filiais marcado</p>
+<h3 id="obrigatoriedade-de-campos_1">OBRIGATORIEDADE DE CAMPOS<a class="headerlink" href="#obrigatoriedade-de-campos_1" title="Permanent link">#</a></h3>
+<p>O sistema deverá exibir de forma destacada os campos do formulário que são de preenchimento obrigatório</p>
+<hr />
+<h2 id="excluir-usuario">Excluir Usuário<a class="headerlink" href="#excluir-usuario" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Contexto</p>
+<ul>
+<li>Para acessar essa funcionalidade o usuário aciona o botão <strong>Excluir</strong> a partir da tela de listagem de 
+usuários;</li>
+<li>A exclusão de um usuário deverá ser uma exclusão <strong>Lógica</strong> de forma que o registro da despesa nunca será
+fisicamente excluído do banco de dados;</li>
+</ul>
+</div>
+<p><strong>QUANDO</strong> o usuário acionar o botão <strong>Excluir</strong> em uma linha na lista de usuários</p>
+<p><strong>ENTÃO</strong> o sistema exibe uma janela de confirmação com a mensagem <strong>"Deseja realmente excluir o registro selecionado?"</strong></p>
+<p><strong>QUANDO</strong> o usuário confirmar a exclusão do registro</p>
+<p><strong>ENTÃO</strong> o sistema efetua a desativação <strong>Lógica</strong> do registro do usuário </p>
+<p><strong>E</strong> atualiza a lista de usuários de acordo com o filtro previamente definido pelo usuário</p>
+<h3 id="excluir-o-proprio-usuario">Excluir o próprio usuário<a class="headerlink" href="#excluir-o-proprio-usuario" title="Permanent link">#</a></h3>
+<p><strong>QUANDO</strong> o usuário tentar excluir um registro do seu próprio usuário</p>
+<p><strong>ENTÃO</strong> o sistema exibe a mensagem <strong>"Você não pode excluir seu próprio usuário"</strong></p>
+          <aside class="copyright" role="note">
+            
+              Copyright (c) 2016 Net On Soluções &ndash;
+            
+            Documentação gerada pelo
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../../../cadastro/lpu/lpu/" title="Cadastrar > Itens de LPU">
+          <span class="direction">
+            Voltar
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Cadastrar > Itens de LPU
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../../../funcionalidade/lpu/" title="Funcionalidade > Importar Itens de LPU">
+          <span class="direction">
+            Proximo
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Funcionalidade > Importar Itens de LPU
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>
