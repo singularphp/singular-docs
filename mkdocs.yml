@@ -1,0 +1,37 @@
+# Informações do projeto
+site_name: Singular Framework
+site_description: Documentação do Singular Framework
+site_author: Otávio Fernandes
+site_url: http://singular.neton.com.br/
+extra_css: [extra.css]
+
+
+# Copyright
+copyright: Copyright (c) 2018 Net On Soluções
+
+# Documentação de tema
+theme_dir: material
+
+# Opções
+extra:
+  version: 2.0
+  logo: images/logo.png
+  i18n:
+    prev: 'Voltar'
+    next: 'Proximo'
+  palette:
+    primary: 'orange'
+  author:
+    github: singularphp
+
+# Extensões
+markdown_extensions:
+  - codehilite(css_class=code)
+  - admonition
+  - toc:
+      permalink: '#'
+
+# Árvore de páginas
+pages:
+  - Começando: 'index.md'
+  - Como fazer: 'comofazer/comofazer.md'
