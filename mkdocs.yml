@@ -20,7 +20,7 @@ extra:
     prev: 'Voltar'
     next: 'Proximo'
   palette:
-    primary: 'orange'
+    primary: 'deep orange'
   author:
     github: singularphp
 
@@ -30,8 +30,12 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: '#'
+  - markdown_include.include:
+      base_path: docs
 
 # Árvore de páginas
 pages:
   - Começando: 'index.md'
-  - Como fazer: 'comofazer/comofazer.md'
+  - Conceitos básicos: 'conceitos/index.md'
+  - Como fazer: 'comofazer/index.md'
+
