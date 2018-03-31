@@ -36,6 +36,10 @@ markdown_extensions:
 # Árvore de páginas
 pages:
   - Começando: 'index.md'
-  - Conceitos básicos: 'conceitos/index.md'
+  - Conceitos básicos:
+    - Ciclo de vida: 'conceitos/ciclo.md'
+    - Singular Cli: 'conceitos/singularcli.md'
+    - Backend: 'conceitos/backend.md'
+    - Frontend: 'conceitos/frontend.md'
   - Como fazer: 'comofazer/index.md'
 
