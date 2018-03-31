@@ -10,11 +10,31 @@
     
 
     
+        
     <url>
-     <loc>http://singular.neton.com.br//conceitos/</loc>
+     <loc>http://singular.neton.com.br//conceitos/ciclo/</loc>
      <lastmod>2018-03-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>http://singular.neton.com.br//conceitos/singularcli/</loc>
+     <lastmod>2018-03-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://singular.neton.com.br//conceitos/backend/</loc>
+     <lastmod>2018-03-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://singular.neton.com.br//conceitos/frontend/</loc>
+     <lastmod>2018-03-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

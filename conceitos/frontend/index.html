@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Frontend - Singular Framework</title>
+      
+      
+      
+        <link rel="canonical" href="http://singular.neton.com.br/conceitos/frontend/">
+      
+      
+        <meta name="author" content="Otávio Fernandes">
+      
+    
+    <meta property="og:url" content="http://singular.neton.com.br/conceitos/frontend/">
+    <meta property="og:title" content="Singular Framework">
+    <meta property="og:image" content="http://singular.neton.com.br/conceitos/frontend//../../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Singular Framework">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../images/logo.png">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-b64b728552.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-deep-orange ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Conceitos básicos <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Frontend
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/singularphp" title="@singularphp on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Procurar" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Procurar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Singular Framework 2.0</strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Começando" href="../..">
+      Começando
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Conceitos básicos</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Ciclo de vida" href="../ciclo/">
+      Ciclo de vida
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Singular Cli" href="../singularcli/">
+      Singular Cli
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Backend" href="../backend/">
+      Backend
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="current" title="Frontend" href="./">
+      Frontend
+    </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Views renderizadas pelo backend" href="#views-renderizadas-pelo-backend">
+                Views renderizadas pelo backend
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Módulos" href="#modulos">
+                Módulos
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Controladores" href="#controladores">
+                Controladores
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Service Stores" href="#service-stores">
+                Service Stores
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Views" href="#views">
+                Views
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Como fazer" href="../../comofazer/">
+      Como fazer
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">Autor</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/singularphp" target="_blank" title="@singularphp on GitHub">
+                  @singularphp no GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+            <h1>Frontend</h1>
+          
+          <p>O Singular Framework foi projetado para ser um framework Ajax de baixo acoplamento entre as camadas de frontend e backend, ou seja, a interface dos módulos que serão construídos na aplicação, são definidos totalmente no frontend, sem nenhuma vinculação com a renderização no backend. Enquanto no backend, o Silex é utilizado como base do framework, no frontend por sua vez é o AngularJS quem fornece a estrutura de trabalho para a construção da interface de usuário.</p>
+<h3 id="views-renderizadas-pelo-backend">Views renderizadas pelo backend<a class="headerlink" href="#views-renderizadas-pelo-backend" title="Permanent link">#</a></h3>
+<p>Em um projeto criado a partir do Singular Project, há inicialmente, apenas 2 views que são renderizadas pelo backend. Entretanto essas views não possuem código de interface de usuário, elas são apenas páginas HTML que ativam uma aplicação AngularJS. Essas duas views são auth.html e secure.html, ambas estão localizadas no diretório <strong>views</strong> na raiz do projeto. </p>
+<p>A renderização dessas views ocorre através do controlador <strong>Sessao\Controller\Main</strong> através dos métodos <strong>showSecure</strong> e <strong>showAuth</strong>. Eles utilizam o provedor de serviços do <strong>Twig</strong> para pegar o template das páginas html e renderizá-las no navegador. </p>
+<p>Algumas vezes, pode ser necessário criar algumas rodas adicionais para serem renderizadas pelo backend, por exemplo, suponha que a aplicação que você está construindo terá uma tela que será exibida em um monitor e que para o recurso acessado, ela não precise que o usuário esteja autenticado. Então, seria necessário criar uma outra view, para isso, crie o arquivo do template da view dentro do diretório views. Por exemplo: <strong>monitor.html</strong>. Essa view irá fazer referência a uma aplicação própria do angular. </p>
+<p>Após criar o seu template, o próximo passo é criar um novo método que será responsável por renderizar a view no controlador <strong>Main</strong> no pacote <strong>Sessao</strong>. </p>
+<pre class="code"><code class="language-php">...
+    /**
+     * Renderiza a interface que será exibida no monitor.
+     * 
+     * @param Request $request
+     * 
+     * @return JsonResponse
+     */
+    public function showMonitor(Request $request)
+    {
+        $app = $this-&gt;app;
+
+        // rederiza a página de autenticação
+        return $app['twig']-&gt;render(&quot;monitor.html&quot;);
+    }
+...</code></pre>
+
+
+<p>O método render do serviço <strong>twig</strong> pode ainda receber parâmetros adicionais que serão interpolados ao template, para maiores informações, consulte a documentação do <a href="https://silex.symfony.com/doc/2.0/providers/twig.html">Provedor de serviços do Twig</a>. </p>
+<p>Para que a view possa ser renderizada, ainda é necessário realizar uma última configuração que irá criar uma rota get para o método de renderização da view. Para isso, adicione uma entrada para o mapeamento da rota no método connect da classe SessaoServiceProvider no pacote Sessao.</p>
+<pre class="code"><code class="language-php">    /**
+     * Registra as rotas de inicialização da aplicação.
+     *
+     * @param Application $app
+     */
+    public function connect(Application $app)
+    {
+        // define o serviço do controlador principal
+        $app['sessao.controller.main'] = function() use ($app) {
+            return new Main($app, $app['singular.packs'][$this-&gt;pack]);
+        };
+
+        // define a rota de acesso autenticado da aplicação
+        $app-&gt;get('/secure.app', 'sessao.controller.main:showSecure')-&gt;bind('secure');
+
+        // define a rota de visualização da interface de registro e autenticação do sistema
+        $app-&gt;get('/auth.app', 'sessao.controller.main:showAuth')-&gt;bind('auth');
+
+        // define a rota default do sistema
+        $app-&gt;get('/', 'sessao.controller.main:index');
+
+        // define a rota para a view do monitor
+        $app-&gt;get('/monitor', 'sessao.controller.main:showMonitor');
+    }</code></pre>
+
+
+<p>Como se trata de uma definição de rota convencional do Silex, você pode utilizar qualquer funcionalidade ou recurso disponíveis para isso, como por exemplo, utilizar rotas dinâmicas com parâmetros, validação de parâmetros, etc. </p>
+<p>Pronto, feito isso, você poderá agora acessar a view diretamente através do seu navegador.</p>
+<h3 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">#</a></h3>
+<p>Se no backend as funcionalidades são agrupadas em pacotes, no frontend elas são agrupadas por módulos, esses são módulos do AngularJS, esses módulos podem ser dependentes de outros módulos menores ou submódulos, se assim quiser chamá-los. </p>
+<p>Os módulos de frontend são armazenados dentro do diretório <strong>web/src</strong>. Uma aplicação criada a partir do Singular Project já vem com 3 módulos principais:</p>
+<ul>
+<li><strong>login</strong>: Módulo que define a aplicação utilizada na view de autenticação do sistema (auth.html). Ele é responsável por fornecer funções para autenticação do usuário;</li>
+<li><strong>secure</strong>: Módulo que define a aplicação utilizada na view segura do sistema (secure.html). Geralmente seus novos módulos serão adicionados como dependência para este módulo, de forma que, quando o usuário logar, seus módulos estarão disponíveis na aplicação;</li>
+<li><strong>ui</strong>: Módulo padrão que define serviços, controladores, views e diretivas utilizadas na interface do sistema. </li>
+</ul>
+<h4 id="a-estrutura-de-um-modulo">A estrutura de um módulo<a class="headerlink" href="#a-estrutura-de-um-modulo" title="Permanent link">#</a></h4>
+<p>Um módulo de frontend é composto por um script de definição e vários scripts de (controladores, diretivas, serviços, views e filtros) que são organizados dentro de diretórios. A idéia é seguir a definição do <em>Jhon Papa</em> para melhor organização do código. </p>
+<p>Ao abrir o diretório de um módulo geralmente tem-se a seguinte estrutura:</p>
+<ul>
+<li><strong>controllers</strong>: Diretório onde são armazenados os scripts dos controladores AngularJS do módulo. Cada view deverá ter seu próprio controlador. Podem ser criados tantos controladores quanto necessários e quanto menor o controlador mais organizado e bem estruturado será o seu código;</li>
+<li><strong>services</strong>: Diretório onde são armazenados os scripts dos serviços AngularJS do módulo. Podem ser criados tantos serviços quanto se fizer necessário. Toda comunicação com o backend se dará por meio dos serviços que implementam o [Service Store];</li>
+<li><strong>directives (opcional)</strong>: Diretório onde podem ser armazenadas diretivas específicas do módulo em questão;</li>
+<li><strong>filters (opcional)</strong>: Diretório onde podem ser armazenados filtros específicos do módulo em questão;</li>
+<li><strong>modulo.js</strong>: Script que define o módulo AngularJS. É nessa definição que são criados os states para as views do módulo. Vale lembrar que se o módulo se chamar login.registro, o nome do script será registro.js.</li>
+</ul>
+<h4 id="criando-um-novo-modulo">Criando um novo módulo<a class="headerlink" href="#criando-um-novo-modulo" title="Permanent link">#</a></h4>
+<p>Para criar um novo módulo, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-module app.teste</code></pre>
+
+
+<p>Ao executar este comando, será criado um novo módulo no diretório <strong>web/src</strong> chamado <strong>app.teste</strong>. No entanto, frequentemente, você precisará criar um submódulo, ou seja, um módulo que fica dentro de outro módulo como uma dependência. Para isso, o Singular utiliza o padrão de namespaces para nomeação dos módulos. No caso, o módulo <strong>app.teste</strong> está dentro do namespace <strong>app</strong> que representa a nossa aplicação. </p>
+<p>Suponha que seja necessário criar um submódulo "registro" dentro do módulo de login, para isso, no Singular Cli utilizaríamos:</p>
+<pre class="code"><code class="language-php">./singular frontend:create-module login.registro --dir=login</code></pre>
+
+
+<p>Ao executar este comando, um novo diretório do módulo será criado dentro do diretório do módulo <strong>login</strong>. No nome <strong>login.registro</strong> o namespace é facilmente identificado pelo <strong>login.</strong>. Por padrão, quando você cria um submódulo, o mesmo já é registrado como uma dependência no módulo pai.</p>
+<h4 id="definindo-states-para-o-modulo">Definindo states para o módulo<a class="headerlink" href="#definindo-states-para-o-modulo" title="Permanent link">#</a></h4>
+<p>O Singular Project utiliza o ui-router como mecanismo de roteamento padrão. Cada módulo define seus próprios states. Por este motivo, todas as rotas são definidas através de states, convencionalmente como é feito no ui-router, dentro da função config do módulo:</p>
+<pre class="code"><code class="language-javascript">...
+        $stateProvider.state('usuario.cadastro', {
+            url: '/usuario/cadastro',
+            acl: 'f-cadastro-create',
+            controller: 'cadastro.CreateCtrl',
+            templateUrl: getView('create')
+        })
+...</code></pre>
+
+
+<p>Mas ao observar o bloco de código, você deve ter percebido que existe um parâmetro que não é comum ao ui-router. O parâmetro <strong>"acl"</strong> faz parte do Singular e ele é utilizado para restringir o acesso de um usuário ao state. Ao utilizar esse parâmetro, você garante que apenas usuários que possuam no seu perfil o acesso à funcionalidade <strong>f-cadastro-create</strong> poderão acessá-lo.</p>
+<h3 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">#</a></h3>
+<p>Assim como na definição do AngularJS, a principal funcão de um controlador é integrar o modelo à view. Cada módulo tem seu próprio conjunto de controladores, e eles se encontram no diretório <strong>controllers</strong> do módulo. </p>
+<h4 id="criando-um-novo-controlador">Criando um novo controlador<a class="headerlink" href="#criando-um-novo-controlador" title="Permanent link">#</a></h4>
+<p>Para criar um novo controlador, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-controller namespacemodulo.MeuControlador modulo diretorio/do/submodulo --tipo=list</code></pre>
+
+
+<p>Onde:
++ <strong>namespacemodulo.MeuControlador</strong>: deve ser substituído pelo nome do seu controlador com o namespace. Por exemplo: usuario.ListCtrl;
++ <strong>modulo</strong>: deve ser substituído pelo nome com namepsace completo do módulo onde o controlador será criado. Por exemplo: cadastro.usuario;
++ <strong>diretorio/do/modulo</strong>: deve ser substituído pelo caminho completo do diretório do módulo a partir do diretório web/src;
++ <strong>tipo</strong>: se omitido, o valor default é normal. Mas pode assumir os valores (list, filter, modal, create, edit, normal);</p>
+<h3 id="service-stores">Service Stores<a class="headerlink" href="#service-stores" title="Permanent link">#</a></h3>
+<p>Service Stores são serviços angular que são criados a partir de uma StoreFactory. Eles disponibilizam métodos CRUD e de comunicação com o backend encapsulando as chamadas do serviço $http.</p>
+<h4 id="criando-um-novo-service-store">Criando um novo service store<a class="headerlink" href="#criando-um-novo-service-store" title="Permanent link">#</a></h4>
+<p>Para criar um novo service store, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-store NomedoStore modulo pack controlador dir</code></pre>
+
+
+<p>Onde:
++ <strong>NomedoStore</strong>: deverá ser substituído pelo nome do service store que será criado;
++ <strong>modulo</strong>: deverá ser substituído pelo nome completo com namepsace do módulo onde o service store será criado;
++ <strong>pack</strong>: deverá ser substituído pelo nome do pacote no backend, onde se encontra o controlador com o qual o service store irá se comunicar;
++ <strong>controlador</strong>: deverá ser substituído pelo nome do controlador no backend com o qual o service store irá se comunicar;
++ <strong>dir</strong>: deverá ser substituído pelo caminho completo do módulo/submódulo a partir de web/src;</p>
+<h4 id="metodos-crud-disponiveis">Métodos CRUD disponíveis<a class="headerlink" href="#metodos-crud-disponiveis" title="Permanent link">#</a></h4>
+<p>Como mencionado, um service store é criado a partir de um StoreFactory, com isso ele consegue acesso há alguns métodos CRUD já implementados pelo StoreFactory que possibilitam comunicação e chamada dos métodos CRUD no backend. </p>
+<ul>
+<li><strong>get(id: integer, callback: function)</strong>: método crud que faz a chamada do método <strong>get</strong> no backend, onde um ID do registro é passado como parâmetro, a função de callback é acionada com o resultado da recuperação do registro no backend.</li>
+<li><strong>load(callback: function)</strong>: método crud que faz a chamada do método <strong>find</strong> no backend. Este método utiliza implicitamente as propriedades <em>filter</em>, <em>sort</em>, e <em>paging</em> do store como parâmetros para o método find, a função de callback é acionada com o resultado da recuperação dos registros no backend.</li>
+<li><strong>save(data: object, callback: function)</strong>: método crud que faz a chamada do método <strong>save</strong> no backend, para criar/atualizar um registro. É passado um objeto com a representação do registro que será inserido/atualizado e a função de callback é acionada com o resultado da ação de salvamento do registro no backend.</li>
+<li><strong>remove(id: integer, callback: function, config: object)</strong>: método crud que faz a chamada do método <strong>remove</strong> no backend. Recebe como parâmetro o ID do registro que será excluído, e a função de callback que será acionada após a execução da ação no backend. Pode ainda receber um objeto de configuração com as propriedades (title, text e success) para definir respectivamente o título da modal de confirmação da exclusão, o texto de confirmação da modal de confirmação da exclusão e a mensagem exibida em caso de sucesso da exclusão. Caso este último parâmetro não seja passado, utilizará os valores padrão para a modal e mensagem de confirmação.</li>
+</ul>
+<h4 id="parametros-do-metodo-load">Parâmetros do método load<a class="headerlink" href="#parametros-do-metodo-load" title="Permanent link">#</a></h4>
+<p>Como mencionado acima, quando chamamos o método <strong>load</strong> de um service store, ele implicitamente inclui nos parâmetros da chamada do método <strong>find</strong> no backend as propriedades <em>filter</em>, <em>sort</em> e <em>paging</em>. Vamos analisar como esses parâmetros são definidos e como podem ser alterados, de acordo com nossa necessidade.</p>
+<h5 id="paginacao">Paginação<a class="headerlink" href="#paginacao" title="Permanent link">#</a></h5>
+<p>A paginação do método load acontece pela configuração de um objeto com duas propriedades do Service Store, imagine que você tem acesso há um Service Store chamado UserStore.</p>
+<pre class="code"><code class="language-javascript">UserStore.paging.pageSize = 10;
+UserStore.paging.currentPage = 0;
+UserStore.load();</code></pre>
+
+
+<p>Ao utilizar uma <strong>list view</strong> essas propriedades estarão vinculadas aos atributos md-limit e md-page da diretiva <strong>md-table-pagination</strong>, e podem ser manipuladas e alteradas diretamente pelo usuário na tela. </p>
+<h5 id="ordenacao">Ordenação<a class="headerlink" href="#ordenacao" title="Permanent link">#</a></h5>
+<p>Assim como a paginação, a ordenação do método load acontece também através da configuração de um objeto, <strong>sort</strong>. Em uma <strong>list view</strong> essa propriedade é atribuída à diretiva <strong>md-order</strong> no cabeçalho de uma tabela, e em conjunto com a diretiva md-order-by utilizada nas colunas do cabeçalho, definem a ordem da listagem de resultados:</p>
+<pre class="code"><code class="language-html">&lt;table md-table md-row-select=&quot;DataStore.enableRowSelection&quot; ng-model=&quot;DataStore.selected&quot;&gt;
+   &lt;thead md-head md-order=&quot;DataStore.sort&quot; md-on-reorder=&quot;reloadData&quot;&gt;
+      &lt;tr md-row&gt;
+         &lt;th class=&quot;col-sm-1&quot;&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;perfil&quot;&gt;&lt;span&gt;Perfil&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;nome&quot;&gt;&lt;span&gt;Nome&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;login&quot;&gt;&lt;span&gt;Login&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;ativo&quot;&gt;&lt;span&gt;Ativo&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column&gt;&lt;span&gt;&lt;/span&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+...
+&lt;/table&gt;</code></pre>
+
+
+<h5 id="filtros">Filtros<a class="headerlink" href="#filtros" title="Permanent link">#</a></h5>
+<p>Apenas chamar um método que retorna uma relação de registros, sem poder aplicar um filtro aos resultados que queremos obter seria algo inútil. Por isso, ao chamar o método <strong>load</strong> podemos definir filtros que serão enviados como parâmetro e servirão para filtrar os registros que desejamos obter. </p>
+<p>A forma mais simples de aplicar um filtro, é atribuir um valor ao atributo da tabela que queremos filtrar:</p>
+<pre class="code"><code class="language-javascript">UserStore.filter.ativo = 1;
+UserStore.load();</code></pre>
+
+
+<p>Esse simples filtro será aplicado ao método find no backend, e ele diz para trazer todos os registros onde a propriedade ativo seja igual a 1. </p>
+<p>Algumas vezes, podemos desejar que os filtros sejam aplicados por similaridade, por exemplo:</p>
+<pre class="code"><code class="language-javascript">UserStore.filter.email = '%:gmail.com';</code></pre>
+
+
+<p>Esse filtro irá retornar todos os usuários que possuam um email que possua a expressão <strong>gmail.com</strong> em alguma parte do valor. </p>
+<p>Podemos passar para um filtro qualquer condição de comparação:</p>
+<pre class="code"><code class="language-javascript">UserStore.filter.idade = '&gt;=:10'; // idade maior igual há 10
+UserStore.filter.peso = '&lt;=:30'; // peso menor igual há 30
+UserStore.filter.reprovado = '&lt;&gt;:1'; // reprovado diferente de 1</code></pre>
+
+
+<p>Ao utilizar filtros simples, o Singular irá automaticamente vincular a propriedade do <strong>filter</strong> à tabela principal vinculada ao Store do backend. Entretanto, quando utilizamos joins, podemos querer vincular uma propriedade há um atributo de uma outra tabela na relação de joins. Para isso, precisamos criar um mapa na definição do  Service Store:</p>
+<pre class="code"><code class="language-javascript">        /* Script UserStore.js */
+        me.filterMap = {
+            perfil: {
+                property: 'p.perfil',
+                operation: '%'
+            }
+        };</code></pre>
+
+
+<p>Utilizando o filterMap, podemos definir qual deve ser o atributo equivalente em uma tabela de um atributo de filtro no frontend. </p>
+<p>Também podemos utilizar o filter map para determinar o tipo de operação que desejamos que seja aplicada há um atributo, dessa forma não precisaremos ficar informando a toda chamada a operação:</p>
+<pre class="code"><code class="language-javascript">// Ao invés de
+UserStore.filter.idade = '&gt;:10';
+
+// Equivale a utilizar um filter map
+UserStore.filterMap.idade = '&gt;';
+UserStore.filter.idade = 10;
+UserStore.load();</code></pre>
+
+
+<p>Uma outra utilidade do filterMap é aplicar funções de conversão em um atributo antes que ele seja enviado como filtro para a função find no backend. </p>
+<pre class="code"><code class="language-javascript">/* Script UserStore.js */
+me.filterMap = {
+   status: {
+      property: 'en.status',
+      operation: '=',
+      convert: function(v){
+         if (v &gt; 1) {
+            return 1;
+         }
+         return 0;
+      }
+   }
+}</code></pre>
+
+
+<h4 id="fazendo-a-chamada-de-metodos-customizados">Fazendo a chamada de métodos customizados<a class="headerlink" href="#fazendo-a-chamada-de-metodos-customizados" title="Permanent link">#</a></h4>
+<p>Embora, a maioria da comunicação entre o frontend e backend seja a chamada de métodos CRUD, eles não resolvem 100% dos problemas, e, frequentemente é necessário fazer a chamada de métodos customizados no controlador do backend anotados com <strong>@Route</strong>. Isso pode ser feito utilizando a chamada ao serviço $http, mas o Service store possui um método auxiliar que simplifica e torna fácil a chamada e recuperação de resultado de métodos customizados no backend: o método <strong>call</strong>.</p>
+<p>O método call recebe quatro parâmetros:</p>
+<ul>
+<li><strong>method (string)</strong>: nome do método que será chamado no backend;</li>
+<li><strong>params (object)</strong>: objeto que contém a relação de chaves e valor dos parâmetros que serão enviados para o método customizado no backend, pode ser enviado um objeto vazio;</li>
+<li><strong>callback (function)</strong>: função de callback que será executada quando a chamada ao método do backend retornar;</li>
+<li><strong>config (object: opcional)</strong>: objeto que contém a configuração da chamada remota. Por padrão, ao chamar o método call, sempre é executada uma chamada ao método <strong>post</strong>, mas isso pode ser alterado mudando o valor da propriedade method do objeto de configuração para <strong>get</strong>, também podem ser passados parâmetros na URL através da propriedade urlParams no formato string, por exemplo: </li>
+</ul>
+<pre class="code"><code class="language-javascript">me.call('meuMetodoGet', {}, function(response){...}, {method: 'get', urlParams: '/10'});</code></pre>
+
+
+<h3 id="views">Views<a class="headerlink" href="#views" title="Permanent link">#</a></h3>
+<p>As views do AngularJS são o que tornam possível a utilização do padrão SPA (Single Page Aplication). Assim como nos controladores, cada módulo tem seu próprio conjunto de views, e elas se encontram no diretório <strong>views</strong> do módulo. </p>
+<h4 id="criando-uma-nova-view">Criando uma nova view<a class="headerlink" href="#criando-uma-nova-view" title="Permanent link">#</a></h4>
+<p>Para criar uma nova view, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-view view dir tipo</code></pre>
+
+
+<p>Onde:
++ <strong>view</strong>: deve ser substituído pelo nome da view que se está criando. Exemplo: usuario.cadastro;
++ <strong>diretorio/do/modulo</strong>: deve ser substituído pelo caminho completo do diretório do módulo onde a view será criada a partir do diretório web/src;
++ <strong>tipo</strong>: o tipo de view a ser criada (list, filter, modal, form, tab);</p>
+<p>Tipos de view:</p>
+<ul>
+<li><strong>list</strong>: view do tipo listagem de resultados de um service store, com uma tabela com recursos de paginação e botões de ação para criação, exclusão, edição e visualização de um registro;</li>
+<li><strong>filter</strong>: view do tipo filtro de resultados de uma list view, é a view exibida na sidebar lateral de filtros do módulo;</li>
+<li><strong>modal</strong>: view do tipo modal que será exibida através do serviço $modal;</li>
+<li><strong>form</strong>: view do tipo formulário que inclui tabs do cadastro do registro. Também possui botões de ação para salvamento do registro e retorno à tela de listagem;</li>
+<li><strong>tab</strong>: view do tipo tab, que pode ser incluída em uma view form.</li>
+</ul>
+          <aside class="copyright" role="note">
+            
+              Copyright (c) 2018 Net On Soluções &ndash;
+            
+            Documentação gerada pelo
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../backend/" title="Backend">
+          <span class="direction">
+            Voltar
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Backend
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../../comofazer/" title="Como fazer">
+          <span class="direction">
+            Proximo
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Como fazer
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>
