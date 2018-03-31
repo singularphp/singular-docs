@@ -2,6 +2,21 @@
 	background-color: #78909C !important;
 }
 
+.admonition span {
+    background-color: #f0f2f1;
+    color: #f4645f;
+    padding: 1px 5px;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.125);
+}
+destak {
+    background: #f0f2f1;
+    color: #f4645f;
+    padding: 1px 5px;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.125);
+}
+
 .palette-primary-teal .article h3 {
     color: #009688;
 }

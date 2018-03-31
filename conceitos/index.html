@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Conceitos básicos - Singular Framework</title>
+      
+      
+      
+        <link rel="canonical" href="http://singular.neton.com.br/conceitos/">
+      
+      
+        <meta name="author" content="Otávio Fernandes">
+      
+    
+    <meta property="og:url" content="http://singular.neton.com.br/conceitos/">
+    <meta property="og:title" content="Singular Framework">
+    <meta property="og:image" content="http://singular.neton.com.br/conceitos//../images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Singular Framework">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../images/logo.png">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../assets/fonts/icon.eot?52m981');
+      	src: url('../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/stylesheets/application-b64b728552.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-deep-orange ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+          </span>
+        
+        Conceitos básicos
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/singularphp" title="@singularphp on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Procurar" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Procurar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Singular Framework 2.0</strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Começando" href="..">
+      Começando
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="current" title="Conceitos básicos" href="./">
+      Conceitos básicos
+    </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Backend" href="#backend">
+                Backend
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Singular CLI" href="#singular-cli">
+                Singular CLI
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Pacote" href="#pacote">
+                Pacote
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Comando" href="#comando">
+                Comando
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Frontend" href="#frontend">
+                Frontend
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Como fazer" href="../comofazer/">
+      Como fazer
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">Autor</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/singularphp" target="_blank" title="@singularphp on GitHub">
+                  @singularphp no GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+            <h1>Conceitos básicos</h1>
+          
+          <p>O Singular Framework, foi projetado para ser um framework Ajax, ou seja, à exceção das views principais (autenticação e 
+acesso seguro, além das que se fizerem necessárias), todo o front-end é codificado em HTML, CSS e JavaScript, com apoio 
+do framework AngularJS. Sempre que é necessário um dado que venha do servidor (backend) é feita uma requisição 
+assíncrona Ajax para uma classe em PHP, que por sua vez, após realizar o processamento necessário, retorna a resposta 
+para o frontend no formato JSON.</p>
+<p>Por este motivo, todo o ciclo de desenvolvimento se divide basicamente em dois ambientes: Backend e Frontend.</p>
+<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">#</a></h2>
+<p>No backend é onde são feitos todos os processamentos de lógica de negócio, acesso à base de dados, geração de relatórios, 
+envios de email, e outras tarefas semelhantes. Como mencionado anteriormente, o Singular Framework foi construído sobre 
+o Silex, mas de forma totalmente orientada a objetos. </p>
+<p>Todo o código backend de um projeto no Singular reside dentro do diretório <destak>src</destak>. </p>
+<hr />
+<h2 id="singular-cli">Singular CLI<a class="headerlink" href="#singular-cli" title="Permanent link">#</a></h2>
+<p>Um projeto criado com o Singular Project inclui o <destak>Singular Command Line Interface</destak>. O <destak>Singular
+Cli</destak> é uma ferramenta utilitária que automatiza muitas tarefas no processo de desenvolvimento de aplicações.</p>
+<h3 id="exibindo-os-comandos-disponiveis">Exibindo os comandos disponíveis<a class="headerlink" href="#exibindo-os-comandos-disponiveis" title="Permanent link">#</a></h3>
+<p>Para visualizar os comandos disponíveis no <destak>Singular Cli</destak>, na raiz do seu projeto, execute o comando:</p>
+<pre class="code"><code class="language-shell">./singular </code></pre>
+
+
+<p>O resultado será algo como:</p>
+<pre class="code"><code class="language-shell">Available commands:
+  help                         Displays help for a command
+  list                         Lists commands
+ backend
+  backend:create-command       Cria um novo comando num pacote
+  backend:create-controller    Cria um novo controlador num pacote
+  backend:create-pack          Cria e habilita um novo pacote na aplicação
+  backend:create-service       Cria um novo serviço num pacote
+  backend:create-store         Cria um novo store num pacote
+  backend:disable-pack         Desabilita um pacote da aplicação
+  backend:enable-pack          Habilita um pacote da aplicação
+component
+  component:create-migration   Cria migrations para inclusão dos componentes no banco de dados
+  component:grant-full-access  Concede permissão de acesso a todos os componentes para um perfil
+ frontend
+  frontend:create-controller   Cria um controlador de frontend na aplicação
+  frontend:create-module       Cria um módulo de frontend na aplicação
+  frontend:create-store        Cria um store de frontend na aplicação
+  frontend:create-view         Cria uma view de frontend para um módulo na aplicação
+ lint
+  lint:yaml                    Lints a file and outputs encountered errors
+ sessao
+  sessao:cria-perfil           Cria um novo registro de perfil na aplicação</code></pre>
+
+
+<hr />
+<h2 id="pacote">Pacote<a class="headerlink" href="#pacote" title="Permanent link">#</a></h2>
+<p>Cada conjunto de funcionalidades é organizado dentro de um pacote no diretório src. Por exemplo, se o sistema a ser 
+desenvolvido possui um conjunto de funcionalidades de cadastro, poderá ser criado um pacote <destak>Cadastro</destak> 
+que irá armazenar todas as classes relacionadas à funcionalidade de cadastro. Quando um novo projeto é criado com o 
+Singular Project, já existe um pacote chamado <destak>Sessao</destak>.</p>
+<h3 id="estrutura-de-um-pacote">Estrutura de um Pacote<a class="headerlink" href="#estrutura-de-um-pacote" title="Permanent link">#</a></h3>
+<p>Como dito anteriormente, um pacote é uma forma de agrupar um conjunto de funcionalidades relacionadas. 
+Quando um pacote é criado, a seguinte estrutura de diretórios e arquivos é criada na raiz do diretório <destak>src</destak>:</p>
+<ul>
+<li><destak>Command</destak>: Diretório onde são armazenadas as classes das tarefas que serão adicionadas à linha de comando do singular para o pacote em questão;</li>
+<li><destak>Controller</destak>: Diretório onde são armazenadas as classes dos controladores, controladores são o canal de comunicação entre o frontend e o backend. Funcionam como uma API do backend disponibilizada para acesso no frontend;</li>
+<li><destak>Service</destak>: Diretório onde são armazenadas classes auxiliares que disponibilizam serviços para que o container de serviços do Silex possa disponibilizar para toda a aplicação;</li>
+<li><destak>Store</destak>: Diretório onde são armazenadas as classes que intermediam a comunicação da aplicação com o banco de dados. Cada tabela é representada no Singular por um store;</li>
+<li><destak>PacoteServiceProvider.php</destak>: Arquivo de definição do pacote, ele é que registra o provedor de serviços do pacote e o expõe para o container de serviços da aplicação.</li>
+</ul>
+<p>O Singular CLI possui tarefas utilitárias para a criação de todos os recursos de um pacote, mais adiante iremos estudá-lo para conhecer as tarefas disponíveis.</p>
+<h3 id="criando-um-pacote">Criando um pacote<a class="headerlink" href="#criando-um-pacote" title="Permanent link">#</a></h3>
+<p>A maneira mais fácil de criar um pacote é utilizar o Singular CLI, para isso, no terminal, no diretório raiz do seu projeto digite o seguinte comando:</p>
+<pre class="code"><code class="language-shell">./singular backend:create-pack NomeDoPacote</code></pre>
+
+
+<p>Onde, <destak>NomeDoPacote</destak>, deverá ser substituído pelo nome do pacote que você deseja criar.</p>
+<p>Ao executar este comando, um novo diretório nomeado de acordo com nome que você forneceu ao pacote será criado na 
+raiz do diretório src, com a estrutura completa de um pacote.</p>
+<p>Além disso, um arquivo chamado <destak>nomedopacote.php</destak> é criado dentro do diretório <a href="">app/packs</a>. Ao abrir 
+este arquivo, você pode verificar a seguinte declaração:</p>
+<pre class="code"><code class="language-php">use NomeDoPacote\NomeDoPacoteServiceProvider;
+
+$app-&gt;register(new NomeDoPacoteServiceProvider());</code></pre>
+
+
+<p>Uma vez que o Singular é criado sobre o <destak>Silex Framework</destak>, ele também utiliza a funcionalidade de provedores
+de serviço para extender suas funcionalidades. Neste caso, cada novo pacote criado é um novo provedor de serviços, e 
+cada funcionalidade desse pacote extende as funcionalidades do framework.</p>
+<h3 id="desabilitando-um-pacote">Desabilitando um pacote<a class="headerlink" href="#desabilitando-um-pacote" title="Permanent link">#</a></h3>
+<p>Algumas vezes, pode ser necessário, para efeitos de testes ou por outro motivo, desativar um pacote e todas as suas 
+funcionalidades. Para fazer isso, basta apagar o arquivo <a href="">app/packs/nomedopacote.php</a>. Mas isso pode ser feito via 
+<destak>Singular Cli</destak></p>
+<pre class="code"><code class="language-shell">./singular backend:disable-pack NomeDoPacote</code></pre>
+
+
+<h3 id="habilitando-um-pacote">Habilitando um pacote<a class="headerlink" href="#habilitando-um-pacote" title="Permanent link">#</a></h3>
+<p>Se um pacote foi desabilitado, ou criado manualmente, para que o mesmo seja novamente ativado, é necessário que ele seja
+habilitado. Para isso, basta criar um arquivo chamado <destak>nomedopacote.php</destak> dentro do diretório <a href="">app/packs</a>. 
+Dentro desse arquivo, você deve registrar o seu provedor de serviços.</p>
+<pre class="code"><code class="language-php">use NomeDoPacote\NomeDoPacoteServiceProvider;
+
+$app-&gt;register(new NomeDoPacoteServiceProvider());</code></pre>
+
+
+<p>Entretanto, isso também pode ser alcançado de forma muito mais simples, através do <destak>Singular Cli</destak></p>
+<pre class="code"><code class="language-shell">./singular backend:enable-pack NomeDoPacote</code></pre>
+
+
+<hr />
+<h2 id="comando">Comando<a class="headerlink" href="#comando" title="Permanent link">#</a></h2>
+<p>Comandos são tarefas que podem ser executadas pelo terminal através do Singular Cli. Comandos são úteis para disparar 
+emails, executar tarefas de limpeza de tabelas, etc. Eles podem ser acionados manualmente, ou ser programados para 
+executar automaticamente através de ferramentas como o <destak>cron</destak> do linux.</p>
+<h3 id="criando-um-comando">Criando um comando<a class="headerlink" href="#criando-um-comando" title="Permanent link">#</a></h3>
+<p>Cada pacote pode definir seus próprios comandos, e desta forma extender as funcionalidades do <destak>Singular Cli</destak>
+para executar tarefas específicas do pacote. </p>
+<p>Para criar um comando, basta digitar a seguinte instrução no seu terminal:</p>
+<pre class="code"><code class="language-shell">./singular backend:create-command Comando Pacote</code></pre>
+
+
+<div class="admonition onde">
+<p class="admonition-title">Onde</p>
+<p><span>Comando</span> deve ser substituído pelo nome script de comando<br>
+<span>Pacote</span> deve ser substituído pelo nome do pacote onde você deseja armazenar o novo comando</p>
+</div>
+<p>Ao executar essa instrução, uma nova classe php, com o nome fornecido para o comando, será criado no diretório Command 
+do seu pacote. </p>
+<p>A estrutura dessa classe é bem simples, ela possui apenas 2 métodos <destak>configure</destak> e <destak>execute</destak>, 
+conforme veremos em detalhe abaixo:</p>
+<pre class="code"><code class="language-php"> 1.  class TesteCommandCommand extends Command
+ 2.  {
+ 6.      public function configure()
+ 7.      {
+ 8.         $this-&gt;setName('sessao:teste-command')
+ 9.             -&gt;setDescription('Descrição do comando')
+10.            -&gt;setHelp('Ajuda para execução do comando')
+11.            -&gt;addArgument(
+12.                'parametro',
+13.                InputArgument::REQUIRED,
+14.                'Descricao do parâmetro'
+15.            );
+16.      }
+17.
+24.      public function execute(InputInterface $input, OutputInterface $output)
+25.      {
+26.          $app = $this-&gt;getSilexApplication();
+27.
+28.          $output-&gt;writeln(sprintf('&lt;info&gt;%s&lt;/info&gt;', 'Comando executado com sucesso!'));
+29.      }
+30.  }</code></pre>
+
+
+<p>No método <destak>configure</destak> é feita a configuração do parâmetro: </p>
+<div class="admonition entendendo">
+<p class="admonition-title">Entendendo</p>
+<p><span>Linha 8</span> É definido o nome do comando que será exibido no Singular Cli, 
+é uma boa prática utilizar o nome do pacote como namespace de um comando 
+Por exemplo, se o comando chama-se teste o pacote cadastro, o nome deveria ser <span>cadastro:teste</span></p>
+<p><span>Linha 9</span> É definido o texto de definição do comando, que exibe a ajuda ao usuário, sobre o que o 
+comando faz</p>
+<p><span>Linha 10</span> É definido um texto de ajuda, que será exibido quando o usuário digitar a opção de ajuda 
+para o seu comando</p>
+<p><span>Linha 11 a 14</span> São definidos os argumentos do comando, ou parâmetros, como costumamos chamá-los. 
+Podem ser criados tantos argumentos quanto necessários. Argumentos são obrigatórios, mas existe opções, que são 
+parâmetros opcionais </p>
+</div>
+<p>O método <destak>execute</destak> é acionado quando o seu comando é executado pelo Singular Cli, ele pode acessar 
+qualquer serviço da sua aplicação para executar uma determinada tarefas. </p>
+<p>Para maiores informações, acesse o site da documentação do <a href="http://symfony.com/doc/current/console.html">Componente Console do Symfony</a>.</p>
+<h4 id="criando-um-controlador">Criando um controlador<a class="headerlink" href="#criando-um-controlador" title="Permanent link">#</a></h4>
+<p>Controladores são a interface de integração e comunicação entre o frontend e o backend. Quando uma informação do backend é necessária no frontend, como por exemplo, uma lista de usuários, uma requisição é feita a partir da interface para um controlador, esse por sua vez, é responsável por realizar as chamadas aos serviços e stores e retornar essa informação para o frontend no formato json. </p>
+<p>Para criar um novo controlador através do Singular Cli, basta executar o seguinte código:</p>
+<pre class="code"><code class="language-shell">./singular backend:create-controller Controlador Pacote</code></pre>
+
+
+<p>Onde:
++ <strong>Controlador</strong>: deve ser substituído pelo nome do controlador;
++ <strong>Pacote</strong>: deve ser substituído pelo nome do pacote onde você deseja armazenar o novo controlador;</p>
+<p>Ao executar essa instrução, uma nova classe php, com o nome fornecido para o controlador, será criado no diretório Controller do seu pacote.  A estrutura básica da classe de um controlador se parece com:</p>
+<pre class="code"><code class="language-php">/**
+ * Classe Perfil
+ *
+ * @Controller
+ *
+ * @author Otávio Fernandes &lt;otavio@netonsolucoes.com.br&gt;
+ */
+class Perfil extends SingularController
+{
+    use Crud;
+
+    /**
+     * Defina o store padrão do controlador.
+     *
+     * @var $store
+     */
+    protected $store = 'perfil';
+}</code></pre>
+
+
+<p>O que diferencia uma classe de um controlador de uma classe qualquer é a anotação <strong>@Controller</strong> no bloco de documentação da classe. Se essa anotação não existir, não será possível acessar nenhum de seus métodos através do frontend.</p>
+<p>Outro ponto importante, é que, se você desejar que o controlador criado já implemente métodos básicos de funcionalidade <strong>CRUD</strong>, você pode utilizar o <strong>Trait</strong> <strong>Crud</strong>, como é feito na linha <strong>use Crud</strong>. Por padrão, um controlador criado pelo Singular Cli, já implementa esse traço. Os métodos disponibilizados pelo traço Crud são:</p>
+<ul>
+<li>
+<p><strong>find</strong>: Função que recupera uma lista de registros vinculados há um store de acordo com parâmetros de filtro, paginação e ordenação (<strong>filter</strong>, <strong>paging</strong> e <strong>sort</strong>);</p>
+</li>
+<li>
+<p><strong>get</strong>: Função que recupera um registro específico vinculado há um store de acordo com o parâmetro <strong>id</strong> desse registro;</p>
+</li>
+<li>
+<p><strong>save</strong>: Função que cria/atualiza um registro específico vinculado há um store de acordo com parâmetros de campos de uma tabela. Se o campo <strong>id</strong> for enviado na lista de parâmetros o registro é atualizado, caso contrário, um novo registro é criado e o seu <strong>id</strong> é retornado para o método que fez a requisição no frontend;</p>
+</li>
+<li>
+<p><strong>remove</strong>: Função que exclui um registro vinculado há um store através do seu <strong>id</strong> informado como parâmetro.</p>
+</li>
+</ul>
+<p>Outro ponto muito importante a considerar é a propriedade <strong>$store</strong> da classe do controlador. Essa propriedade faz referência direta a qual classe <strong>store</strong> o controlador está vinculado. Sem essa propriedade definida, nenhum método definido pelo traço <strong>Crud</strong> irá funcionar. Ela deve referenciar, no minúsculo, há uma classe store, criada no mesmo pacote do controlador. Caso não seja um controlador que use o traço Crud, ela não é necessária. </p>
+<h5 id="expondo-metodos-para-o-frontend">Expondo métodos para o frontend<a class="headerlink" href="#expondo-metodos-para-o-frontend" title="Permanent link">#</a></h5>
+<p>Como o objetivo de uma classe de controlador é fornecer um método de comunicação entre o backend e o frontend, é extremamente necessário que os métodos criados no controlador sejam "expostos" para o frontend. Veja como um novo método pode ser criado e exposto para o frontend:</p>
+<pre class="code"><code class="language-php">&lt;?php
+namespace Sessao\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Singular\SingularController;
+use Singular\Crud;
+use Singular\Annotation\Controller;
+use Singular\Annotation\Route;
+use Singular\Annotation\Direct;
+use Singular\Annotation\Value;
+use Singular\Annotation\Assert;
+use Singular\Annotation\Convert;
+use Singular\Annotation\After;
+use Singular\Annotation\Before;
+
+/**
+ * Classe Perfil
+ *
+ * @Controller
+ *
+ * @author Otávio Fernandes &lt;otavio@netonsolucoes.com.br&gt;
+ */
+class Perfil extends SingularController
+{
+    use Crud;
+
+    /**
+     * Defina o store padrão do controlador.
+     *
+     * @var $store
+     */
+    protected $store = 'perfil';
+
+    /**
+     * Emite uma saudação para um nome completo.
+     *
+     * @Route(method=&quot;post&quot;)
+     *
+     * @param Request $request
+     *
+     * @return \Singular\Response\JsonResponse
+     */
+    public function saudacoesNomeCompleto(Request $request)
+    {
+        $app = $this-&gt;app;
+
+        $primeiroNome = $request-&gt;get('primeiro_nome');
+        $segundoNome = $request-&gt;get('segundo_nome');
+
+        return $app-&gt;json([
+            'mensagem' =&gt; 'Olá '.$primeiroNome.' '.$segundoNome.', seja bem vindo!'
+        ]);
+    }
+}</code></pre>
+
+
+<p>O método <strong>saudacoesNomeCompleto</strong> do controlador <strong>Perfil</strong> do pacote <strong>Sessao</strong> precisa ser exposto para a camada de frontend. Para isso, utilizamos a anotação </p>
+<pre class="code"><code class="language-php">@Route(method=&quot;post&quot;)</code></pre>
+
+
+<p>Ao utilizarmos essa anotação, estamos tornando possível que uma requisição seja feita diretamente da interface por exemplo através do serviço <strong>$http</strong>:</p>
+<pre class="code"><code class="language-javascript">$http.post('./sessao/perfil/saudacoesNomeCompleto', {primeiro_nome: &quot;Otavio&quot;, segundo_nome: &quot;Fernandes&quot;}, function(response){
+   alert(response.mensagem);
+});</code></pre>
+
+
+<p>Todos os métodos http estão disponíveis para serem utilizados na anotação <strong>@Route</strong> (get, post, put, delete, options). Algumas vezes, pode ser necessário expor uma função do controlador para mais de um método http, isso pode ser facilmente alcançado com:</p>
+<pre class="code"><code class="language-php">@Route(methods={&quot;post&quot;,&quot;options&quot;})</code></pre>
+
+
+<p>Por padrão, todos os parâmetros são recuperados na função do controlador através de um objeto da classe Request que é parâmetro da função. Entretanto, algumas vezes, você pode necessitar passar alguns parâmetros na própria URL, para isso basta adicionar o nome desses parâmetros na sua função:</p>
+<pre class="code"><code class="language-php">    /**
+     * Emite uma saudação para um nome completo.
+     *
+     * @Route(method=&quot;get&quot;)
+     *
+     * @param Request $request
+     * @param string  $primeiroNome
+     * @param string  $segundoNome
+     *
+     * @return \Singular\Response\JsonResponse
+     */
+    public function saudacoesNomeCompleto(Request $request, $primeiroNome, $segundoNome)
+    {
+        $app = $this-&gt;app;
+
+        $primeiroNome = $primeiroNome;
+        $segundoNome = $segundoNome;
+
+        return $app-&gt;json([
+            'mensagem' =&gt; 'Olá '.$primeiroNome.' '.$segundoNome.', seja bem vindo!'
+        ]);
+    }</code></pre>
+
+
+<p>E a chamada http ficaria semelhante à:</p>
+<pre class="code"><code class="language-javascript">$http.get('./sessao/perfil/saudacoesNomeCompleto/Otavio/Fernandes', function(response){
+   alert(response.mensagem);
+});
+
+````
+### Criando um Serviço
+
+Serviços são classes que expõe métodos e funções utilitárias que permitem a execução de algumas lógicas e regras de negócio para outras partes da aplicação (outros serviços e controladores). 
+
+Para criar um serviço, basta utilizar o Singular Cli:
+
+```shell
+./singular backend:create-service NomeServico Pacote</code></pre>
+
+
+<p>Onde: 
++ <strong>NomeServico</strong>: deve ser substituído pelo nome do serviço que se deseja criar;
++ <strong>Pacote</strong>: deve ser substituído pelo nome do pacote onde se deseja criar o novo serviço;</p>
+<p>Todo serviço tem acesso ao container da aplicação, que pode ser acessado através da propriedade $app da aplicação. Pelo container da aplicação, você pode acessar qualquer outro serviço definido na aplicação. </p>
+<p>Assim como com os controladores, um serviço no Singular Framework precisa ser anotado para estar registrado no container da aplicação como um serviço. Para isso, a anotação <strong>@Service</strong> deve ser utilizada. </p>
+<h4 id="acessando-servicos-do-container">Acessando serviços do container<a class="headerlink" href="#acessando-servicos-do-container" title="Permanent link">#</a></h4>
+<p>Frequentemente, faz-se necessário acessar serviços a partir de um controlador, ou mesmo de outro serviço. Entende-se por serviço, qualquer classe que estiver dentro de um pacote da aplicação. Suponha que você precise acessar um serviço chamado <strong>CalculoSalario</strong> que está definido dentro do pacote <strong>Financeiro</strong>, para acessá-lo, basta pegar uma referência do container de serviços da aplicação, como é feito no pimple:</p>
+<pre class="code"><code class="language-php">$servico = $this-&gt;app['cadastro.store.calculo_salario'];</code></pre>
+
+
+<p>É possível acessar qualquer serviço criado, a partir de qualquer pacote, controlador ou serviço, simplesmente usando a anotação de namespace de serviços com três partes. Onde a primeira parte identifica o pacote, a segunda, o diretório do pacote (Command, Controller, Service, Store) e a terceira o nome da classe em minúsculo.</p>
+<h3 id="criando-um-store">Criando um Store<a class="headerlink" href="#criando-um-store" title="Permanent link">#</a></h3>
+<p>Classes Stores são a camada de acesso ao banco de dados da sua aplicação. Cada store, pode representar uma tabela, e disponibiliza uma API de métodos que estarão disponíveis para serviços e controladores que executam consultas e manipulações específicas no banco de dados retornando resultados, alterando ou manipulando registros.</p>
+<p>Para criar um store, você pode utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular backend:create-store Store Pacote tabela</code></pre>
+
+
+<ul>
+<li><strong>Store</strong>: deve ser substituído pelo nome da classe do store;</li>
+<li><strong>Pacote</strong>: deve ser substituído pelo nome do pacote onde você deseja armazenar o novo controlador;</li>
+<li><strong>tabela</strong>: nome da tabela no banco de dados vinculada ao store;</li>
+</ul>
+<h4 id="metodos-crud-herdados-da-classe-singularstore">Métodos CRUD herdados da classe SingularStore<a class="headerlink" href="#metodos-crud-herdados-da-classe-singularstore" title="Permanent link">#</a></h4>
+<p>Uma classe store faz herança da classe <strong>Singular\SingularStore</strong>, então ela herda alguns métodos utilitários do tipo crud padrão dessa classe:</p>
+<ul>
+<li><strong>find($id: integer):array</strong>: Retorna um registro de uma tabela do banco de dados pelo seu id. Recebe o <strong>id</strong> do registro como parâmetro e retorna um array representando um registro único da tabela.</li>
+</ul>
+<pre class="code"><code class="language-php">$usuario = $app['cadastro.store.usuario']-&gt;find(1);</code></pre>
+
+
+<ul>
+<li><strong>findOneBy($filters: array):array</strong>: Retorna um registro de uma tabela através de um array de filtros aplicados nessa tabela. Recebe um array de filtros como parâmetro e retorna um array representando um registro único da tabela.</li>
+</ul>
+<pre class="code"><code class="language-php">$usuario = $app['cadastro.store.usuario']-&gt;findBy([
+      'login' =&gt; '%:Otavio', 
+      'email' =&gt; 'otavio@neton.com.br'
+]);</code></pre>
+
+
+<ul>
+<li><strong>findBy($filters: array, $pageOpts: array, $sort: array)</strong>: Retorna um conjunto de registros que combinam com um grupo de filtros aplicado na tabela. Recebe um array de filtros como parâmetro, e também pode receber parâmetros de paginação e ordenação dos resultados e retorna um array contendo um conjunto de resultados que combinam com os filtros aplicados;</li>
+</ul>
+<pre class="code"><code class="language-php">$usuarios = $app['cadastro.store.usuario']-&gt;findBy(
+     ['email' =&gt; '%:gmail.com'],
+     ['start' =&gt; 0,'limit'=&gt; 5], 
+     ['nome' =&gt; 'asc']
+);</code></pre>
+
+
+<ul>
+<li><strong>save($record:array):integer</strong>: Cria/atualiza um registro na tabela e retorna o seu id;</li>
+</ul>
+<pre class="code"><code class="language-php">$usuario = ['nome' =&gt; 'Otávio', 'login' =&gt; 'otavio', 'senha'=&gt; '123];
+$id = $app['cadastro.store.usuario']-&gt;save($usuario);</code></pre>
+
+
+<ul>
+<li><strong>remove($id: integer): boolean</strong>: Remove um registro da tabela através do seu id e retorna o booleano do sucesso da operação;</li>
+</ul>
+<pre class="code"><code class="language-php">$excluido = $app['cadastro.store.usuario']-&gt;remove(1);</code></pre>
+
+
+<ul>
+<li><strong>removeBy($filter: array)</strong>: boolean: Remove um ou mais registros da tabela através da combinação de filtros aplicados na tabela;</li>
+</ul>
+<pre class="code"><code class="language-php">$excluido = $app['cadastro.store.usuario']-&gt;removeBy(['email' =&gt; '%:gmail.com']);</code></pre>
+
+
+<h5 id="perfis-de-consulta">Perfis de consulta<a class="headerlink" href="#perfis-de-consulta" title="Permanent link">#</a></h5>
+<p>Todas as funções de consulta herdadas do SingularStore, por padrão, retornam determinados campos, aplicando joins, groupings e filtros padrão. Isso é ótimo, pois evita a criação de consultas complexas desnecessárias agilizando o processo. Entretanto, pode haver a necessidade de trazer informações diferentes, com filtros e joins diferentes, dependendo do contexto. A versão 2 do Singular implementa uma funcionalidade chamada <strong>Perfis de consulta (profiles)</strong> que permite criar vários perfis de consulta (campos do select, filtros, joins, groupings), dessa forma é possível de acordo com o contexto, selecionar um ou outro perfil padrão, eliminando ainda mais a necessidade de criar querys complexas para atividades triviais.</p>
+<p>Quando você cria um novo store, por padrão ele já define o padrão <strong>default</strong> de consulta:</p>
+<pre class="code"><code class="language-php">    ...
+    /**
+     * Perfis de consulta.
+     *
+     * @var array
+     */
+    protected $profiles = [
+        'default' =&gt; [
+            'select' =&gt; ['t.*'],
+            'joins' =&gt; [],
+            'filters' =&gt; [],
+            'groupings' =&gt; []
+        ]
+    ];
+    ...</code></pre>
+
+
+<p>Um perfil de consulta nada mais é que um array de arrays estruturados. Para criar um novo perfil, basta criar um elemento na propriedade $profiles atribuindo-lhe um nome e igualando seu valor a um outro array com as propriedades:
++ <strong>select</strong>: array com a lista dos campos que serão selecionadas, por padrão o alias da tabela vinculada ao store é <strong>t</strong>;</p>
+<pre class="code"><code class="language-php">[
+   'select'=&gt; ['t.nome','t.id as codigo']
+]
+````
++ __joins__: um array de definição de um relacionamento com outra tabela. Para cada elemento do join o primeiro parâmetro é o nome da tabela relacionada, o segundo o alias, o terceiro a condição de igualdade do relacionamento e o quarto e opcional, o tipo de relacionamento (left ou join), se for omitido assume o valor 'join'.
+```php
+[
+   'joins' =&gt; [
+      ['perfil','p','p.id = u.perfil_id', 'left']
+   ]
+]</code></pre>
+
+
+<ul>
+<li><strong>filters</strong>: um array de definição dos filtros padrão a serem aplicados na consulta.</li>
+</ul>
+<pre class="code"><code class="language-php">[
+   'filters' =&gt; [
+      'ativo' =&gt; '1'
+   ]
+]</code></pre>
+
+
+<ul>
+<li><strong>groupings</strong>: um array de definição dos agrupamentos padrão aplicados na consulta</li>
+</ul>
+<pre class="code"><code class="language-php">[
+   'grouping' =&gt; [
+      't.id'
+   ]
+]</code></pre>
+
+
+<p>Para criar um novo perfil de consulta, apenas crie um novo elemento no array $profiles e defina os valores que julgar necessários. Para selecionar um perfil de consulta, basta acionar o método <strong>setProfile</strong> antes de executar uma função como (find, findBy, findOneBy).</p>
+<pre class="code"><code class="language-php">$app['cadastro.store.usuario']-&gt;setProfile('perfil')-&gt;findBy(['id' =&gt; '&gt;:10']);</code></pre>
+
+
+<h5 id="criando-consultas-customizadas">Criando consultas customizadas<a class="headerlink" href="#criando-consultas-customizadas" title="Permanent link">#</a></h5>
+<p>Embora os métodos findBy e findOneBy possam ser muito úteis e flexíveis através da utilização dos perfis de consulta, algumas vezes se faz necessário criar consultas customizadas e complexas para realizar tarefas específicas. Esses métodos podem ser facilmente criados nas classes store. </p>
+<p>A classe store, possui uma propriedade <strong>$db</strong> que fornece acesso à classe de conexão <strong>DBAL</strong> do Doctrine para o Silex. Para facilitar a criação de consultas, e ter consultas que sejam mais legíveis, é extremamente importante utilizar o <strong>QueryBuilder</strong> do Doctrine. Para recuperar uma nova instância do query builder, basta:</p>
+<pre class="code"><code class="language-php">$qb = $this-&gt;db-&gt;createQueryBuilder();</code></pre>
+
+
+<p>Ao criar uma consulta customizada, geralmente, precisamos passar filtros para essa consulta. Por questões de segurança, <strong>SEMPRE</strong> utilize a vinculação de parâmetros para definir filtros. <strong>NÃO UTILIZE</strong> a vinculação da entrada do usuário diretamente na montagem da sua consulta. Vamos ver uma aplicação de certo e errado:</p>
+<pre class="code"><code class="language-php">/* ERRADO */
+$qb-&gt;select('u.*')
+   -&gt;from('usuarios','u')
+   -&gt;where('u.idade &gt; '.$idade);
+$rs = $this-&gt;db-&gt;fetchAll($qb-&gt;getSQL());
+
+/* CORRETO */
+$qb-&gt;select('u.*')
+   -&gt;from('usuarios','u')
+   -&gt;where('u.idade &gt; :idade');
+
+$rs = $this-&gt;db-&gt;fetchAll($qb-&gt;getSQL(), ['idade' =&gt; $idade]);</code></pre>
+
+
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">#</a></h2>
+<p>O Singular Framework foi projetado para ser um framework Ajax de baixo acoplamento entre as camadas de frontend e backend, ou seja, a interface dos módulos que serão construídos na aplicação, são definidos totalmente no frontend, sem nenhuma vinculação com a renderização no backend. Enquanto no backend, o Silex é utilizado como base do framework, no frontend por sua vez é o AngularJS quem fornece a estrutura de trabalho para a construção da interface de usuário.</p>
+<h3 id="views-renderizadas-pelo-backend">Views renderizadas pelo backend<a class="headerlink" href="#views-renderizadas-pelo-backend" title="Permanent link">#</a></h3>
+<p>Em um projeto criado a partir do Singular Project, há inicialmente, apenas 2 views que são renderizadas pelo backend. Entretanto essas views não possuem código de interface de usuário, elas são apenas páginas HTML que ativam uma aplicação AngularJS. Essas duas views são auth.html e secure.html, ambas estão localizadas no diretório <strong>views</strong> na raiz do projeto. </p>
+<p>A renderização dessas views ocorre através do controlador <strong>Sessao\Controller\Main</strong> através dos métodos <strong>showSecure</strong> e <strong>showAuth</strong>. Eles utilizam o provedor de serviços do <strong>Twig</strong> para pegar o template das páginas html e renderizá-las no navegador. </p>
+<p>Algumas vezes, pode ser necessário criar algumas rodas adicionais para serem renderizadas pelo backend, por exemplo, suponha que a aplicação que você está construindo terá uma tela que será exibida em um monitor e que para o recurso acessado, ela não precise que o usuário esteja autenticado. Então, seria necessário criar uma outra view, para isso, crie o arquivo do template da view dentro do diretório views. Por exemplo: <strong>monitor.html</strong>. Essa view irá fazer referência a uma aplicação própria do angular. </p>
+<p>Após criar o seu template, o próximo passo é criar um novo método que será responsável por renderizar a view no controlador <strong>Main</strong> no pacote <strong>Sessao</strong>. </p>
+<pre class="code"><code class="language-php">...
+    /**
+     * Renderiza a interface que será exibida no monitor.
+     * 
+     * @param Request $request
+     * 
+     * @return JsonResponse
+     */
+    public function showMonitor(Request $request)
+    {
+        $app = $this-&gt;app;
+
+        // rederiza a página de autenticação
+        return $app['twig']-&gt;render(&quot;monitor.html&quot;);
+    }
+...</code></pre>
+
+
+<p>O método render do serviço <strong>twig</strong> pode ainda receber parâmetros adicionais que serão interpolados ao template, para maiores informações, consulte a documentação do <a href="https://silex.symfony.com/doc/2.0/providers/twig.html">Provedor de serviços do Twig</a>. </p>
+<p>Para que a view possa ser renderizada, ainda é necessário realizar uma última configuração que irá criar uma rota get para o método de renderização da view. Para isso, adicione uma entrada para o mapeamento da rota no método connect da classe SessaoServiceProvider no pacote Sessao.</p>
+<pre class="code"><code class="language-php">    /**
+     * Registra as rotas de inicialização da aplicação.
+     *
+     * @param Application $app
+     */
+    public function connect(Application $app)
+    {
+        // define o serviço do controlador principal
+        $app['sessao.controller.main'] = function() use ($app) {
+            return new Main($app, $app['singular.packs'][$this-&gt;pack]);
+        };
+
+        // define a rota de acesso autenticado da aplicação
+        $app-&gt;get('/secure.app', 'sessao.controller.main:showSecure')-&gt;bind('secure');
+
+        // define a rota de visualização da interface de registro e autenticação do sistema
+        $app-&gt;get('/auth.app', 'sessao.controller.main:showAuth')-&gt;bind('auth');
+
+        // define a rota default do sistema
+        $app-&gt;get('/', 'sessao.controller.main:index');
+
+        // define a rota para a view do monitor
+        $app-&gt;get('/monitor', 'sessao.controller.main:showMonitor');
+    }</code></pre>
+
+
+<p>Como se trata de uma definição de rota convencional do Silex, você pode utilizar qualquer funcionalidade ou recurso disponíveis para isso, como por exemplo, utilizar rotas dinâmicas com parâmetros, validação de parâmetros, etc. </p>
+<p>Pronto, feito isso, você poderá agora acessar a view diretamente através do seu navegador.</p>
+<h3 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">#</a></h3>
+<p>Se no backend as funcionalidades são agrupadas em pacotes, no frontend elas são agrupadas por módulos, esses são módulos do AngularJS, esses módulos podem ser dependentes de outros módulos menores ou submódulos, se assim quiser chamá-los. </p>
+<p>Os módulos de frontend são armazenados dentro do diretório <strong>web/src</strong>. Uma aplicação criada a partir do Singular Project já vem com 3 módulos principais:</p>
+<ul>
+<li><strong>login</strong>: Módulo que define a aplicação utilizada na view de autenticação do sistema (auth.html). Ele é responsável por fornecer funções para autenticação do usuário;</li>
+<li><strong>secure</strong>: Módulo que define a aplicação utilizada na view segura do sistema (secure.html). Geralmente seus novos módulos serão adicionados como dependência para este módulo, de forma que, quando o usuário logar, seus módulos estarão disponíveis na aplicação;</li>
+<li><strong>ui</strong>: Módulo padrão que define serviços, controladores, views e diretivas utilizadas na interface do sistema. </li>
+</ul>
+<h4 id="a-estrutura-de-um-modulo">A estrutura de um módulo<a class="headerlink" href="#a-estrutura-de-um-modulo" title="Permanent link">#</a></h4>
+<p>Um módulo de frontend é composto por um script de definição e vários scripts de (controladores, diretivas, serviços, views e filtros) que são organizados dentro de diretórios. A idéia é seguir a definição do <em>Jhon Papa</em> para melhor organização do código. </p>
+<p>Ao abrir o diretório de um módulo geralmente tem-se a seguinte estrutura:</p>
+<ul>
+<li><strong>controllers</strong>: Diretório onde são armazenados os scripts dos controladores AngularJS do módulo. Cada view deverá ter seu próprio controlador. Podem ser criados tantos controladores quanto necessários e quanto menor o controlador mais organizado e bem estruturado será o seu código;</li>
+<li><strong>services</strong>: Diretório onde são armazenados os scripts dos serviços AngularJS do módulo. Podem ser criados tantos serviços quanto se fizer necessário. Toda comunicação com o backend se dará por meio dos serviços que implementam o [Service Store];</li>
+<li><strong>directives (opcional)</strong>: Diretório onde podem ser armazenadas diretivas específicas do módulo em questão;</li>
+<li><strong>filters (opcional)</strong>: Diretório onde podem ser armazenados filtros específicos do módulo em questão;</li>
+<li><strong>modulo.js</strong>: Script que define o módulo AngularJS. É nessa definição que são criados os states para as views do módulo. Vale lembrar que se o módulo se chamar login.registro, o nome do script será registro.js.</li>
+</ul>
+<h4 id="criando-um-novo-modulo">Criando um novo módulo<a class="headerlink" href="#criando-um-novo-modulo" title="Permanent link">#</a></h4>
+<p>Para criar um novo módulo, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-module app.teste</code></pre>
+
+
+<p>Ao executar este comando, será criado um novo módulo no diretório <strong>web/src</strong> chamado <strong>app.teste</strong>. No entanto, frequentemente, você precisará criar um submódulo, ou seja, um módulo que fica dentro de outro módulo como uma dependência. Para isso, o Singular utiliza o padrão de namespaces para nomeação dos módulos. No caso, o módulo <strong>app.teste</strong> está dentro do namespace <strong>app</strong> que representa a nossa aplicação. </p>
+<p>Suponha que seja necessário criar um submódulo "registro" dentro do módulo de login, para isso, no Singular Cli utilizaríamos:</p>
+<pre class="code"><code class="language-php">./singular frontend:create-module login.registro --dir=login</code></pre>
+
+
+<p>Ao executar este comando, um novo diretório do módulo será criado dentro do diretório do módulo <strong>login</strong>. No nome <strong>login.registro</strong> o namespace é facilmente identificado pelo <strong>login.</strong>. Por padrão, quando você cria um submódulo, o mesmo já é registrado como uma dependência no módulo pai.</p>
+<h4 id="definindo-states-para-o-modulo">Definindo states para o módulo<a class="headerlink" href="#definindo-states-para-o-modulo" title="Permanent link">#</a></h4>
+<p>O Singular Project utiliza o ui-router como mecanismo de roteamento padrão. Cada módulo define seus próprios states. Por este motivo, todas as rotas são definidas através de states, convencionalmente como é feito no ui-router, dentro da função config do módulo:</p>
+<pre class="code"><code class="language-javascript">...
+        $stateProvider.state('usuario.cadastro', {
+            url: '/usuario/cadastro',
+            acl: 'f-cadastro-create',
+            controller: 'cadastro.CreateCtrl',
+            templateUrl: getView('create')
+        })
+...</code></pre>
+
+
+<p>Mas ao observar o bloco de código, você deve ter percebido que existe um parâmetro que não é comum ao ui-router. O parâmetro <strong>"acl"</strong> faz parte do Singular e ele é utilizado para restringir o acesso de um usuário ao state. Ao utilizar esse parâmetro, você garante que apenas usuários que possuam no seu perfil o acesso à funcionalidade <strong>f-cadastro-create</strong> poderão acessá-lo.</p>
+<h3 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">#</a></h3>
+<p>Assim como na definição do AngularJS, a principal funcão de um controlador é integrar o modelo à view. Cada módulo tem seu próprio conjunto de controladores, e eles se encontram no diretório <strong>controllers</strong> do módulo. </p>
+<h4 id="criando-um-novo-controlador">Criando um novo controlador<a class="headerlink" href="#criando-um-novo-controlador" title="Permanent link">#</a></h4>
+<p>Para criar um novo controlador, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-controller namespacemodulo.MeuControlador modulo diretorio/do/submodulo --tipo=list</code></pre>
+
+
+<p>Onde:
++ <strong>namespacemodulo.MeuControlador</strong>: deve ser substituído pelo nome do seu controlador com o namespace. Por exemplo: usuario.ListCtrl;
++ <strong>modulo</strong>: deve ser substituído pelo nome com namepsace completo do módulo onde o controlador será criado. Por exemplo: cadastro.usuario;
++ <strong>diretorio/do/modulo</strong>: deve ser substituído pelo caminho completo do diretório do módulo a partir do diretório web/src;
++ <strong>tipo</strong>: se omitido, o valor default é normal. Mas pode assumir os valores (list, filter, modal, create, edit, normal);</p>
+<h3 id="service-stores">Service Stores<a class="headerlink" href="#service-stores" title="Permanent link">#</a></h3>
+<p>Service Stores são serviços angular que são criados a partir de uma StoreFactory. Eles disponibilizam métodos CRUD e de comunicação com o backend encapsulando as chamadas do serviço $http.</p>
+<h4 id="criando-um-novo-service-store">Criando um novo service store<a class="headerlink" href="#criando-um-novo-service-store" title="Permanent link">#</a></h4>
+<p>Para criar um novo service store, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-store NomedoStore modulo pack controlador dir</code></pre>
+
+
+<p>Onde:
++ <strong>NomedoStore</strong>: deverá ser substituído pelo nome do service store que será criado;
++ <strong>modulo</strong>: deverá ser substituído pelo nome completo com namepsace do módulo onde o service store será criado;
++ <strong>pack</strong>: deverá ser substituído pelo nome do pacote no backend, onde se encontra o controlador com o qual o service store irá se comunicar;
++ <strong>controlador</strong>: deverá ser substituído pelo nome do controlador no backend com o qual o service store irá se comunicar;
++ <strong>dir</strong>: deverá ser substituído pelo caminho completo do módulo/submódulo a partir de web/src;</p>
+<h4 id="metodos-crud-disponiveis">Métodos CRUD disponíveis<a class="headerlink" href="#metodos-crud-disponiveis" title="Permanent link">#</a></h4>
+<p>Como mencionado, um service store é criado a partir de um StoreFactory, com isso ele consegue acesso há alguns métodos CRUD já implementados pelo StoreFactory que possibilitam comunicação e chamada dos métodos CRUD no backend. </p>
+<ul>
+<li><strong>get(id: integer, callback: function)</strong>: método crud que faz a chamada do método <strong>get</strong> no backend, onde um ID do registro é passado como parâmetro, a função de callback é acionada com o resultado da recuperação do registro no backend.</li>
+<li><strong>load(callback: function)</strong>: método crud que faz a chamada do método <strong>find</strong> no backend. Este método utiliza implicitamente as propriedades <em>filter</em>, <em>sort</em>, e <em>paging</em> do store como parâmetros para o método find, a função de callback é acionada com o resultado da recuperação dos registros no backend.</li>
+<li><strong>save(data: object, callback: function)</strong>: método crud que faz a chamada do método <strong>save</strong> no backend, para criar/atualizar um registro. É passado um objeto com a representação do registro que será inserido/atualizado e a função de callback é acionada com o resultado da ação de salvamento do registro no backend.</li>
+<li><strong>remove(id: integer, callback: function, config: object)</strong>: método crud que faz a chamada do método <strong>remove</strong> no backend. Recebe como parâmetro o ID do registro que será excluído, e a função de callback que será acionada após a execução da ação no backend. Pode ainda receber um objeto de configuração com as propriedades (title, text e success) para definir respectivamente o título da modal de confirmação da exclusão, o texto de confirmação da modal de confirmação da exclusão e a mensagem exibida em caso de sucesso da exclusão. Caso este último parâmetro não seja passado, utilizará os valores padrão para a modal e mensagem de confirmação.</li>
+</ul>
+<h4 id="parametros-do-metodo-load">Parâmetros do método load<a class="headerlink" href="#parametros-do-metodo-load" title="Permanent link">#</a></h4>
+<p>Como mencionado acima, quando chamamos o método <strong>load</strong> de um service store, ele implicitamente inclui nos parâmetros da chamada do método <strong>find</strong> no backend as propriedades <em>filter</em>, <em>sort</em> e <em>paging</em>. Vamos analisar como esses parâmetros são definidos e como podem ser alterados, de acordo com nossa necessidade.</p>
+<h5 id="paginacao">Paginação<a class="headerlink" href="#paginacao" title="Permanent link">#</a></h5>
+<p>A paginação do método load acontece pela configuração de um objeto com duas propriedades do Service Store, imagine que você tem acesso há um Service Store chamado UserStore.</p>
+<pre class="code"><code class="language-javascript">UserStore.paging.pageSize = 10;
+UserStore.paging.currentPage = 0;
+UserStore.load();</code></pre>
+
+
+<p>Ao utilizar uma <strong>list view</strong> essas propriedades estarão vinculadas aos atributos md-limit e md-page da diretiva <strong>md-table-pagination</strong>, e podem ser manipuladas e alteradas diretamente pelo usuário na tela. </p>
+<h5 id="ordenacao">Ordenação<a class="headerlink" href="#ordenacao" title="Permanent link">#</a></h5>
+<p>Assim como a paginação, a ordenação do método load acontece também através da configuração de um objeto, <strong>sort</strong>. Em uma <strong>list view</strong> essa propriedade é atribuída à diretiva <strong>md-order</strong> no cabeçalho de uma tabela, e em conjunto com a diretiva md-order-by utilizada nas colunas do cabeçalho, definem a ordem da listagem de resultados:</p>
+<pre class="code"><code class="language-html">&lt;table md-table md-row-select=&quot;DataStore.enableRowSelection&quot; ng-model=&quot;DataStore.selected&quot;&gt;
+   &lt;thead md-head md-order=&quot;DataStore.sort&quot; md-on-reorder=&quot;reloadData&quot;&gt;
+      &lt;tr md-row&gt;
+         &lt;th class=&quot;col-sm-1&quot;&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;perfil&quot;&gt;&lt;span&gt;Perfil&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;nome&quot;&gt;&lt;span&gt;Nome&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;login&quot;&gt;&lt;span&gt;Login&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column md-order-by=&quot;ativo&quot;&gt;&lt;span&gt;Ativo&lt;/span&gt;&lt;/th&gt;
+         &lt;th md-column&gt;&lt;span&gt;&lt;/span&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+   &lt;/thead&gt;
+...
+&lt;/table&gt;</code></pre>
+
+
+<h5 id="filtros">Filtros<a class="headerlink" href="#filtros" title="Permanent link">#</a></h5>
+<p>Apenas chamar um método que retorna uma relação de registros, sem poder aplicar um filtro aos resultados que queremos obter seria algo inútil. Por isso, ao chamar o método <strong>load</strong> podemos definir filtros que serão enviados como parâmetro e servirão para filtrar os registros que desejamos obter. </p>
+<p>A forma mais simples de aplicar um filtro, é atribuir um valor ao atributo da tabela que queremos filtrar:</p>
+<pre class="code"><code class="language-javascript">UserStore.filter.ativo = 1;
+UserStore.load();</code></pre>
+
+
+<p>Esse simples filtro será aplicado ao método find no backend, e ele diz para trazer todos os registros onde a propriedade ativo seja igual a 1. </p>
+<p>Algumas vezes, podemos desejar que os filtros sejam aplicados por similaridade, por exemplo:</p>
+<pre class="code"><code class="language-javascript">UserStore.filter.email = '%:gmail.com';</code></pre>
+
+
+<p>Esse filtro irá retornar todos os usuários que possuam um email que possua a expressão <strong>gmail.com</strong> em alguma parte do valor. </p>
+<p>Podemos passar para um filtro qualquer condição de comparação:</p>
+<pre class="code"><code class="language-javascript">UserStore.filter.idade = '&gt;=:10'; // idade maior igual há 10
+UserStore.filter.peso = '&lt;=:30'; // peso menor igual há 30
+UserStore.filter.reprovado = '&lt;&gt;:1'; // reprovado diferente de 1</code></pre>
+
+
+<p>Ao utilizar filtros simples, o Singular irá automaticamente vincular a propriedade do <strong>filter</strong> à tabela principal vinculada ao Store do backend. Entretanto, quando utilizamos joins, podemos querer vincular uma propriedade há um atributo de uma outra tabela na relação de joins. Para isso, precisamos criar um mapa na definição do  Service Store:</p>
+<pre class="code"><code class="language-javascript">        /* Script UserStore.js */
+        me.filterMap = {
+            perfil: {
+                property: 'p.perfil',
+                operation: '%'
+            }
+        };</code></pre>
+
+
+<p>Utilizando o filterMap, podemos definir qual deve ser o atributo equivalente em uma tabela de um atributo de filtro no frontend. </p>
+<p>Também podemos utilizar o filter map para determinar o tipo de operação que desejamos que seja aplicada há um atributo, dessa forma não precisaremos ficar informando a toda chamada a operação:</p>
+<pre class="code"><code class="language-javascript">// Ao invés de
+UserStore.filter.idade = '&gt;:10';
+
+// Equivale a utilizar um filter map
+UserStore.filterMap.idade = '&gt;';
+UserStore.filter.idade = 10;
+UserStore.load();</code></pre>
+
+
+<p>Uma outra utilidade do filterMap é aplicar funções de conversão em um atributo antes que ele seja enviado como filtro para a função find no backend. </p>
+<pre class="code"><code class="language-javascript">/* Script UserStore.js */
+me.filterMap = {
+   status: {
+      property: 'en.status',
+      operation: '=',
+      convert: function(v){
+         if (v &gt; 1) {
+            return 1;
+         }
+         return 0;
+      }
+   }
+}</code></pre>
+
+
+<h4 id="fazendo-a-chamada-de-metodos-customizados">Fazendo a chamada de métodos customizados<a class="headerlink" href="#fazendo-a-chamada-de-metodos-customizados" title="Permanent link">#</a></h4>
+<p>Embora, a maioria da comunicação entre o frontend e backend seja a chamada de métodos CRUD, eles não resolvem 100% dos problemas, e, frequentemente é necessário fazer a chamada de métodos customizados no controlador do backend anotados com <strong>@Route</strong>. Isso pode ser feito utilizando a chamada ao serviço $http, mas o Service store possui um método auxiliar que simplifica e torna fácil a chamada e recuperação de resultado de métodos customizados no backend: o método <strong>call</strong>.</p>
+<p>O método call recebe quatro parâmetros:</p>
+<ul>
+<li><strong>method (string)</strong>: nome do método que será chamado no backend;</li>
+<li><strong>params (object)</strong>: objeto que contém a relação de chaves e valor dos parâmetros que serão enviados para o método customizado no backend, pode ser enviado um objeto vazio;</li>
+<li><strong>callback (function)</strong>: função de callback que será executada quando a chamada ao método do backend retornar;</li>
+<li><strong>config (object: opcional)</strong>: objeto que contém a configuração da chamada remota. Por padrão, ao chamar o método call, sempre é executada uma chamada ao método <strong>post</strong>, mas isso pode ser alterado mudando o valor da propriedade method do objeto de configuração para <strong>get</strong>, também podem ser passados parâmetros na URL através da propriedade urlParams no formato string, por exemplo: </li>
+</ul>
+<pre class="code"><code class="language-javascript">me.call('meuMetodoGet', {}, function(response){...}, {method: 'get', urlParams: '/10'});</code></pre>
+
+
+<h3 id="views">Views<a class="headerlink" href="#views" title="Permanent link">#</a></h3>
+<p>As views do AngularJS são o que tornam possível a utilização do padrão SPA (Single Page Aplication). Assim como nos controladores, cada módulo tem seu próprio conjunto de views, e elas se encontram no diretório <strong>views</strong> do módulo. </p>
+<h4 id="criando-uma-nova-view">Criando uma nova view<a class="headerlink" href="#criando-uma-nova-view" title="Permanent link">#</a></h4>
+<p>Para criar uma nova view, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular frontend:create-view view dir tipo</code></pre>
+
+
+<p>Onde:
++ <strong>view</strong>: deve ser substituído pelo nome da view que se está criando. Exemplo: usuario.cadastro;
++ <strong>diretorio/do/modulo</strong>: deve ser substituído pelo caminho completo do diretório do módulo onde a view será criada a partir do diretório web/src;
++ <strong>tipo</strong>: o tipo de view a ser criada (list, filter, modal, form, tab);</p>
+<p>Tipos de view:</p>
+<ul>
+<li><strong>list</strong>: view do tipo listagem de resultados de um service store, com uma tabela com recursos de paginação e botões de ação para criação, exclusão, edição e visualização de um registro;</li>
+<li><strong>filter</strong>: view do tipo filtro de resultados de uma list view, é a view exibida na sidebar lateral de filtros do módulo;</li>
+<li><strong>modal</strong>: view do tipo modal que será exibida através do serviço $modal;</li>
+<li><strong>form</strong>: view do tipo formulário que inclui tabs do cadastro do registro. Também possui botões de ação para salvamento do registro e retorno à tela de listagem;</li>
+<li><strong>tab</strong>: view do tipo tab, que pode ser incluída em uma view form.</li>
+</ul>
+          <aside class="copyright" role="note">
+            
+              Copyright (c) 2018 Net On Soluções &ndash;
+            
+            Documentação gerada pelo
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href=".." title="Começando">
+          <span class="direction">
+            Voltar
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Começando
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../comofazer/" title="Como fazer">
+          <span class="direction">
+            Proximo
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Como fazer
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '..';
+      var repo_id  = '';
+    </script>
+    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>
