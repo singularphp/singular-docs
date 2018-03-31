@@ -59,12 +59,15 @@ component
 
 ___
 
-## Pacote
+## Pacotes
 
 Cada conjunto de funcionalidades é organizado dentro de um pacote no diretório src. Por exemplo, se o sistema a ser 
-desenvolvido possui um conjunto de funcionalidades de cadastro, poderá ser criado um pacote <destak>Cadastro</destak> 
-que irá armazenar todas as classes relacionadas à funcionalidade de cadastro. Quando um novo projeto é criado com o 
-Singular Project, já existe um pacote chamado <destak>Sessao</destak>.
+desenvolvido possui um conjunto de funcionalidades relacionadas a cadastros, poderá ser criado um pacote <destak>Cadastro</destak> 
+que irá armazenar todas as classes relacionadas a essa funcionalidade de cadastro. 
+
+Quando um novo projeto é criado com o Singular Project, já existe um pacote chamado <destak>Sessao</destak>. Esse pacote
+possui controladores, serviços e stores relacionados às funcionalidades de controle de acesso e gerenciamento de sessão
+da aplicação.
 
 ### Estrutura de um Pacote
 
@@ -134,7 +137,7 @@ Entretanto, isso também pode ser alcançado de forma muito mais simples, atrav�
 ```
 ___
 
-## Comando
+## Comandos
 
 Comandos são tarefas que podem ser executadas pelo terminal através do Singular Cli. Comandos são úteis para disparar 
 emails, executar tarefas de limpeza de tabelas, etc. Eles podem ser acionados manualmente, ou ser programados para 
@@ -190,7 +193,7 @@ No método <destak>configure</destak> é feita a configuração do parâmetro:
 !!! Entendendo:  
     <span>Linha 8</span> É definido o nome do comando que será exibido no Singular Cli, 
     é uma boa prática utilizar o nome do pacote como namespace de um comando 
-    Por exemplo, se o comando chama-se teste o pacote cadastro, o nome deveria ser <span>cadastro:teste</span>
+    Por exemplo, se o comando chama-se teste e o pacote cadastro, o nome deveria ser <span>cadastro:teste</span>
     
     <span>Linha 9</span> É definido o texto de definição do comando, que exibe a ajuda ao usuário, sobre o que o 
     comando faz
@@ -207,133 +210,171 @@ qualquer serviço da sua aplicação para executar uma determinada tarefas.
 
 Para maiores informações, acesse o site da documentação do [Componente Console do Symfony](http://symfony.com/doc/current/console.html).
 
-#### Criando um controlador
+## Controladores
 
-Controladores são a interface de integração e comunicação entre o frontend e o backend. Quando uma informação do backend é necessária no frontend, como por exemplo, uma lista de usuários, uma requisição é feita a partir da interface para um controlador, esse por sua vez, é responsável por realizar as chamadas aos serviços e stores e retornar essa informação para o frontend no formato json. 
+Controladores são a interface de comunicação entre o frontend e o backend. Quando uma informação do backend é 
+necessária no frontend, como por exemplo, uma lista de usuários, uma requisição é feita a partir da interface para um 
+controlador, esse por sua vez, é responsável por realizar as chamadas aos serviços e stores e retornar essa informação 
+para o frontend no formato json. 
+
+### Criando um controlador
+
 
 Para criar um novo controlador através do Singular Cli, basta executar o seguinte código:
 
 ```shell
 ./singular backend:create-controller Controlador Pacote
 ```
-Onde:
-+ __Controlador__: deve ser substituído pelo nome do controlador;
-+ __Pacote__: deve ser substituído pelo nome do pacote onde você deseja armazenar o novo controlador;
 
-Ao executar essa instrução, uma nova classe php, com o nome fornecido para o controlador, será criado no diretório Controller do seu pacote.  A estrutura básica da classe de um controlador se parece com:
+!!! Onde
+    <span>Controlador</span> deve ser substituído pelo nome do controlador<br>
+    <span>Pacote</span> deve ser substituído pelo nome do pacote onde você deseja armazenar o novo controlador
+
+Ao executar essa instrução, uma nova classe php, com o nome fornecido para o controlador, será criado no diretório 
+<destak>Controller</destak> do seu pacote.  A estrutura básica da classe de um controlador se parece com:
 
 ```php
-/**
- * Classe Perfil
- *
- * @Controller
- *
- * @author Otávio Fernandes <otavio@netonsolucoes.com.br>
- */
-class Perfil extends SingularController
-{
-    use Crud;
-
-    /**
-     * Defina o store padrão do controlador.
-     *
-     * @var $store
-     */
-    protected $store = 'perfil';
-}
+1.  /**
+2.   * Classe Perfil
+3.   *
+4.   * @Controller
+5.   *
+6.   * @author Otávio Fernandes <otavio@netonsolucoes.com.br>
+7.   */
+8.  class Perfil extends SingularController
+9.  {
+10.    use Crud;
+11.
+12.    /**
+13.     * Defina o store padrão do controlador.
+14.     *
+15.     * @var $store
+16.     */
+17.    protected $store = 'perfil';
+18. }
 ```
-O que diferencia uma classe de um controlador de uma classe qualquer é a anotação __@Controller__ no bloco de documentação da classe. Se essa anotação não existir, não será possível acessar nenhum de seus métodos através do frontend.
 
-Outro ponto importante, é que, se você desejar que o controlador criado já implemente métodos básicos de funcionalidade __CRUD__, você pode utilizar o __Trait__ __Crud__, como é feito na linha __use Crud__. Por padrão, um controlador criado pelo Singular Cli, já implementa esse traço. Os métodos disponibilizados pelo traço Crud são:
+O que diferencia uma classe de um controlador de uma outra classe qualquer é a anotação <destak>@Controller</destak> no 
+bloco de documentação da classe. Se essa anotação não existir, não será possível acessar nenhum de seus métodos através 
+do frontend.
 
-+ __find__: Função que recupera uma lista de registros vinculados há um store de acordo com parâmetros de filtro, paginação e ordenação (__filter__, __paging__ e __sort__);
+Outro ponto importante, é que, se você desejar que o controlador criado já implemente métodos básicos de funcionalidades
+ <destak>CRUD</destak>, você pode utilizar o <destak>Trait Crud</destak>, como é feito na <destak>linha 10</destak>. 
+ Por padrão, um controlador criado pelo Singular Cli, já implementa esse traço, mas você pode retirar esse comportamento, 
+ removendo o <destak>use Crud</destak> da declaração da classe. 
 
-+ __get__: Função que recupera um registro específico vinculado há um store de acordo com o parâmetro __id__ desse registro;
+!!!CRUD
+    + <span>Método find</span> Função que recupera uma lista de registros vinculados há um store de acordo com parâmetros de 
+    filtro, paginação e ordenação (<span>filter</span>, <span>paging</span> e <span>sort</span>);
+    
+    + <span>Método get</span> Função que recupera um registro específico vinculado há um store de acordo com o parâmetro 
+    <span>id</span> desse registro;
 
-+ __save__: Função que cria/atualiza um registro específico vinculado há um store de acordo com parâmetros de campos de uma tabela. Se o campo __id__ for enviado na lista de parâmetros o registro é atualizado, caso contrário, um novo registro é criado e o seu __id__ é retornado para o método que fez a requisição no frontend;
+    + <span>Método save</span> Função que cria/atualiza um registro específico vinculado há um store de acordo com 
+    parâmetros de campos de uma tabela. Se o campo <span>id</span> for enviado na lista de parâmetros o registro é 
+    atualizado, caso contrário, um novo registro é criado e o seu id é retornado para o método que fez a requisição no 
+    frontend;
 
-+ __remove__: Função que exclui um registro vinculado há um store através do seu __id__ informado como parâmetro.
+    + <span>Método remove</span> Função que exclui um registro vinculado há um store através do seu <span>id</span> 
+    informado como parâmetro.
 
-Outro ponto muito importante a considerar é a propriedade __$store__ da classe do controlador. Essa propriedade faz referência direta a qual classe __store__ o controlador está vinculado. Sem essa propriedade definida, nenhum método definido pelo traço __Crud__ irá funcionar. Ela deve referenciar, no minúsculo, há uma classe store, criada no mesmo pacote do controlador. Caso não seja um controlador que use o traço Crud, ela não é necessária. 
+Outro ponto muito importante a considerar é a propriedade <destak>$store</destak> da classe do controlador. Essa 
+propriedade faz referência direta a qual classe <destal>store</destak> o controlador está vinculado. Sem essa 
+propriedade definida, nenhum método definido pelo traço <destak>Crud</destak> irá funcionar. Ela deve referenciar, 
+no minúsculo, há uma classe store, criada no mesmo pacote do controlador. Caso não seja um controlador que use o 
+traço Crud, ela não é necessária. 
 
-##### Expondo métodos para o frontend
+### Expondo métodos para o frontend
 
-Como o objetivo de uma classe de controlador é fornecer um método de comunicação entre o backend e o frontend, é extremamente necessário que os métodos criados no controlador sejam "expostos" para o frontend. Veja como um novo método pode ser criado e exposto para o frontend:
+O objetivo de uma classe de controlador é fornecer um método que permita comunicação entre o backend e o frontend. Para 
+ que isso aconteça é extremamente necessário que os métodos criados no controlador sejam <destak>expostos</destak> para o frontend. 
+ Veja como um novo método pode ser criado e exposto para o frontend:
 
 ```php
 <?php
-namespace Sessao\Controller;
+1.  namespace Sessao\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Singular\SingularController;
-use Singular\Crud;
-use Singular\Annotation\Controller;
-use Singular\Annotation\Route;
-use Singular\Annotation\Direct;
-use Singular\Annotation\Value;
-use Singular\Annotation\Assert;
-use Singular\Annotation\Convert;
-use Singular\Annotation\After;
-use Singular\Annotation\Before;
+2.  use Symfony\Component\HttpFoundation\Request;
+3.  use Singular\SingularController;
+4.  use Singular\Crud;
+6.  use Singular\Annotation\Controller;
+7.  use Singular\Annotation\Route;
+8.  use Singular\Annotation\Direct;
+9.  use Singular\Annotation\Value;
+10. use Singular\Annotation\Assert;
+11. use Singular\Annotation\Convert;
+12. use Singular\Annotation\After;
+13. use Singular\Annotation\Before;
 
-/**
- * Classe Perfil
- *
- * @Controller
- *
- * @author Otávio Fernandes <otavio@netonsolucoes.com.br>
- */
-class Perfil extends SingularController
-{
-    use Crud;
+14. /**
+15.  * Classe Perfil
+16.  *
+17.  * @Controller
+18.  *
+19.  * @author Otávio Fernandes <otavio@netonsolucoes.com.br>
+20.  */
+21. class Perfil extends SingularController
+22. {
+23.     use Crud;
+24.
+25.     /**
+26.      * Defina o store padrão do controlador.
+27.      *
+28.      * @var $store
+29.      */
+30.    protected $store = 'perfil';
+31.
+32.    /**
+33.     * Emite uma saudação para um nome completo.
+34.     *
+35.     * @Route(method="post")
+36.     *
+37.     * @param Request $request
+38.     *
+40.     * @return \Singular\Response\JsonResponse
+41.     */
+42.    public function saudacoesNomeCompleto(Request $request)
+43.    {
+47.        $app = $this->app;
+48.
+49.        $primeiroNome = $request->get('primeiro_nome');
+50.        $segundoNome = $request->get('segundo_nome');
+51.
+52.        return $app->json([
+53.            'mensagem' => 'Olá '.$primeiroNome.' '.$segundoNome.', seja bem vindo!'
+54.        ]);
+58.    }
+59. }
 
-    /**
-     * Defina o store padrão do controlador.
-     *
-     * @var $store
-     */
-    protected $store = 'perfil';
-
-    /**
-     * Emite uma saudação para um nome completo.
-     *
-     * @Route(method="post")
-     *
-     * @param Request $request
-     *
-     * @return \Singular\Response\JsonResponse
-     */
-    public function saudacoesNomeCompleto(Request $request)
-    {
-        $app = $this->app;
-
-        $primeiroNome = $request->get('primeiro_nome');
-        $segundoNome = $request->get('segundo_nome');
-
-        return $app->json([
-            'mensagem' => 'Olá '.$primeiroNome.' '.$segundoNome.', seja bem vindo!'
-        ]);
-    }
-}
 ```
-O método __saudacoesNomeCompleto__ do controlador __Perfil__ do pacote __Sessao__ precisa ser exposto para a camada de frontend. Para isso, utilizamos a anotação 
+
+O método <destak>saudacoesNomeCompleto</destak> do controlador <destak>Perfil</destak> do pacote <destak>Sessao</destak> 
+precisa ser exposto para a camada de frontend. Para isso, utilizamos a anotação da <destak>linha 35</destak>
 
 ```php
 @Route(method="post")
 ```
- Ao utilizarmos essa anotação, estamos tornando possível que uma requisição seja feita diretamente da interface por exemplo através do serviço __$http__:
+ Ao utilizarmos essa anotação, estamos tornando possível que uma requisição seja feita diretamente da interface por 
+ exemplo através do serviço <destak>$http</destak> do __AngularJS__ ou qualquer outro framework:
 
 ```javascript
 $http.post('./sessao/perfil/saudacoesNomeCompleto', {primeiro_nome: "Otavio", segundo_nome: "Fernandes"}, function(response){
    alert(response.mensagem);
 });
 ```
-Todos os métodos http estão disponíveis para serem utilizados na anotação __@Route__ (get, post, put, delete, options). Algumas vezes, pode ser necessário expor uma função do controlador para mais de um método http, isso pode ser facilmente alcançado com:
+
+Todos os métodos http estão disponíveis para serem utilizados na anotação <destak>@Route</destak> (get, post, put, 
+delete, options). Algumas vezes, pode ser necessário expor uma função do controlador para mais de um método http, 
+isso pode ser facilmente alcançado com:
 
 ```php
 @Route(methods={"post","options"})
 ```
-Por padrão, todos os parâmetros são recuperados na função do controlador através de um objeto da classe Request que é parâmetro da função. Entretanto, algumas vezes, você pode necessitar passar alguns parâmetros na própria URL, para isso basta adicionar o nome desses parâmetros na sua função:
+
+Por padrão, todos os parâmetros são recuperados na função do controlador através de um objeto da classe 
+<destak>Symfony\Component\HttpFoundation\Request</destak> que é parâmetro da função. Entretanto, algumas vezes, 
+você pode necessitar passar alguns parâmetros na própria URL, para isso basta adicionar o nome desses parâmetros na 
+sua função:
 
 ```php
     /**
@@ -359,14 +400,79 @@ Por padrão, todos os parâmetros são recuperados na função do controlador at
         ]);
     }
 ```
+
 E a chamada http ficaria semelhante à:
 
 ```javascript
 $http.get('./sessao/perfil/saudacoesNomeCompleto/Otavio/Fernandes', function(response){
    alert(response.mensagem);
 });
+```
+### Middlewares de controladores
 
-````
+Assim como no Silex, o Singular permite que sejam definidos <destak>middlewares de rotas</destak> que podem ser 
+executados antes, ou depois de um grupo de rotas ser executado. Cada controlador no Singular é mapeado para um grupo
+de rota do Silex. Para criar middlares para um controlador, basta alterar a anotação <destak>@Controller</destak>, 
+adicionando as anotações <destak>@After</destak> e <destak>@Before</destak>.
+
+```php
+1.  /**
+2.   * Classe Perfil
+3.   *
+4.   * @Controller(
+5.   *      @Before({"pacote.service.servico:metodoAntes"})
+6.   *      @After({"pacote.service.servico:metodoDepois"})
+7.   * )
+8.   *
+9.   */
+10.  class Perfil extends SingularController
+11.  {
+12.  }
+
+```
+!!! Onde
+    <span>pacote</span> é o nome do pacote onde está o serviço que será executado como middleware<br>
+    <span>servico</span> é o nome da classe do serviço que será instanciado<br>
+    <span>metodoAntes</span> é o método na classe serviço, que será executado antes de qualquer método no controlador 
+    ser acionado<br>
+    <span>metodoDepois</span> é o método na classe serviço, que será executado depois todo método no controlador ser 
+    executado
+    
+No exemplo acima, estão sendo registrados dois middlewares <destak>@Before</destak> e <destak>@After</destak>. 
+
+Antes que qualquer método exposto do controlador <destak>Perfil</destak> seja executado o método <destak>metodoAntes</destak> 
+da classe <destak>Pacote\Service\Servico</destak> será executado, como um interceptador da requisição, e poderá manipular 
+o objeto <destak>Request</destak> adicionando ou removendo parâmetros, ou mesmo curto-circuitar a resposta, impedindo que 
+o método do controlador seja executado.
+
+Após a execução de qualquer método do controlador Perfil. o método <destak>metodoDepois</destak> da classe <destak>
+Pacote\Service\Servico</destak> será executado e receberá como parâmetro o objeto <destak>Response</destak> retornado
+pelo método do controlador.
+
+Exemplo de implementação do serviço middleware.
+
+```php
+1.  namespace Pacote\Service;
+2.  
+3.  class Servico
+4.  {
+5.      public function metodoAntes(Request $request)
+6.      {
+6.           $app = $this->app;
+8.
+9.           $request->set('user_id',$app['session']->get('user'));
+10.     }
+11.     
+12.     public function metodoDepois(Request $request, Response $response)
+13.     {
+14.          $app = $this->app;
+15.
+16.          $response->set('user_id',$app['session']->get('user'));
+17.     }
+18.     
+ 
+```
+  
 ### Criando um Serviço
 
 Serviços são classes que expõe métodos e funções utilitárias que permitem a execução de algumas lógicas e regras de negócio para outras partes da aplicação (outros serviços e controladores). 
