@@ -182,14 +182,20 @@
             </li>
           
             <li class="anchor">
-              <a title="Pacote" href="#pacote">
-                Pacote
+              <a title="Pacotes" href="#pacotes">
+                Pacotes
               </a>
             </li>
           
             <li class="anchor">
-              <a title="Comando" href="#comando">
-                Comando
+              <a title="Comandos" href="#comandos">
+                Comandos
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Controladores" href="#controladores">
+                Controladores
               </a>
             </li>
           
@@ -287,11 +293,13 @@ component
 
 
 <hr />
-<h2 id="pacote">Pacote<a class="headerlink" href="#pacote" title="Permanent link">#</a></h2>
+<h2 id="pacotes">Pacotes<a class="headerlink" href="#pacotes" title="Permanent link">#</a></h2>
 <p>Cada conjunto de funcionalidades é organizado dentro de um pacote no diretório src. Por exemplo, se o sistema a ser 
-desenvolvido possui um conjunto de funcionalidades de cadastro, poderá ser criado um pacote <destak>Cadastro</destak> 
-que irá armazenar todas as classes relacionadas à funcionalidade de cadastro. Quando um novo projeto é criado com o 
-Singular Project, já existe um pacote chamado <destak>Sessao</destak>.</p>
+desenvolvido possui um conjunto de funcionalidades relacionadas a cadastros, poderá ser criado um pacote <destak>Cadastro</destak> 
+que irá armazenar todas as classes relacionadas a essa funcionalidade de cadastro. </p>
+<p>Quando um novo projeto é criado com o Singular Project, já existe um pacote chamado <destak>Sessao</destak>. Esse pacote
+possui controladores, serviços e stores relacionados às funcionalidades de controle de acesso e gerenciamento de sessão
+da aplicação.</p>
 <h3 id="estrutura-de-um-pacote">Estrutura de um Pacote<a class="headerlink" href="#estrutura-de-um-pacote" title="Permanent link">#</a></h3>
 <p>Como dito anteriormente, um pacote é uma forma de agrupar um conjunto de funcionalidades relacionadas. 
 Quando um pacote é criado, a seguinte estrutura de diretórios e arquivos é criada na raiz do diretório <destak>src</destak>:</p>
@@ -342,7 +350,7 @@ $app-&gt;register(new NomeDoPacoteServiceProvider());</code></pre>
 
 
 <hr />
-<h2 id="comando">Comando<a class="headerlink" href="#comando" title="Permanent link">#</a></h2>
+<h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">#</a></h2>
 <p>Comandos são tarefas que podem ser executadas pelo terminal através do Singular Cli. Comandos são úteis para disparar 
 emails, executar tarefas de limpeza de tabelas, etc. Eles podem ser acionados manualmente, ou ser programados para 
 executar automaticamente através de ferramentas como o <destak>cron</destak> do linux.</p>
@@ -390,7 +398,7 @@ conforme veremos em detalhe abaixo:</p>
 <p class="admonition-title">Entendendo</p>
 <p><span>Linha 8</span> É definido o nome do comando que será exibido no Singular Cli, 
 é uma boa prática utilizar o nome do pacote como namespace de um comando 
-Por exemplo, se o comando chama-se teste o pacote cadastro, o nome deveria ser <span>cadastro:teste</span></p>
+Por exemplo, se o comando chama-se teste e o pacote cadastro, o nome deveria ser <span>cadastro:teste</span></p>
 <p><span>Linha 9</span> É definido o texto de definição do comando, que exibe a ajuda ao usuário, sobre o que o 
 comando faz</p>
 <p><span>Linha 10</span> É definido um texto de ajuda, que será exibido quando o usuário digitar a opção de ajuda 
@@ -402,126 +410,160 @@ parâmetros opcionais </p>
 <p>O método <destak>execute</destak> é acionado quando o seu comando é executado pelo Singular Cli, ele pode acessar 
 qualquer serviço da sua aplicação para executar uma determinada tarefas. </p>
 <p>Para maiores informações, acesse o site da documentação do <a href="http://symfony.com/doc/current/console.html">Componente Console do Symfony</a>.</p>
-<h4 id="criando-um-controlador">Criando um controlador<a class="headerlink" href="#criando-um-controlador" title="Permanent link">#</a></h4>
-<p>Controladores são a interface de integração e comunicação entre o frontend e o backend. Quando uma informação do backend é necessária no frontend, como por exemplo, uma lista de usuários, uma requisição é feita a partir da interface para um controlador, esse por sua vez, é responsável por realizar as chamadas aos serviços e stores e retornar essa informação para o frontend no formato json. </p>
+<h2 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">#</a></h2>
+<p>Controladores são a interface de comunicação entre o frontend e o backend. Quando uma informação do backend é 
+necessária no frontend, como por exemplo, uma lista de usuários, uma requisição é feita a partir da interface para um 
+controlador, esse por sua vez, é responsável por realizar as chamadas aos serviços e stores e retornar essa informação 
+para o frontend no formato json. </p>
+<h3 id="criando-um-controlador">Criando um controlador<a class="headerlink" href="#criando-um-controlador" title="Permanent link">#</a></h3>
 <p>Para criar um novo controlador através do Singular Cli, basta executar o seguinte código:</p>
 <pre class="code"><code class="language-shell">./singular backend:create-controller Controlador Pacote</code></pre>
 
 
-<p>Onde:
-+ <strong>Controlador</strong>: deve ser substituído pelo nome do controlador;
-+ <strong>Pacote</strong>: deve ser substituído pelo nome do pacote onde você deseja armazenar o novo controlador;</p>
-<p>Ao executar essa instrução, uma nova classe php, com o nome fornecido para o controlador, será criado no diretório Controller do seu pacote.  A estrutura básica da classe de um controlador se parece com:</p>
-<pre class="code"><code class="language-php">/**
- * Classe Perfil
- *
- * @Controller
- *
- * @author Otávio Fernandes &lt;otavio@netonsolucoes.com.br&gt;
- */
-class Perfil extends SingularController
-{
-    use Crud;
+<div class="admonition onde">
+<p class="admonition-title">Onde</p>
+<p><span>Controlador</span> deve ser substituído pelo nome do controlador<br>
+<span>Pacote</span> deve ser substituído pelo nome do pacote onde você deseja armazenar o novo controlador</p>
+</div>
+<p>Ao executar essa instrução, uma nova classe php, com o nome fornecido para o controlador, será criado no diretório 
+<destak>Controller</destak> do seu pacote.  A estrutura básica da classe de um controlador se parece com:</p>
+<pre class="code"><code class="language-php">1.  /**
+2.   * Classe Perfil
+3.   *
+4.   * @Controller
+5.   *
+6.   * @author Otávio Fernandes &lt;otavio@netonsolucoes.com.br&gt;
+7.   */
+8.  class Perfil extends SingularController
+9.  {
+10.    use Crud;
+11.
+12.    /**
+13.     * Defina o store padrão do controlador.
+14.     *
+15.     * @var $store
+16.     */
+17.    protected $store = 'perfil';
+18. }</code></pre>
 
-    /**
-     * Defina o store padrão do controlador.
-     *
-     * @var $store
-     */
-    protected $store = 'perfil';
-}</code></pre>
 
-
-<p>O que diferencia uma classe de um controlador de uma classe qualquer é a anotação <strong>@Controller</strong> no bloco de documentação da classe. Se essa anotação não existir, não será possível acessar nenhum de seus métodos através do frontend.</p>
-<p>Outro ponto importante, é que, se você desejar que o controlador criado já implemente métodos básicos de funcionalidade <strong>CRUD</strong>, você pode utilizar o <strong>Trait</strong> <strong>Crud</strong>, como é feito na linha <strong>use Crud</strong>. Por padrão, um controlador criado pelo Singular Cli, já implementa esse traço. Os métodos disponibilizados pelo traço Crud são:</p>
+<p>O que diferencia uma classe de um controlador de uma outra classe qualquer é a anotação <destak>@Controller</destak> no 
+bloco de documentação da classe. Se essa anotação não existir, não será possível acessar nenhum de seus métodos através 
+do frontend.</p>
+<p>Outro ponto importante, é que, se você desejar que o controlador criado já implemente métodos básicos de funcionalidades
+ <destak>CRUD</destak>, você pode utilizar o <destak>Trait Crud</destak>, como é feito na <destak>linha 10</destak>. 
+ Por padrão, um controlador criado pelo Singular Cli, já implementa esse traço, mas você pode retirar esse comportamento, 
+ removendo o <destak>use Crud</destak> da declaração da classe. </p>
+<div class="admonition crud">
+<p class="admonition-title">Crud</p>
 <ul>
 <li>
-<p><strong>find</strong>: Função que recupera uma lista de registros vinculados há um store de acordo com parâmetros de filtro, paginação e ordenação (<strong>filter</strong>, <strong>paging</strong> e <strong>sort</strong>);</p>
+<p><span>Método find</span> Função que recupera uma lista de registros vinculados há um store de acordo com parâmetros de 
+filtro, paginação e ordenação (<span>filter</span>, <span>paging</span> e <span>sort</span>);</p>
 </li>
 <li>
-<p><strong>get</strong>: Função que recupera um registro específico vinculado há um store de acordo com o parâmetro <strong>id</strong> desse registro;</p>
+<p><span>Método get</span> Função que recupera um registro específico vinculado há um store de acordo com o parâmetro 
+<span>id</span> desse registro;</p>
 </li>
 <li>
-<p><strong>save</strong>: Função que cria/atualiza um registro específico vinculado há um store de acordo com parâmetros de campos de uma tabela. Se o campo <strong>id</strong> for enviado na lista de parâmetros o registro é atualizado, caso contrário, um novo registro é criado e o seu <strong>id</strong> é retornado para o método que fez a requisição no frontend;</p>
+<p><span>Método save</span> Função que cria/atualiza um registro específico vinculado há um store de acordo com 
+parâmetros de campos de uma tabela. Se o campo <span>id</span> for enviado na lista de parâmetros o registro é 
+atualizado, caso contrário, um novo registro é criado e o seu id é retornado para o método que fez a requisição no 
+frontend;</p>
 </li>
 <li>
-<p><strong>remove</strong>: Função que exclui um registro vinculado há um store através do seu <strong>id</strong> informado como parâmetro.</p>
+<p><span>Método remove</span> Função que exclui um registro vinculado há um store através do seu <span>id</span> 
+informado como parâmetro.</p>
 </li>
 </ul>
-<p>Outro ponto muito importante a considerar é a propriedade <strong>$store</strong> da classe do controlador. Essa propriedade faz referência direta a qual classe <strong>store</strong> o controlador está vinculado. Sem essa propriedade definida, nenhum método definido pelo traço <strong>Crud</strong> irá funcionar. Ela deve referenciar, no minúsculo, há uma classe store, criada no mesmo pacote do controlador. Caso não seja um controlador que use o traço Crud, ela não é necessária. </p>
-<h5 id="expondo-metodos-para-o-frontend">Expondo métodos para o frontend<a class="headerlink" href="#expondo-metodos-para-o-frontend" title="Permanent link">#</a></h5>
-<p>Como o objetivo de uma classe de controlador é fornecer um método de comunicação entre o backend e o frontend, é extremamente necessário que os métodos criados no controlador sejam "expostos" para o frontend. Veja como um novo método pode ser criado e exposto para o frontend:</p>
+</div>
+<p>Outro ponto muito importante a considerar é a propriedade <destak>$store</destak> da classe do controlador. Essa 
+propriedade faz referência direta a qual classe <destal>store</destak> o controlador está vinculado. Sem essa 
+propriedade definida, nenhum método definido pelo traço <destak>Crud</destak> irá funcionar. Ela deve referenciar, 
+no minúsculo, há uma classe store, criada no mesmo pacote do controlador. Caso não seja um controlador que use o 
+traço Crud, ela não é necessária. </p>
+<h3 id="expondo-metodos-para-o-frontend">Expondo métodos para o frontend<a class="headerlink" href="#expondo-metodos-para-o-frontend" title="Permanent link">#</a></h3>
+<p>O objetivo de uma classe de controlador é fornecer um método que permita comunicação entre o backend e o frontend. Para 
+ que isso aconteça é extremamente necessário que os métodos criados no controlador sejam <destak>expostos</destak> para o frontend. 
+ Veja como um novo método pode ser criado e exposto para o frontend:</p>
 <pre class="code"><code class="language-php">&lt;?php
-namespace Sessao\Controller;
+1.  namespace Sessao\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Singular\SingularController;
-use Singular\Crud;
-use Singular\Annotation\Controller;
-use Singular\Annotation\Route;
-use Singular\Annotation\Direct;
-use Singular\Annotation\Value;
-use Singular\Annotation\Assert;
-use Singular\Annotation\Convert;
-use Singular\Annotation\After;
-use Singular\Annotation\Before;
+2.  use Symfony\Component\HttpFoundation\Request;
+3.  use Singular\SingularController;
+4.  use Singular\Crud;
+6.  use Singular\Annotation\Controller;
+7.  use Singular\Annotation\Route;
+8.  use Singular\Annotation\Direct;
+9.  use Singular\Annotation\Value;
+10. use Singular\Annotation\Assert;
+11. use Singular\Annotation\Convert;
+12. use Singular\Annotation\After;
+13. use Singular\Annotation\Before;
 
-/**
- * Classe Perfil
- *
- * @Controller
- *
- * @author Otávio Fernandes &lt;otavio@netonsolucoes.com.br&gt;
- */
-class Perfil extends SingularController
-{
-    use Crud;
+14. /**
+15.  * Classe Perfil
+16.  *
+17.  * @Controller
+18.  *
+19.  * @author Otávio Fernandes &lt;otavio@netonsolucoes.com.br&gt;
+20.  */
+21. class Perfil extends SingularController
+22. {
+23.     use Crud;
+24.
+25.     /**
+26.      * Defina o store padrão do controlador.
+27.      *
+28.      * @var $store
+29.      */
+30.    protected $store = 'perfil';
+31.
+32.    /**
+33.     * Emite uma saudação para um nome completo.
+34.     *
+35.     * @Route(method=&quot;post&quot;)
+36.     *
+37.     * @param Request $request
+38.     *
+40.     * @return \Singular\Response\JsonResponse
+41.     */
+42.    public function saudacoesNomeCompleto(Request $request)
+43.    {
+47.        $app = $this-&gt;app;
+48.
+49.        $primeiroNome = $request-&gt;get('primeiro_nome');
+50.        $segundoNome = $request-&gt;get('segundo_nome');
+51.
+52.        return $app-&gt;json([
+53.            'mensagem' =&gt; 'Olá '.$primeiroNome.' '.$segundoNome.', seja bem vindo!'
+54.        ]);
+58.    }
+59. }</code></pre>
 
-    /**
-     * Defina o store padrão do controlador.
-     *
-     * @var $store
-     */
-    protected $store = 'perfil';
 
-    /**
-     * Emite uma saudação para um nome completo.
-     *
-     * @Route(method=&quot;post&quot;)
-     *
-     * @param Request $request
-     *
-     * @return \Singular\Response\JsonResponse
-     */
-    public function saudacoesNomeCompleto(Request $request)
-    {
-        $app = $this-&gt;app;
-
-        $primeiroNome = $request-&gt;get('primeiro_nome');
-        $segundoNome = $request-&gt;get('segundo_nome');
-
-        return $app-&gt;json([
-            'mensagem' =&gt; 'Olá '.$primeiroNome.' '.$segundoNome.', seja bem vindo!'
-        ]);
-    }
-}</code></pre>
-
-
-<p>O método <strong>saudacoesNomeCompleto</strong> do controlador <strong>Perfil</strong> do pacote <strong>Sessao</strong> precisa ser exposto para a camada de frontend. Para isso, utilizamos a anotação </p>
+<p>O método <destak>saudacoesNomeCompleto</destak> do controlador <destak>Perfil</destak> do pacote <destak>Sessao</destak> 
+precisa ser exposto para a camada de frontend. Para isso, utilizamos a anotação da <destak>linha 35</destak></p>
 <pre class="code"><code class="language-php">@Route(method=&quot;post&quot;)</code></pre>
 
 
-<p>Ao utilizarmos essa anotação, estamos tornando possível que uma requisição seja feita diretamente da interface por exemplo através do serviço <strong>$http</strong>:</p>
+<p>Ao utilizarmos essa anotação, estamos tornando possível que uma requisição seja feita diretamente da interface por 
+ exemplo através do serviço <destak>$http</destak> do <strong>AngularJS</strong> ou qualquer outro framework:</p>
 <pre class="code"><code class="language-javascript">$http.post('./sessao/perfil/saudacoesNomeCompleto', {primeiro_nome: &quot;Otavio&quot;, segundo_nome: &quot;Fernandes&quot;}, function(response){
    alert(response.mensagem);
 });</code></pre>
 
 
-<p>Todos os métodos http estão disponíveis para serem utilizados na anotação <strong>@Route</strong> (get, post, put, delete, options). Algumas vezes, pode ser necessário expor uma função do controlador para mais de um método http, isso pode ser facilmente alcançado com:</p>
+<p>Todos os métodos http estão disponíveis para serem utilizados na anotação <destak>@Route</destak> (get, post, put, 
+delete, options). Algumas vezes, pode ser necessário expor uma função do controlador para mais de um método http, 
+isso pode ser facilmente alcançado com:</p>
 <pre class="code"><code class="language-php">@Route(methods={&quot;post&quot;,&quot;options&quot;})</code></pre>
 
 
-<p>Por padrão, todos os parâmetros são recuperados na função do controlador através de um objeto da classe Request que é parâmetro da função. Entretanto, algumas vezes, você pode necessitar passar alguns parâmetros na própria URL, para isso basta adicionar o nome desses parâmetros na sua função:</p>
+<p>Por padrão, todos os parâmetros são recuperados na função do controlador através de um objeto da classe 
+<destak>Symfony\Component\HttpFoundation\Request</destak> que é parâmetro da função. Entretanto, algumas vezes, 
+você pode necessitar passar alguns parâmetros na própria URL, para isso basta adicionar o nome desses parâmetros na 
+sua função:</p>
 <pre class="code"><code class="language-php">    /**
      * Emite uma saudação para um nome completo.
      *
@@ -549,17 +591,70 @@ class Perfil extends SingularController
 <p>E a chamada http ficaria semelhante à:</p>
 <pre class="code"><code class="language-javascript">$http.get('./sessao/perfil/saudacoesNomeCompleto/Otavio/Fernandes', function(response){
    alert(response.mensagem);
-});
+});</code></pre>
 
-````
-### Criando um Serviço
 
-Serviços são classes que expõe métodos e funções utilitárias que permitem a execução de algumas lógicas e regras de negócio para outras partes da aplicação (outros serviços e controladores). 
+<h3 id="middlewares-de-controladores">Middlewares de controladores<a class="headerlink" href="#middlewares-de-controladores" title="Permanent link">#</a></h3>
+<p>Assim como no Silex, o Singular permite que sejam definidos <destak>middlewares de rotas</destak> que podem ser 
+executados antes, ou depois de um grupo de rotas ser executado. Cada controlador no Singular é mapeado para um grupo
+de rota do Silex. Para criar middlares para um controlador, basta alterar a anotação <destak>@Controller</destak>, 
+adicionando as anotações <destak>@After</destak> e <destak>@Before</destak>.</p>
+<pre class="code"><code class="language-php">1.  /**
+2.   * Classe Perfil
+3.   *
+4.   * @Controller(
+5.   *      @Before({&quot;pacote.service.servico:metodoAntes&quot;})
+6.   *      @After({&quot;pacote.service.servico:metodoDepois&quot;})
+7.   * )
+8.   *
+9.   */
+10.  class Perfil extends SingularController
+11.  {
+12.  }</code></pre>
 
-Para criar um serviço, basta utilizar o Singular Cli:
 
-```shell
-./singular backend:create-service NomeServico Pacote</code></pre>
+<div class="admonition onde">
+<p class="admonition-title">Onde</p>
+<p><span>pacote</span> é o nome do pacote onde está o serviço que será executado como middleware<br>
+<span>servico</span> é o nome da classe do serviço que será instanciado<br>
+<span>metodoAntes</span> é o método na classe serviço, que será executado antes de qualquer método no controlador 
+ser acionado<br>
+<span>metodoDepois</span> é o método na classe serviço, que será executado depois todo método no controlador ser 
+executado</p>
+</div>
+<p>No exemplo acima, estão sendo registrados dois middlewares <destak>@Before</destak> e <destak>@After</destak>. </p>
+<p>Antes que qualquer método exposto do controlador <destak>Perfil</destak> seja executado o método <destak>metodoAntes</destak> 
+da classe <destak>Pacote\Service\Servico</destak> será executado, como um interceptador da requisição, e poderá manipular 
+o objeto <destak>Request</destak> adicionando ou removendo parâmetros, ou mesmo curto-circuitar a resposta, impedindo que 
+o método do controlador seja executado.</p>
+<p>Após a execução de qualquer método do controlador Perfil. o método <destak>metodoDepois</destak> da classe <destak>
+Pacote\Service\Servico</destak> será executado e receberá como parâmetro o objeto <destak>Response</destak> retornado
+pelo método do controlador.</p>
+<p>Exemplo de implementação do serviço middleware.</p>
+<pre class="code"><code class="language-php">1.  namespace Pacote\Service;
+2.  
+3.  class Servico
+4.  {
+5.      public function metodoAntes(Request $request)
+6.      {
+6.           $app = $this-&gt;app;
+8.
+9.           $request-&gt;set('user_id',$app['session']-&gt;get('user'));
+10.     }
+11.     
+12.     public function metodoDepois(Request $request, Response $response)
+13.     {
+14.          $app = $this-&gt;app;
+15.
+16.          $response-&gt;set('user_id',$app['session']-&gt;get('user'));
+17.     }
+18.     </code></pre>
+
+
+<h3 id="criando-um-servico">Criando um Serviço<a class="headerlink" href="#criando-um-servico" title="Permanent link">#</a></h3>
+<p>Serviços são classes que expõe métodos e funções utilitárias que permitem a execução de algumas lógicas e regras de negócio para outras partes da aplicação (outros serviços e controladores). </p>
+<p>Para criar um serviço, basta utilizar o Singular Cli:</p>
+<pre class="code"><code class="language-shell">./singular backend:create-service NomeServico Pacote</code></pre>
 
 
 <p>Onde: 
@@ -807,7 +902,7 @@ $rs = $this-&gt;db-&gt;fetchAll($qb-&gt;getSQL(), ['idade' =&gt; $idade]);</code
 
 
 <p>Mas ao observar o bloco de código, você deve ter percebido que existe um parâmetro que não é comum ao ui-router. O parâmetro <strong>"acl"</strong> faz parte do Singular e ele é utilizado para restringir o acesso de um usuário ao state. Ao utilizar esse parâmetro, você garante que apenas usuários que possuam no seu perfil o acesso à funcionalidade <strong>f-cadastro-create</strong> poderão acessá-lo.</p>
-<h3 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">#</a></h3>
+<h3 id="controladores_1">Controladores<a class="headerlink" href="#controladores_1" title="Permanent link">#</a></h3>
 <p>Assim como na definição do AngularJS, a principal funcão de um controlador é integrar o modelo à view. Cada módulo tem seu próprio conjunto de controladores, e eles se encontram no diretório <strong>controllers</strong> do módulo. </p>
 <h4 id="criando-um-novo-controlador">Criando um novo controlador<a class="headerlink" href="#criando-um-novo-controlador" title="Permanent link">#</a></h4>
 <p>Para criar um novo controlador, basta utilizar o Singular Cli:</p>
