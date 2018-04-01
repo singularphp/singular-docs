@@ -206,8 +206,8 @@
         <ul>
           
             <li class="anchor">
-              <a title="Views renderizadas pelo backend" href="#views-renderizadas-pelo-backend">
-                Views renderizadas pelo backend
+              <a title="Views renderizadas pelo Twig" href="#views-renderizadas-pelo-twig">
+                Views renderizadas pelo Twig
               </a>
             </li>
           
@@ -280,12 +280,26 @@
           
             <h1>Frontend</h1>
           
-          <p>O Singular Framework foi projetado para ser um framework Ajax de baixo acoplamento entre as camadas de frontend e backend, ou seja, a interface dos módulos que serão construídos na aplicação, são definidos totalmente no frontend, sem nenhuma vinculação com a renderização no backend. Enquanto no backend, o Silex é utilizado como base do framework, no frontend por sua vez é o AngularJS quem fornece a estrutura de trabalho para a construção da interface de usuário.</p>
-<h3 id="views-renderizadas-pelo-backend">Views renderizadas pelo backend<a class="headerlink" href="#views-renderizadas-pelo-backend" title="Permanent link">#</a></h3>
-<p>Em um projeto criado a partir do Singular Project, há inicialmente, apenas 2 views que são renderizadas pelo backend. Entretanto essas views não possuem código de interface de usuário, elas são apenas páginas HTML que ativam uma aplicação AngularJS. Essas duas views são auth.html e secure.html, ambas estão localizadas no diretório <strong>views</strong> na raiz do projeto. </p>
-<p>A renderização dessas views ocorre através do controlador <strong>Sessao\Controller\Main</strong> através dos métodos <strong>showSecure</strong> e <strong>showAuth</strong>. Eles utilizam o provedor de serviços do <strong>Twig</strong> para pegar o template das páginas html e renderizá-las no navegador. </p>
-<p>Algumas vezes, pode ser necessário criar algumas rodas adicionais para serem renderizadas pelo backend, por exemplo, suponha que a aplicação que você está construindo terá uma tela que será exibida em um monitor e que para o recurso acessado, ela não precise que o usuário esteja autenticado. Então, seria necessário criar uma outra view, para isso, crie o arquivo do template da view dentro do diretório views. Por exemplo: <strong>monitor.html</strong>. Essa view irá fazer referência a uma aplicação própria do angular. </p>
-<p>Após criar o seu template, o próximo passo é criar um novo método que será responsável por renderizar a view no controlador <strong>Main</strong> no pacote <strong>Sessao</strong>. </p>
+          <p>O Singular Framework foi projetado para ser um framework Ajax de baixo acoplamento entre as camadas de frontend e 
+backend, ou seja, a interface dos módulos que serão construídos na aplicação, é definida totalmente no frontend, 
+sem nenhuma vinculação com a renderização no backend. Enquanto no backend, o <destak>Silex</destak> é utilizado como base do framework, 
+no frontend por sua vez é o <destak>AngularJS</destak> quem fornece a estrutura de trabalho para a construção da 
+interface de usuário.</p>
+<h2 id="views-renderizadas-pelo-twig">Views renderizadas pelo Twig<a class="headerlink" href="#views-renderizadas-pelo-twig" title="Permanent link">#</a></h2>
+<p>Em um projeto criado a partir do Singular Project, há inicialmente, apenas 2 views que são renderizadas pelo backend. 
+Através do <destak>Twig</destak>. Entretanto essas views não possuem código de interface de usuário, elas são apenas 
+páginas HTML que ativam uma aplicação AngularJS. Essas duas views são <destak>auth.html</destak> e <destak>secure.html</destak>,
+ambas estão localizadas no diretório <destak>views</destak> na raiz do projeto. </p>
+<p>A renderização dessas views ocorre através do controlador <destak>Sessao\Controller\Main</destak> através dos métodos 
+<detak>showSecure</destak> e <destak>showAuth</destak>. Eles utilizam o provedor de serviços do <destak>Twig</destak> 
+para recuperar o template das páginas html processá-lo e renderizá-los no navegador. </p>
+<p>Algumas vezes, pode ser necessário criar algumas rodas adicionais para serem renderizadas pelo backend, por exemplo, 
+suponha que a aplicação que você está construindo terá uma tela que será exibida em um monitor e que para o recurso 
+acessado, ela não precise que o usuário esteja autenticado. Então, seria necessário criar uma outra view, para isso, 
+crie o arquivo do template da view dentro do diretório views. Por exemplo: <destak>monitor.html</destak>. Essa view irá 
+fazer referência a uma aplicação própria do AngularJS. </p>
+<p>Após criar o seu template no diretório views, o próximo passo é criar um novo método que será responsável por renderizar a view no 
+controlador <destak>Main</destak> no pacote <destak>Sessao</destak>. </p>
 <pre class="code"><code class="language-php">...
     /**
      * Renderiza a interface que será exibida no monitor.
@@ -304,8 +318,11 @@
 ...</code></pre>
 
 
-<p>O método render do serviço <strong>twig</strong> pode ainda receber parâmetros adicionais que serão interpolados ao template, para maiores informações, consulte a documentação do <a href="https://silex.symfony.com/doc/2.0/providers/twig.html">Provedor de serviços do Twig</a>. </p>
-<p>Para que a view possa ser renderizada, ainda é necessário realizar uma última configuração que irá criar uma rota get para o método de renderização da view. Para isso, adicione uma entrada para o mapeamento da rota no método connect da classe SessaoServiceProvider no pacote Sessao.</p>
+<p>O método render do serviço <destak>Twig</destak> pode ainda receber parâmetros adicionais que serão interpolados ao 
+template, para maiores informações, consulte a documentação do <a href="https://silex.symfony.com/doc/2.0/providers/twig.html">Provedor de serviços do Twig</a>. </p>
+<p>Para que a view possa ser renderizada, ainda é necessário realizar uma última configuração que irá criar uma rota 
+get para o método de renderização da view. Para isso, adicione uma entrada para o mapeamento da rota no método connect 
+da classe <destak>SessaoServiceProvider</destak> no pacote <destak>Sessao</destak>.</p>
 <pre class="code"><code class="language-php">    /**
      * Registra as rotas de inicialização da aplicação.
      *
@@ -332,39 +349,86 @@
     }</code></pre>
 
 
-<p>Como se trata de uma definição de rota convencional do Silex, você pode utilizar qualquer funcionalidade ou recurso disponíveis para isso, como por exemplo, utilizar rotas dinâmicas com parâmetros, validação de parâmetros, etc. </p>
+<p>Como se trata de uma definição de rota convencional do Silex, você pode utilizar qualquer funcionalidade ou recurso 
+disponíveis para isso, como por exemplo, utilizar rotas dinâmicas com parâmetros, validação de parâmetros, etc. </p>
 <p>Pronto, feito isso, você poderá agora acessar a view diretamente através do seu navegador.</p>
-<h3 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">#</a></h3>
-<p>Se no backend as funcionalidades são agrupadas em pacotes, no frontend elas são agrupadas por módulos, esses são módulos do AngularJS, esses módulos podem ser dependentes de outros módulos menores ou submódulos, se assim quiser chamá-los. </p>
-<p>Os módulos de frontend são armazenados dentro do diretório <strong>web/src</strong>. Uma aplicação criada a partir do Singular Project já vem com 3 módulos principais:</p>
+<p>Apesar de termos definido a nova rota no pacote <destak>Sessao</destak>, qualquer pacote pode ser utilizado para a 
+definição dessa rota.</p>
+<h2 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">#</a></h2>
+<p>Se no backend as funcionalidades são agrupadas em pacotes, no frontend elas são agrupadas por módulos, esses são módulos
+do AngularJS, esses módulos podem ser dependentes de outros módulos menores ou submódulos, se assim quiser chamá-los. </p>
+<p>Os módulos de frontend são armazenados dentro do diretório <destak>web/src</destak>. Uma aplicação criada a partir do 
+Singular Project já vem com 3 módulos principais:</p>
+<div class="admonition info">
+<p class="admonition-title">Módulos</p>
 <ul>
-<li><strong>login</strong>: Módulo que define a aplicação utilizada na view de autenticação do sistema (auth.html). Ele é responsável por fornecer funções para autenticação do usuário;</li>
-<li><strong>secure</strong>: Módulo que define a aplicação utilizada na view segura do sistema (secure.html). Geralmente seus novos módulos serão adicionados como dependência para este módulo, de forma que, quando o usuário logar, seus módulos estarão disponíveis na aplicação;</li>
-<li><strong>ui</strong>: Módulo padrão que define serviços, controladores, views e diretivas utilizadas na interface do sistema. </li>
+<li>
+<p><destak>login</destak> Módulo que define a aplicação utilizada na view de autenticação do sistema. Ele é instanciado 
+na renderização do template <destak>auth.html</destak> no diretório <destak>views</destak>. Ele é responsável por 
+fornecer funções para autenticação do usuário;</p>
+</li>
+<li>
+<p><destak>secure</destak> Módulo que define a aplicação utilizada na view segura do sistema. Ele é instanciado na 
+renderização do template <destak>secure.html</destak>. Geralmente novos módulos serão adicionados como dependência 
+para este módulo, de forma que, quando o usuário logar, seus módulos estarão disponíveis na aplicação.</p>
+</li>
+<li>
+<p><destak>ui</destak> Módulo padrão que define serviços, controladores, views e diretivas utilizadas na interface do 
+sistema.</p>
+</li>
 </ul>
-<h4 id="a-estrutura-de-um-modulo">A estrutura de um módulo<a class="headerlink" href="#a-estrutura-de-um-modulo" title="Permanent link">#</a></h4>
-<p>Um módulo de frontend é composto por um script de definição e vários scripts de (controladores, diretivas, serviços, views e filtros) que são organizados dentro de diretórios. A idéia é seguir a definição do <em>Jhon Papa</em> para melhor organização do código. </p>
+</div>
+<h3 id="a-estrutura-de-um-modulo">A estrutura de um módulo<a class="headerlink" href="#a-estrutura-de-um-modulo" title="Permanent link">#</a></h3>
+<p>Um módulo de frontend é composto por um script de definição e vários scripts de (controladores, diretivas, serviços, 
+views e filtros) que são organizados dentro de diretórios. A idéia é seguir a definição do <a href="">Jhon Papa</a> para melhor 
+organização do código. </p>
 <p>Ao abrir o diretório de um módulo geralmente tem-se a seguinte estrutura:</p>
+<div class="admonition info">
+<p class="admonition-title">Arquitetura do módulo</p>
 <ul>
-<li><strong>controllers</strong>: Diretório onde são armazenados os scripts dos controladores AngularJS do módulo. Cada view deverá ter seu próprio controlador. Podem ser criados tantos controladores quanto necessários e quanto menor o controlador mais organizado e bem estruturado será o seu código;</li>
-<li><strong>services</strong>: Diretório onde são armazenados os scripts dos serviços AngularJS do módulo. Podem ser criados tantos serviços quanto se fizer necessário. Toda comunicação com o backend se dará por meio dos serviços que implementam o [Service Store];</li>
-<li><strong>directives (opcional)</strong>: Diretório onde podem ser armazenadas diretivas específicas do módulo em questão;</li>
-<li><strong>filters (opcional)</strong>: Diretório onde podem ser armazenados filtros específicos do módulo em questão;</li>
-<li><strong>modulo.js</strong>: Script que define o módulo AngularJS. É nessa definição que são criados os states para as views do módulo. Vale lembrar que se o módulo se chamar login.registro, o nome do script será registro.js.</li>
+<li>
+<p><span>controllers</span> Diretório onde são armazenados os scripts dos controladores AngularJS do módulo. 
+Cada view deverá ter seu próprio controlador. Podem ser criados tantos controladores quanto necessários e quanto 
+menor o controlador mais organizado e bem estruturado será o seu código</p>
+</li>
+<li>
+<p><span>services</span> Diretório onde são armazenados os scripts dos serviços AngularJS do módulo. Podem ser 
+criados tantos serviços quanto se fizer necessário. Toda comunicação com o backend se dará por meio dos serviços 
+que implementam o [Service Store]</p>
+</li>
+<li>
+<p><span>directives (opcional)</span> Diretório onde podem ser armazenadas diretivas específicas do módulo em questão</p>
+</li>
+<li>
+<p><span>filters (opcional)</span> Diretório onde podem ser armazenados filtros específicos do módulo em questão</p>
+</li>
+<li>
+<p><span>modulo.js</span> Script que define o módulo AngularJS. É nessa definição que são criados os states para as 
+views do módulo. Vale lembrar que se o módulo se chamar login.registro, o nome do script será <span>registro.js</span>.</p>
+</li>
 </ul>
-<h4 id="criando-um-novo-modulo">Criando um novo módulo<a class="headerlink" href="#criando-um-novo-modulo" title="Permanent link">#</a></h4>
+</div>
+<h3 id="criando-um-novo-modulo">Criando um novo módulo<a class="headerlink" href="#criando-um-novo-modulo" title="Permanent link">#</a></h3>
 <p>Para criar um novo módulo, basta utilizar o Singular Cli:</p>
 <pre class="code"><code class="language-shell">./singular frontend:create-module app.teste</code></pre>
 
 
-<p>Ao executar este comando, será criado um novo módulo no diretório <strong>web/src</strong> chamado <strong>app.teste</strong>. No entanto, frequentemente, você precisará criar um submódulo, ou seja, um módulo que fica dentro de outro módulo como uma dependência. Para isso, o Singular utiliza o padrão de namespaces para nomeação dos módulos. No caso, o módulo <strong>app.teste</strong> está dentro do namespace <strong>app</strong> que representa a nossa aplicação. </p>
-<p>Suponha que seja necessário criar um submódulo "registro" dentro do módulo de login, para isso, no Singular Cli utilizaríamos:</p>
+<p>Ao executar este comando, será criado um novo módulo no diretório <destak>web/src</destak> chamado <destak>app.teste</destak>. 
+No entanto, frequentemente, você precisará criar um submódulo, ou seja, um módulo que fica dentro de outro módulo como 
+uma dependência. Para isso, o Singular utiliza o padrão de namespaces para nomeação dos módulos. No caso, o módulo 
+<destak>app.teste</destak> está dentro do namespace <destak>app</destak> que representa a nossa aplicação. </p>
+<p>Suponha que seja necessário criar um submódulo <destak>registro</destak> dentro do módulo de login, para isso, no 
+Singular Cli utilizaríamos:</p>
 <pre class="code"><code class="language-php">./singular frontend:create-module login.registro --dir=login</code></pre>
 
 
-<p>Ao executar este comando, um novo diretório do módulo será criado dentro do diretório do módulo <strong>login</strong>. No nome <strong>login.registro</strong> o namespace é facilmente identificado pelo <strong>login.</strong>. Por padrão, quando você cria um submódulo, o mesmo já é registrado como uma dependência no módulo pai.</p>
-<h4 id="definindo-states-para-o-modulo">Definindo states para o módulo<a class="headerlink" href="#definindo-states-para-o-modulo" title="Permanent link">#</a></h4>
-<p>O Singular Project utiliza o ui-router como mecanismo de roteamento padrão. Cada módulo define seus próprios states. Por este motivo, todas as rotas são definidas através de states, convencionalmente como é feito no ui-router, dentro da função config do módulo:</p>
+<p>Ao executar este comando, um novo diretório do módulo será criado dentro do diretório do módulo <destak>login</destak>. 
+No nome <destak>login.registro</destak> o namespace é facilmente identificado pelo <destak>login</destak>. Por padrão, 
+quando você cria um submódulo com o Singular Cli, o mesmo já é registrado como uma dependência no módulo pai.</p>
+<h3 id="definindo-states-para-o-modulo">Definindo states para o módulo<a class="headerlink" href="#definindo-states-para-o-modulo" title="Permanent link">#</a></h3>
+<p>O Singular Project utiliza o ui-router como mecanismo de roteamento padrão no frontend. Cada módulo define seus 
+próprios states. Por este motivo, todas as rotas são definidas através de states, convencionalmente como é feito no 
+ui-router, dentro da função config do módulo:</p>
 <pre class="code"><code class="language-javascript">...
         $stateProvider.state('usuario.cadastro', {
             url: '/usuario/cadastro',
@@ -375,10 +439,13 @@
 ...</code></pre>
 
 
-<p>Mas ao observar o bloco de código, você deve ter percebido que existe um parâmetro que não é comum ao ui-router. O parâmetro <strong>"acl"</strong> faz parte do Singular e ele é utilizado para restringir o acesso de um usuário ao state. Ao utilizar esse parâmetro, você garante que apenas usuários que possuam no seu perfil o acesso à funcionalidade <strong>f-cadastro-create</strong> poderão acessá-lo.</p>
-<h3 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">#</a></h3>
+<p>Mas ao observar o bloco de código, você deve ter percebido que existe um parâmetro que não é comum ao ui-router. 
+O parâmetro <destak>acl</destak> faz parte do Singular e ele é utilizado para restringir o acesso de um usuário ao state. 
+Ao utilizar esse parâmetro, você garante que apenas usuários que possuam no seu perfil o acesso à funcionalidade 
+<destak>f-cadastro-create</destak> poderão acessá-lo.</p>
+<h2 id="controladores">Controladores<a class="headerlink" href="#controladores" title="Permanent link">#</a></h2>
 <p>Assim como na definição do AngularJS, a principal funcão de um controlador é integrar o modelo à view. Cada módulo tem seu próprio conjunto de controladores, e eles se encontram no diretório <strong>controllers</strong> do módulo. </p>
-<h4 id="criando-um-novo-controlador">Criando um novo controlador<a class="headerlink" href="#criando-um-novo-controlador" title="Permanent link">#</a></h4>
+<h3 id="criando-um-novo-controlador">Criando um novo controlador<a class="headerlink" href="#criando-um-novo-controlador" title="Permanent link">#</a></h3>
 <p>Para criar um novo controlador, basta utilizar o Singular Cli:</p>
 <pre class="code"><code class="language-shell">./singular frontend:create-controller namespacemodulo.MeuControlador modulo diretorio/do/submodulo --tipo=list</code></pre>
 
@@ -388,9 +455,9 @@
 + <strong>modulo</strong>: deve ser substituído pelo nome com namepsace completo do módulo onde o controlador será criado. Por exemplo: cadastro.usuario;
 + <strong>diretorio/do/modulo</strong>: deve ser substituído pelo caminho completo do diretório do módulo a partir do diretório web/src;
 + <strong>tipo</strong>: se omitido, o valor default é normal. Mas pode assumir os valores (list, filter, modal, create, edit, normal);</p>
-<h3 id="service-stores">Service Stores<a class="headerlink" href="#service-stores" title="Permanent link">#</a></h3>
+<h2 id="service-stores">Service Stores<a class="headerlink" href="#service-stores" title="Permanent link">#</a></h2>
 <p>Service Stores são serviços angular que são criados a partir de uma StoreFactory. Eles disponibilizam métodos CRUD e de comunicação com o backend encapsulando as chamadas do serviço $http.</p>
-<h4 id="criando-um-novo-service-store">Criando um novo service store<a class="headerlink" href="#criando-um-novo-service-store" title="Permanent link">#</a></h4>
+<h3 id="criando-um-novo-service-store">Criando um novo service store<a class="headerlink" href="#criando-um-novo-service-store" title="Permanent link">#</a></h3>
 <p>Para criar um novo service store, basta utilizar o Singular Cli:</p>
 <pre class="code"><code class="language-shell">./singular frontend:create-store NomedoStore modulo pack controlador dir</code></pre>
 
@@ -401,7 +468,7 @@
 + <strong>pack</strong>: deverá ser substituído pelo nome do pacote no backend, onde se encontra o controlador com o qual o service store irá se comunicar;
 + <strong>controlador</strong>: deverá ser substituído pelo nome do controlador no backend com o qual o service store irá se comunicar;
 + <strong>dir</strong>: deverá ser substituído pelo caminho completo do módulo/submódulo a partir de web/src;</p>
-<h4 id="metodos-crud-disponiveis">Métodos CRUD disponíveis<a class="headerlink" href="#metodos-crud-disponiveis" title="Permanent link">#</a></h4>
+<h3 id="metodos-crud-disponiveis">Métodos CRUD disponíveis<a class="headerlink" href="#metodos-crud-disponiveis" title="Permanent link">#</a></h3>
 <p>Como mencionado, um service store é criado a partir de um StoreFactory, com isso ele consegue acesso há alguns métodos CRUD já implementados pelo StoreFactory que possibilitam comunicação e chamada dos métodos CRUD no backend. </p>
 <ul>
 <li><strong>get(id: integer, callback: function)</strong>: método crud que faz a chamada do método <strong>get</strong> no backend, onde um ID do registro é passado como parâmetro, a função de callback é acionada com o resultado da recuperação do registro no backend.</li>
@@ -409,9 +476,9 @@
 <li><strong>save(data: object, callback: function)</strong>: método crud que faz a chamada do método <strong>save</strong> no backend, para criar/atualizar um registro. É passado um objeto com a representação do registro que será inserido/atualizado e a função de callback é acionada com o resultado da ação de salvamento do registro no backend.</li>
 <li><strong>remove(id: integer, callback: function, config: object)</strong>: método crud que faz a chamada do método <strong>remove</strong> no backend. Recebe como parâmetro o ID do registro que será excluído, e a função de callback que será acionada após a execução da ação no backend. Pode ainda receber um objeto de configuração com as propriedades (title, text e success) para definir respectivamente o título da modal de confirmação da exclusão, o texto de confirmação da modal de confirmação da exclusão e a mensagem exibida em caso de sucesso da exclusão. Caso este último parâmetro não seja passado, utilizará os valores padrão para a modal e mensagem de confirmação.</li>
 </ul>
-<h4 id="parametros-do-metodo-load">Parâmetros do método load<a class="headerlink" href="#parametros-do-metodo-load" title="Permanent link">#</a></h4>
+<h3 id="parametros-do-metodo-load">Parâmetros do método load<a class="headerlink" href="#parametros-do-metodo-load" title="Permanent link">#</a></h3>
 <p>Como mencionado acima, quando chamamos o método <strong>load</strong> de um service store, ele implicitamente inclui nos parâmetros da chamada do método <strong>find</strong> no backend as propriedades <em>filter</em>, <em>sort</em> e <em>paging</em>. Vamos analisar como esses parâmetros são definidos e como podem ser alterados, de acordo com nossa necessidade.</p>
-<h5 id="paginacao">Paginação<a class="headerlink" href="#paginacao" title="Permanent link">#</a></h5>
+<h4 id="paginacao">Paginação<a class="headerlink" href="#paginacao" title="Permanent link">#</a></h4>
 <p>A paginação do método load acontece pela configuração de um objeto com duas propriedades do Service Store, imagine que você tem acesso há um Service Store chamado UserStore.</p>
 <pre class="code"><code class="language-javascript">UserStore.paging.pageSize = 10;
 UserStore.paging.currentPage = 0;
@@ -419,7 +486,7 @@ UserStore.load();</code></pre>
 
 
 <p>Ao utilizar uma <strong>list view</strong> essas propriedades estarão vinculadas aos atributos md-limit e md-page da diretiva <strong>md-table-pagination</strong>, e podem ser manipuladas e alteradas diretamente pelo usuário na tela. </p>
-<h5 id="ordenacao">Ordenação<a class="headerlink" href="#ordenacao" title="Permanent link">#</a></h5>
+<h4 id="ordenacao">Ordenação<a class="headerlink" href="#ordenacao" title="Permanent link">#</a></h4>
 <p>Assim como a paginação, a ordenação do método load acontece também através da configuração de um objeto, <strong>sort</strong>. Em uma <strong>list view</strong> essa propriedade é atribuída à diretiva <strong>md-order</strong> no cabeçalho de uma tabela, e em conjunto com a diretiva md-order-by utilizada nas colunas do cabeçalho, definem a ordem da listagem de resultados:</p>
 <pre class="code"><code class="language-html">&lt;table md-table md-row-select=&quot;DataStore.enableRowSelection&quot; ng-model=&quot;DataStore.selected&quot;&gt;
    &lt;thead md-head md-order=&quot;DataStore.sort&quot; md-on-reorder=&quot;reloadData&quot;&gt;
@@ -436,7 +503,7 @@ UserStore.load();</code></pre>
 &lt;/table&gt;</code></pre>
 
 
-<h5 id="filtros">Filtros<a class="headerlink" href="#filtros" title="Permanent link">#</a></h5>
+<h4 id="filtros">Filtros<a class="headerlink" href="#filtros" title="Permanent link">#</a></h4>
 <p>Apenas chamar um método que retorna uma relação de registros, sem poder aplicar um filtro aos resultados que queremos obter seria algo inútil. Por isso, ao chamar o método <strong>load</strong> podemos definir filtros que serão enviados como parâmetro e servirão para filtrar os registros que desejamos obter. </p>
 <p>A forma mais simples de aplicar um filtro, é atribuir um valor ao atributo da tabela que queremos filtrar:</p>
 <pre class="code"><code class="language-javascript">UserStore.filter.ativo = 1;
@@ -492,7 +559,7 @@ me.filterMap = {
 }</code></pre>
 
 
-<h4 id="fazendo-a-chamada-de-metodos-customizados">Fazendo a chamada de métodos customizados<a class="headerlink" href="#fazendo-a-chamada-de-metodos-customizados" title="Permanent link">#</a></h4>
+<h3 id="fazendo-a-chamada-de-metodos-customizados">Fazendo a chamada de métodos customizados<a class="headerlink" href="#fazendo-a-chamada-de-metodos-customizados" title="Permanent link">#</a></h3>
 <p>Embora, a maioria da comunicação entre o frontend e backend seja a chamada de métodos CRUD, eles não resolvem 100% dos problemas, e, frequentemente é necessário fazer a chamada de métodos customizados no controlador do backend anotados com <strong>@Route</strong>. Isso pode ser feito utilizando a chamada ao serviço $http, mas o Service store possui um método auxiliar que simplifica e torna fácil a chamada e recuperação de resultado de métodos customizados no backend: o método <strong>call</strong>.</p>
 <p>O método call recebe quatro parâmetros:</p>
 <ul>
@@ -504,9 +571,9 @@ me.filterMap = {
 <pre class="code"><code class="language-javascript">me.call('meuMetodoGet', {}, function(response){...}, {method: 'get', urlParams: '/10'});</code></pre>
 
 
-<h3 id="views">Views<a class="headerlink" href="#views" title="Permanent link">#</a></h3>
+<h2 id="views">Views<a class="headerlink" href="#views" title="Permanent link">#</a></h2>
 <p>As views do AngularJS são o que tornam possível a utilização do padrão SPA (Single Page Aplication). Assim como nos controladores, cada módulo tem seu próprio conjunto de views, e elas se encontram no diretório <strong>views</strong> do módulo. </p>
-<h4 id="criando-uma-nova-view">Criando uma nova view<a class="headerlink" href="#criando-uma-nova-view" title="Permanent link">#</a></h4>
+<h3 id="criando-uma-nova-view">Criando uma nova view<a class="headerlink" href="#criando-uma-nova-view" title="Permanent link">#</a></h3>
 <p>Para criar uma nova view, basta utilizar o Singular Cli:</p>
 <pre class="code"><code class="language-shell">./singular frontend:create-view view dir tipo</code></pre>
 
