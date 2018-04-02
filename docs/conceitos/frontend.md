@@ -185,15 +185,20 @@ Para criar um novo controlador, basta utilizar o Singular Cli:
 ./singular frontend:create-controller namespacemodulo.MeuControlador modulo diretorio/do/submodulo --tipo=list
 ```
 
-Onde:
-+ __namespacemodulo.MeuControlador__: deve ser substituído pelo nome do seu controlador com o namespace. Por exemplo: usuario.ListCtrl;
-+ __modulo__: deve ser substituído pelo nome com namepsace completo do módulo onde o controlador será criado. Por exemplo: cadastro.usuario;
-+ __diretorio/do/modulo__: deve ser substituído pelo caminho completo do diretório do módulo a partir do diretório web/src;
-+ __tipo__: se omitido, o valor default é normal. Mas pode assumir os valores (list, filter, modal, create, edit, normal);
+!!! Onde
+    + <span>namespacemodulo.MeuControlador</span> deve ser substituído pelo nome do seu controlador com o namespace.<br> 
+    Por exemplo: usuario.ListCtrl;
+    + <span>modulo</span> deve ser substituído pelo nome com namepsace completo do módulo onde o controlador será criado.<br> 
+    Por exemplo: cadastro.usuario;
+    + <span>diretorio/do/modulo</span> deve ser substituído pelo caminho completo do diretório do módulo a partir do 
+    diretório web/src;
+    + <span>tipo</span> se omitido, o valor default é normal.<br> 
+    Pode assumir os valores (list, filter, modal, create, edit, normal);
 
 ## Service Stores
 
-Service Stores são serviços angular que são criados a partir de uma StoreFactory. Eles disponibilizam métodos CRUD e de comunicação com o backend encapsulando as chamadas do serviço $http.
+Service Stores são serviços angular que são criados a partir de uma StoreFactory. Eles disponibilizam métodos CRUD e de 
+comunicação com o backend encapsulando as chamadas do serviço $http.
 
 ### Criando um novo service store
 
@@ -202,19 +207,61 @@ Para criar um novo service store, basta utilizar o Singular Cli:
 ```shell
 ./singular frontend:create-store NomedoStore modulo pack controlador dir
 ```
-Onde:
-+ __NomedoStore__: deverá ser substituído pelo nome do service store que será criado;
-+ __modulo__: deverá ser substituído pelo nome completo com namepsace do módulo onde o service store será criado;
-+ __pack__: deverá ser substituído pelo nome do pacote no backend, onde se encontra o controlador com o qual o service store irá se comunicar;
-+ __controlador__: deverá ser substituído pelo nome do controlador no backend com o qual o service store irá se comunicar;
-+ __dir__: deverá ser substituído pelo caminho completo do módulo/submódulo a partir de web/src;
+
+!!! Onde
+    + <span>NomedoStore</span> deverá ser substituído pelo nome do service store que será criado
+    + <span>modulo</span> deverá ser substituído pelo nome completo com namepsace do módulo onde o service store será criado
+    + <span>pack</span> deverá ser substituído pelo nome do pacote no backend, onde se encontra o controlador com o qual o service store irá se comunicar
+    + <span>controlador</span> deverá ser substituído pelo nome do controlador no backend com o qual o service store irá se comunicar
+    + <span>dir</span> deverá ser substituído pelo caminho completo do módulo/submódulo a partir de web/src
+
+Exemplo:
+
+```shell
+./singular frontend:create-store ContatoStore cadastro.usuario Cadastro Contato cadastro/usuario 
+```
 
 ### Métodos CRUD disponíveis 
 
-Como mencionado, um service store é criado a partir de um StoreFactory, com isso ele consegue acesso há alguns métodos CRUD já implementados pelo StoreFactory que possibilitam comunicação e chamada dos métodos CRUD no backend. 
+Como mencionado, um service store é criado a partir de um StoreFactory, com isso ele consegue acesso há alguns métodos 
+CRUD já implementados pelo StoreFactory que possibilitam comunicação e chamada dos métodos CRUD no backend. 
 
-+ __get(id: integer, callback: function)__: método crud que faz a chamada do método __get__ no backend, onde um ID do registro é passado como parâmetro, a função de callback é acionada com o resultado da recuperação do registro no backend.
-+ __load(callback: function)__: método crud que faz a chamada do método __find__ no backend. Este método utiliza implicitamente as propriedades *filter*, *sort*, e *paging* do store como parâmetros para o método find, a função de callback é acionada com o resultado da recuperação dos registros no backend.
+!!!note "get(id: integer, callback: function)"
+    Método CRUD que faz a chamada do método <span>get</span> no controlador do backend.<br>
+    __PARÂMETROS__:<br>
+    <span>id</span> id do registro que você deseja recuperar no backend;<br>
+    <span>callback</span> função de __callback__ que será executada quando a chamada do backend retornar;<br>
+    __RETORNO__:<br>
+    NULL
+
+Exemplo:
+
+```javascript
+UsuarioStore.get(12, function(record){
+    $scope.usuario = record;
+});
+```
+
+!!!note "load(callback: function, method: string)"
+    Método CRUD que faz a chamada de métodos <span>find</span> no controlador do backend.<br>
+    __PARÂMETROS__:<br>
+    <span>callback</span> função de callback que é executada quando a função do backend retornar o resultado.<br>
+    <span>method</span> método find do backend que será executado. Por padrão, executa o método __find__<br>
+    __RETORNO__:<br>
+    NULL
+
+Exemplo:
+
+```javascript
+UsuarioStore.load(function(response){
+    $scope.usuarios = response.results;
+}, 'findWithContatos')
+```
+
+!!!info "Parâmetros ocultos"
+    O método load envia ao backend parâmetros que são transparentes ao usuário. Mas podem ser definidos e alterados conforme
+    a necessidade. [Leia mais]() 
+
 + __save(data: object, callback: function)__: método crud que faz a chamada do método __save__ no backend, para criar/atualizar um registro. É passado um objeto com a representação do registro que será inserido/atualizado e a função de callback é acionada com o resultado da ação de salvamento do registro no backend.
 + __remove(id: integer, callback: function, config: object)__: método crud que faz a chamada do método __remove__ no backend. Recebe como parâmetro o ID do registro que será excluído, e a função de callback que será acionada após a execução da ação no backend. Pode ainda receber um objeto de configuração com as propriedades (title, text e success) para definir respectivamente o título da modal de confirmação da exclusão, o texto de confirmação da modal de confirmação da exclusão e a mensagem exibida em caso de sucesso da exclusão. Caso este último parâmetro não seja passado, utilizará os valores padrão para a modal e mensagem de confirmação.
 
