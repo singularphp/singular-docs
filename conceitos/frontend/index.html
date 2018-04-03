@@ -519,26 +519,91 @@ NULL</p>
 
 
 <div class="admonition info">
-<p class="admonition-title">Parâmetros ocultos</p>
+<p class="admonition-title">Parâmetros implícitos</p>
 <p>O método load envia ao backend parâmetros que são transparentes ao usuário. Mas podem ser definidos e alterados conforme
-a necessidade. <a href="">Leia mais</a> </p>
+a necessidade. <a href="./#parametros-implicitos-do-metodo-load">Leia mais</a> </p>
 </div>
-<ul>
-<li><strong>save(data: object, callback: function)</strong>: método crud que faz a chamada do método <strong>save</strong> no backend, para criar/atualizar um registro. É passado um objeto com a representação do registro que será inserido/atualizado e a função de callback é acionada com o resultado da ação de salvamento do registro no backend.</li>
-<li><strong>remove(id: integer, callback: function, config: object)</strong>: método crud que faz a chamada do método <strong>remove</strong> no backend. Recebe como parâmetro o ID do registro que será excluído, e a função de callback que será acionada após a execução da ação no backend. Pode ainda receber um objeto de configuração com as propriedades (title, text e success) para definir respectivamente o título da modal de confirmação da exclusão, o texto de confirmação da modal de confirmação da exclusão e a mensagem exibida em caso de sucesso da exclusão. Caso este último parâmetro não seja passado, utilizará os valores padrão para a modal e mensagem de confirmação.</li>
-</ul>
-<h3 id="parametros-do-metodo-load">Parâmetros do método load<a class="headerlink" href="#parametros-do-metodo-load" title="Permanent link">#</a></h3>
-<p>Como mencionado acima, quando chamamos o método <strong>load</strong> de um service store, ele implicitamente inclui nos parâmetros da chamada do método <strong>find</strong> no backend as propriedades <em>filter</em>, <em>sort</em> e <em>paging</em>. Vamos analisar como esses parâmetros são definidos e como podem ser alterados, de acordo com nossa necessidade.</p>
-<h4 id="paginacao">Paginação<a class="headerlink" href="#paginacao" title="Permanent link">#</a></h4>
-<p>A paginação do método load acontece pela configuração de um objeto com duas propriedades do Service Store, imagine que você tem acesso há um Service Store chamado UserStore.</p>
-<pre class="code"><code class="language-javascript">UserStore.paging.pageSize = 10;
-UserStore.paging.currentPage = 0;
-UserStore.load();</code></pre>
+<div class="admonition note">
+<p class="admonition-title">save(data: object, callback: function)</p>
+<p>Método crud que faz chamada ao método <span>save</span> no backend, para criar/atualizar um registro.<br>
+<strong>PARÂMETROS</strong>:<br>
+<span>data</span> objeto que representa o registro que será criado/atualizado<br>
+<span>callback</span> função de retorno que será acionada quando o método remoto for executado<br>
+<strong>RETORNO</strong>:<br>
+NULL</p>
+</div>
+<p>Exemplo:</p>
+<pre class="code"><code class="language-javascript">var record = {nome: &quot;Otávio&quot;, email:&quot;otavio@teste.com&quot;, senha: &quot;123&quot;};
+
+UsuarioStore.save(record, function(response){
+    if (response.success) {
+        alert(&quot;Registro de id: &quot; + response.record + &quot; criado com sucesso!&quot;);
+    }
+})</code></pre>
 
 
-<p>Ao utilizar uma <strong>list view</strong> essas propriedades estarão vinculadas aos atributos md-limit e md-page da diretiva <strong>md-table-pagination</strong>, e podem ser manipuladas e alteradas diretamente pelo usuário na tela. </p>
-<h4 id="ordenacao">Ordenação<a class="headerlink" href="#ordenacao" title="Permanent link">#</a></h4>
-<p>Assim como a paginação, a ordenação do método load acontece também através da configuração de um objeto, <strong>sort</strong>. Em uma <strong>list view</strong> essa propriedade é atribuída à diretiva <strong>md-order</strong> no cabeçalho de uma tabela, e em conjunto com a diretiva md-order-by utilizada nas colunas do cabeçalho, definem a ordem da listagem de resultados:</p>
+<div class="admonition note">
+<p class="admonition-title">remove(id: integer, callback: function, config: object)</p>
+<p>Método crud que faz a chamada ao método <span>remove</span> no backend.<br> 
+<strong>PARÂMETROS</strong>:<br>
+<span>id</span> inteiro representando o identificador único do registro a ser excluído<br>
+<span>callback</span> função de retorno a ser acionada quando o método de remoção no backend for executado<br>
+<span>config</span> objeto de configuração das propriedades da mensagem de confirmação da exclusão (title, text, success)</p>
+</div>
+<p>Exemplo:</p>
+<pre class="code"><code class="language-javascript">UsuarioStore.remove(1, function(removed){
+    if (removed) {
+        console.log('removeu');
+    }
+}, {
+    title: &quot;Atenção&quot;, 
+    text: &quot;Deseja apagar o registro selecionado?&quot;, 
+    success: &quot;Registro excluído com sucesso!&quot;
+});</code></pre>
+
+
+<h3 id="parametros-implicitos-do-metodo-load">Parâmetros implícitos do método load<a class="headerlink" href="#parametros-implicitos-do-metodo-load" title="Permanent link">#</a></h3>
+<p>Como mencionado anteriormente, quando chamamos o método <span>load</span> de um service store, ele implicitamente inclui 
+nos parâmetros da chamada do método <destak>find</destak> no backend as propriedades <destak>filter</destak>, 
+<destak>sort</destak> e <destak>paging</destak>. Esses parâmetros permitem realizar o filtro, ordenação e paginação dos
+resultados da consulta. </p>
+<h4 id="paginacao"><strong>Paginação</strong><a class="headerlink" href="#paginacao" title="Permanent link">#</a></h4>
+<p>A paginação do método load acontece pela configuração de um objeto <destak>paging</destak> de um Service Store. Essas 
+propriedades são:</p>
+<p><destak>pageSize</destak> define a quantidade de registros em cada página</p>
+<p><destak>currentPage</destak> define a página atual da consulta</p>
+<p>Exemplo: </p>
+<pre class="code"><code class="language-javascript">UsuarioStore.paging.pageSize = 10;      // 10 registros por página
+UsuarioStore.paging.currentPage = 0;    // página inicial é a primeira página de resultados
+UsuarioStore.load();                    // aciona o recarregamento dos registros </code></pre>
+
+
+<p>Ao utilizar uma <destak>list view</destak> essas propriedades estarão vinculadas aos atributos <destak>md-limit</destak> 
+e <destak>md-page</destak> da diretiva <destak>md-table-pagination</destak>, e podem ser manipuladas e alteradas 
+diretamente pelo usuário na tela. </p>
+<p>Exemplo:</p>
+<pre class="code"><code class="language-html">&lt;md-table-pagination 
+    md-limit=&quot;DataStore.paging.pageSize&quot; 
+    md-limit-options=&quot;[10, 30, 50, 100]&quot;
+    md-page=&quot;DataStore.paging.currentPage&quot; 
+    md-total=&quot;{{DataStore.total}}&quot; 
+    md-on-paginate=&quot;reloadData&quot; 
+    md-page-select&gt;
+&lt;/md-table-pagination&gt;</code></pre>
+
+
+<h4 id="ordenacao"><strong>Ordenação</strong><a class="headerlink" href="#ordenacao" title="Permanent link">#</a></h4>
+<p>A ordenação do método load acontece através da propriedade, <destak>sort</destak> de um Service Store. Essa propriedade
+é uma string, onde cada campo pelo qual se deseja ordenar está separado por vírgula.  </p>
+<p>Exemplo:</p>
+<pre class="code"><code class="language-javascript">UsuarioStore.sort = &quot;nome,-idade&quot;;
+UsuarioStore.load();</code></pre>
+
+
+<p>No exemplo acima a consulta será ordenada pelo nome de forma crescente e pela idade de forma descrescente.</p>
+<p>Em uma <destak>list view</destak> essa propriedade é atribuída à diretiva <destak>md-order</destak> no cabeçalho de uma 
+tabela, e em conjunto com a diretiva <destak>md-order-by</destak> utilizada nas colunas do cabeçalho, definem a ordem da 
+listagem de resultados:</p>
 <pre class="code"><code class="language-html">&lt;table md-table md-row-select=&quot;DataStore.enableRowSelection&quot; ng-model=&quot;DataStore.selected&quot;&gt;
    &lt;thead md-head md-order=&quot;DataStore.sort&quot; md-on-reorder=&quot;reloadData&quot;&gt;
       &lt;tr md-row&gt;
@@ -554,47 +619,56 @@ UserStore.load();</code></pre>
 &lt;/table&gt;</code></pre>
 
 
-<h4 id="filtros">Filtros<a class="headerlink" href="#filtros" title="Permanent link">#</a></h4>
-<p>Apenas chamar um método que retorna uma relação de registros, sem poder aplicar um filtro aos resultados que queremos obter seria algo inútil. Por isso, ao chamar o método <strong>load</strong> podemos definir filtros que serão enviados como parâmetro e servirão para filtrar os registros que desejamos obter. </p>
-<p>A forma mais simples de aplicar um filtro, é atribuir um valor ao atributo da tabela que queremos filtrar:</p>
-<pre class="code"><code class="language-javascript">UserStore.filter.ativo = 1;
-UserStore.load();</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Ao aplicar a ordenação através do md-order na interface, não é possível utilizar múltiplas ordenações.</p>
+</div>
+<h4 id="filtros"><strong>Filtros</strong><a class="headerlink" href="#filtros" title="Permanent link">#</a></h4>
+<p>Apenas chamar um método que retorna uma relação de registros, sem poder aplicar um filtro aos resultados que queremos 
+obter seria inútil. Por isso, ao chamar o método <destak>load</destak> podemos definir filtros que serão enviados como 
+parâmetro e servirão para filtrar os registros que desejamos obter. </p>
+<p>Para filtrar os resultados do método load, é necessário configurar o objeto <destak>filter</destak> do Service Store, com 
+a condição de pesquisa que desejamos aplicar. </p>
+<pre class="code"><code class="language-javascript">UsuarioStore.filter.ativo = 1;   // todos os registros de usuário onde a coluna ativo seja igual a 1 
+UsuarioStore.load();             // força o carregamento dos registros</code></pre>
 
 
-<p>Esse simples filtro será aplicado ao método find no backend, e ele diz para trazer todos os registros onde a propriedade ativo seja igual a 1. </p>
-<p>Algumas vezes, podemos desejar que os filtros sejam aplicados por similaridade, por exemplo:</p>
-<pre class="code"><code class="language-javascript">UserStore.filter.email = '%:gmail.com';</code></pre>
+<p>Todos os operadores de comparação aceitos pelo <a href="../backend/#stores">Store do backend</a> podem ser utilizados para filtrar resultados.</p>
+<p>Exemplo:</p>
+<pre class="code"><code class="language-javascript">UsuarioStore.filter.email = '%:gmail.com';      // email contém email.com
+UsuarioStore.filter.idade = '&gt;=:10';            // e idade maior igual há 10
+UsuarioStore.filter.peso = '&lt;=:30';             // e peso menor igual há 30
+UsuarioStore.filter.reprovado = '&lt;&gt;:1';         // e reprovado diferente de 1</code></pre>
 
 
-<p>Esse filtro irá retornar todos os usuários que possuam um email que possua a expressão <strong>gmail.com</strong> em alguma parte do valor. </p>
-<p>Podemos passar para um filtro qualquer condição de comparação:</p>
-<pre class="code"><code class="language-javascript">UserStore.filter.idade = '&gt;=:10'; // idade maior igual há 10
-UserStore.filter.peso = '&lt;=:30'; // peso menor igual há 30
-UserStore.filter.reprovado = '&lt;&gt;:1'; // reprovado diferente de 1</code></pre>
+<p>Ao utilizar filtros simples, o Singular irá automaticamente vincular a propriedade do <destak>filter</destak> à tabela
+principal vinculada ao Store do backend. Entretanto, quando utilizamos joins, podemos querer vincular uma propriedade 
+há um atributo de uma outra tabela na relação de joins. Para isso, precisamos criar um mapa na definição do<br />
+Service Store.</p>
+<p>Configurando o objeto <destak>filterMap</destak> de um Service Store, podemos definir qual deve ser o atributo 
+equivalente em uma tabela de um  atributo de filtro no frontend. </p>
+<pre class="code"><code class="language-javascript">/* Script UsuarioStore.js */
+me.filterMap = {
+    perfil: {
+        property: 'p.perfil',
+        operation: '%'
+    }
+};</code></pre>
 
 
-<p>Ao utilizar filtros simples, o Singular irá automaticamente vincular a propriedade do <strong>filter</strong> à tabela principal vinculada ao Store do backend. Entretanto, quando utilizamos joins, podemos querer vincular uma propriedade há um atributo de uma outra tabela na relação de joins. Para isso, precisamos criar um mapa na definição do  Service Store:</p>
-<pre class="code"><code class="language-javascript">        /* Script UserStore.js */
-        me.filterMap = {
-            perfil: {
-                property: 'p.perfil',
-                operation: '%'
-            }
-        };</code></pre>
-
-
-<p>Utilizando o filterMap, podemos definir qual deve ser o atributo equivalente em uma tabela de um atributo de filtro no frontend. </p>
-<p>Também podemos utilizar o filter map para determinar o tipo de operação que desejamos que seja aplicada há um atributo, dessa forma não precisaremos ficar informando a toda chamada a operação:</p>
+<p>Também podemos utilizar o filter map para determinar o operador de comparação que desejamos que seja aplicado há um 
+atributo, dessa forma não precisaremos passar essa informação em toda chamada do método load:</p>
 <pre class="code"><code class="language-javascript">// Ao invés de
-UserStore.filter.idade = '&gt;:10';
+UsuarioStore.filter.idade = '&gt;:10';
 
-// Equivale a utilizar um filter map
-UserStore.filterMap.idade = '&gt;';
-UserStore.filter.idade = 10;
-UserStore.load();</code></pre>
+// Podemos utilizar um filter map
+UsuarioStore.filterMap.idade = '&gt;';
+UsuarioStore.filter.idade = 10;
+UsuarioStore.load();</code></pre>
 
 
-<p>Uma outra utilidade do filterMap é aplicar funções de conversão em um atributo antes que ele seja enviado como filtro para a função find no backend. </p>
+<p>Uma outra utilidade do filterMap é aplicar funções de conversão em um atributo antes que ele seja enviado como filtro 
+para a função find no backend. </p>
 <pre class="code"><code class="language-javascript">/* Script UserStore.js */
 me.filterMap = {
    status: {
@@ -611,15 +685,34 @@ me.filterMap = {
 
 
 <h3 id="fazendo-a-chamada-de-metodos-customizados">Fazendo a chamada de métodos customizados<a class="headerlink" href="#fazendo-a-chamada-de-metodos-customizados" title="Permanent link">#</a></h3>
-<p>Embora, a maioria da comunicação entre o frontend e backend seja a chamada de métodos CRUD, eles não resolvem 100% dos problemas, e, frequentemente é necessário fazer a chamada de métodos customizados no controlador do backend anotados com <strong>@Route</strong>. Isso pode ser feito utilizando a chamada ao serviço $http, mas o Service store possui um método auxiliar que simplifica e torna fácil a chamada e recuperação de resultado de métodos customizados no backend: o método <strong>call</strong>.</p>
-<p>O método call recebe quatro parâmetros:</p>
-<ul>
-<li><strong>method (string)</strong>: nome do método que será chamado no backend;</li>
-<li><strong>params (object)</strong>: objeto que contém a relação de chaves e valor dos parâmetros que serão enviados para o método customizado no backend, pode ser enviado um objeto vazio;</li>
-<li><strong>callback (function)</strong>: função de callback que será executada quando a chamada ao método do backend retornar;</li>
-<li><strong>config (object: opcional)</strong>: objeto que contém a configuração da chamada remota. Por padrão, ao chamar o método call, sempre é executada uma chamada ao método <strong>post</strong>, mas isso pode ser alterado mudando o valor da propriedade method do objeto de configuração para <strong>get</strong>, também podem ser passados parâmetros na URL através da propriedade urlParams no formato string, por exemplo: </li>
-</ul>
-<pre class="code"><code class="language-javascript">me.call('meuMetodoGet', {}, function(response){...}, {method: 'get', urlParams: '/10'});</code></pre>
+<p>Embora, a maioria da comunicação entre o frontend e backend seja a chamada de métodos CRUD, eles não resolvem 100% dos 
+problemas, e, frequentemente é necessário fazer a chamada de métodos customizados no controlador do backend anotados com 
+<destak>@Route</destak>. Isso pode ser feito utilizando a chamada ao serviço <destak>$http</destak> do AngularJS, mas o 
+Service store possui um método auxiliar que simplifica e torna fácil a chamada e recuperação de resultado de métodos 
+customizados no backend. O método <destak>call</destak>.</p>
+<div class="admonition note">
+<p class="admonition-title">Parâmetros do método call</p>
+<p><span>method (string)</span> nome do método que será chamado no backend<br>
+<span>params (object)</span> objeto que contém a relação de chaves e valor dos parâmetros que serão enviados para 
+o método customizado no backend, pode ser enviado um objeto vazio<br>
+<span>callback (function)</span> função de callback que será executada quando a chamada ao método do backend retornar<br>
+<span>config (object: opcional)</span> objeto que contém a configuração da chamada remota. Por padrão, ao chamar o 
+método call, sempre é executada uma chamada ao método <span>post</span>, mas isso pode ser alterado mudando o valor 
+da propriedade method do objeto de configuração para <span>get</span>, também podem ser passados parâmetros na URL 
+através da propriedade urlParams no formato string: </p>
+</div>
+<p>Exemplo:</p>
+<pre class="code"><code class="language-javascript">// POST
+UsuarioStore.call('metodoCustomizadoPost', {id: 1}, function(response){
+    if (response.success){
+        $scope.data = response.results;
+    }
+});
+
+// GET
+UsuarioStore.call('metodoCustomizadoGet', {}, function(response){
+
+}, {method: 'get', urlParams: '/10'});</code></pre>
 
 
 <h2 id="views">Views<a class="headerlink" href="#views" title="Permanent link">#</a></h2>
