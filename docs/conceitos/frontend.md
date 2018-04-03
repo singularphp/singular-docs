@@ -258,31 +258,104 @@ UsuarioStore.load(function(response){
 }, 'findWithContatos')
 ```
 
-!!!info "Parâmetros ocultos"
+!!!info "Parâmetros implícitos"
     O método load envia ao backend parâmetros que são transparentes ao usuário. Mas podem ser definidos e alterados conforme
-    a necessidade. [Leia mais]() 
+    a necessidade. [Leia mais](frontend.md#parametros-implicitos-do-metodo-load) 
 
-+ __save(data: object, callback: function)__: método crud que faz a chamada do método __save__ no backend, para criar/atualizar um registro. É passado um objeto com a representação do registro que será inserido/atualizado e a função de callback é acionada com o resultado da ação de salvamento do registro no backend.
-+ __remove(id: integer, callback: function, config: object)__: método crud que faz a chamada do método __remove__ no backend. Recebe como parâmetro o ID do registro que será excluído, e a função de callback que será acionada após a execução da ação no backend. Pode ainda receber um objeto de configuração com as propriedades (title, text e success) para definir respectivamente o título da modal de confirmação da exclusão, o texto de confirmação da modal de confirmação da exclusão e a mensagem exibida em caso de sucesso da exclusão. Caso este último parâmetro não seja passado, utilizará os valores padrão para a modal e mensagem de confirmação.
+!!!note "save(data: object, callback: function)"
+    Método crud que faz chamada ao método <span>save</span> no backend, para criar/atualizar um registro.<br>
+    __PARÂMETROS__:<br>
+    <span>data</span> objeto que representa o registro que será criado/atualizado<br>
+    <span>callback</span> função de retorno que será acionada quando o método remoto for executado<br>
+    __RETORNO__:<br>
+    NULL
 
-### Parâmetros do método load
-
-Como mencionado acima, quando chamamos o método __load__ de um service store, ele implicitamente inclui nos parâmetros da chamada do método __find__ no backend as propriedades *filter*, *sort* e *paging*. Vamos analisar como esses parâmetros são definidos e como podem ser alterados, de acordo com nossa necessidade.
-
-#### Paginação
-
-A paginação do método load acontece pela configuração de um objeto com duas propriedades do Service Store, imagine que você tem acesso há um Service Store chamado UserStore.
+Exemplo:
 
 ```javascript
-UserStore.paging.pageSize = 10;
-UserStore.paging.currentPage = 0;
-UserStore.load();
+var record = {nome: "Otávio", email:"otavio@teste.com", senha: "123"};
+
+UsuarioStore.save(record, function(response){
+    if (response.success) {
+        alert("Registro de id: " + response.record + " criado com sucesso!");
+    }
+})
+```     
+
+!!!note "remove(id: integer, callback: function, config: object)"
+    Método crud que faz a chamada ao método <span>remove</span> no backend.<br> 
+    __PARÂMETROS__:<br>
+    <span>id</span> inteiro representando o identificador único do registro a ser excluído<br>
+    <span>callback</span> função de retorno a ser acionada quando o método de remoção no backend for executado<br>
+    <span>config</span> objeto de configuração das propriedades da mensagem de confirmação da exclusão (title, text, success)
+
+Exemplo:
+
+```javascript
+UsuarioStore.remove(1, function(removed){
+    if (removed) {
+        console.log('removeu');
+    }
+}, {
+    title: "Atenção", 
+    text: "Deseja apagar o registro selecionado?", 
+    success: "Registro excluído com sucesso!"
+});
 ```
-Ao utilizar uma __list view__ essas propriedades estarão vinculadas aos atributos md-limit e md-page da diretiva __md-table-pagination__, e podem ser manipuladas e alteradas diretamente pelo usuário na tela. 
 
-#### Ordenação
+### Parâmetros implícitos do método load
 
-Assim como a paginação, a ordenação do método load acontece também através da configuração de um objeto, __sort__. Em uma __list view__ essa propriedade é atribuída à diretiva __md-order__ no cabeçalho de uma tabela, e em conjunto com a diretiva md-order-by utilizada nas colunas do cabeçalho, definem a ordem da listagem de resultados:
+Como mencionado anteriormente, quando chamamos o método <span>load</span> de um service store, ele implicitamente inclui 
+nos parâmetros da chamada do método <destak>find</destak> no backend as propriedades <destak>filter</destak>, 
+<destak>sort</destak> e <destak>paging</destak>. Esses parâmetros permitem realizar o filtro, ordenação e paginação dos
+resultados da consulta. 
+
+#### __Paginação__
+
+A paginação do método load acontece pela configuração de um objeto <destak>paging</destak> de um Service Store. Essas 
+propriedades são:
+
+<destak>pageSize</destak> define a quantidade de registros em cada página
+
+<destak>currentPage</destak> define a página atual da consulta
+
+Exemplo: 
+```javascript
+UsuarioStore.paging.pageSize = 10;      // 10 registros por página
+UsuarioStore.paging.currentPage = 0;    // página inicial é a primeira página de resultados
+UsuarioStore.load();                    // aciona o recarregamento dos registros 
+```
+Ao utilizar uma <destak>list view</destak> essas propriedades estarão vinculadas aos atributos <destak>md-limit</destak> 
+e <destak>md-page</destak> da diretiva <destak>md-table-pagination</destak>, e podem ser manipuladas e alteradas 
+diretamente pelo usuário na tela. 
+
+Exemplo:
+```html
+<md-table-pagination 
+    md-limit="DataStore.paging.pageSize" 
+    md-limit-options="[10, 30, 50, 100]"
+    md-page="DataStore.paging.currentPage" 
+    md-total="{{DataStore.total}}" 
+    md-on-paginate="reloadData" 
+    md-page-select>
+</md-table-pagination>
+```
+#### __Ordenação__
+
+A ordenação do método load acontece através da propriedade, <destak>sort</destak> de um Service Store. Essa propriedade
+é uma string, onde cada campo pelo qual se deseja ordenar está separado por vírgula.  
+
+Exemplo:
+```javascript
+UsuarioStore.sort = "nome,-idade";
+UsuarioStore.load();
+``` 
+
+No exemplo acima a consulta será ordenada pelo nome de forma crescente e pela idade de forma descrescente.
+
+Em uma <destak>list view</destak> essa propriedade é atribuída à diretiva <destak>md-order</destak> no cabeçalho de uma 
+tabela, e em conjunto com a diretiva <destak>md-order-by</destak> utilizada nas colunas do cabeçalho, definem a ordem da 
+listagem de resultados:
 
 ```html
 <table md-table md-row-select="DataStore.enableRowSelection" ng-model="DataStore.selected">
@@ -300,57 +373,67 @@ Assim como a paginação, a ordenação do método load acontece também atravé
 </table>
 ```
 
-#### Filtros
+!!!warning "Atenção"
+    Ao aplicar a ordenação através do md-order na interface, não é possível utilizar múltiplas ordenações.
 
-Apenas chamar um método que retorna uma relação de registros, sem poder aplicar um filtro aos resultados que queremos obter seria algo inútil. Por isso, ao chamar o método __load__ podemos definir filtros que serão enviados como parâmetro e servirão para filtrar os registros que desejamos obter. 
+#### __Filtros__
 
-A forma mais simples de aplicar um filtro, é atribuir um valor ao atributo da tabela que queremos filtrar:
+Apenas chamar um método que retorna uma relação de registros, sem poder aplicar um filtro aos resultados que queremos 
+obter seria inútil. Por isso, ao chamar o método <destak>load</destak> podemos definir filtros que serão enviados como 
+parâmetro e servirão para filtrar os registros que desejamos obter. 
 
-```javascript
-UserStore.filter.ativo = 1;
-UserStore.load();
-```
-Esse simples filtro será aplicado ao método find no backend, e ele diz para trazer todos os registros onde a propriedade ativo seja igual a 1. 
-
-Algumas vezes, podemos desejar que os filtros sejam aplicados por similaridade, por exemplo:
+Para filtrar os resultados do método load, é necessário configurar o objeto <destak>filter</destak> do Service Store, com 
+a condição de pesquisa que desejamos aplicar. 
 
 ```javascript
-UserStore.filter.email = '%:gmail.com';
+UsuarioStore.filter.ativo = 1;   // todos os registros de usuário onde a coluna ativo seja igual a 1 
+UsuarioStore.load();             // força o carregamento dos registros
 ```
-Esse filtro irá retornar todos os usuários que possuam um email que possua a expressão __gmail.com__ em alguma parte do valor. 
 
-Podemos passar para um filtro qualquer condição de comparação:
+Todos os operadores de comparação aceitos pelo [Store do backend](backend.md#stores) podem ser utilizados para filtrar resultados.
+
+Exemplo:
+```javascript
+UsuarioStore.filter.email = '%:gmail.com';      // email contém email.com
+UsuarioStore.filter.idade = '>=:10';            // e idade maior igual há 10
+UsuarioStore.filter.peso = '<=:30';             // e peso menor igual há 30
+UsuarioStore.filter.reprovado = '<>:1';         // e reprovado diferente de 1
+```
+
+Ao utilizar filtros simples, o Singular irá automaticamente vincular a propriedade do <destak>filter</destak> à tabela
+principal vinculada ao Store do backend. Entretanto, quando utilizamos joins, podemos querer vincular uma propriedade 
+há um atributo de uma outra tabela na relação de joins. Para isso, precisamos criar um mapa na definição do  
+Service Store.
+
+Configurando o objeto <destak>filterMap</destak> de um Service Store, podemos definir qual deve ser o atributo 
+equivalente em uma tabela de um  atributo de filtro no frontend. 
+
 
 ```javascript
-UserStore.filter.idade = '>=:10'; // idade maior igual há 10
-UserStore.filter.peso = '<=:30'; // peso menor igual há 30
-UserStore.filter.reprovado = '<>:1'; // reprovado diferente de 1
+/* Script UsuarioStore.js */
+me.filterMap = {
+    perfil: {
+        property: 'p.perfil',
+        operation: '%'
+    }
+};
 ```
-Ao utilizar filtros simples, o Singular irá automaticamente vincular a propriedade do __filter__ à tabela principal vinculada ao Store do backend. Entretanto, quando utilizamos joins, podemos querer vincular uma propriedade há um atributo de uma outra tabela na relação de joins. Para isso, precisamos criar um mapa na definição do  Service Store:
 
-```javascript
-        /* Script UserStore.js */
-        me.filterMap = {
-            perfil: {
-                property: 'p.perfil',
-                operation: '%'
-            }
-        };
-```
-Utilizando o filterMap, podemos definir qual deve ser o atributo equivalente em uma tabela de um atributo de filtro no frontend. 
 
-Também podemos utilizar o filter map para determinar o tipo de operação que desejamos que seja aplicada há um atributo, dessa forma não precisaremos ficar informando a toda chamada a operação:
+Também podemos utilizar o filter map para determinar o operador de comparação que desejamos que seja aplicado há um 
+atributo, dessa forma não precisaremos passar essa informação em toda chamada do método load:
 
 ```javascript
 // Ao invés de
-UserStore.filter.idade = '>:10';
+UsuarioStore.filter.idade = '>:10';
 
-// Equivale a utilizar um filter map
-UserStore.filterMap.idade = '>';
-UserStore.filter.idade = 10;
-UserStore.load();
+// Podemos utilizar um filter map
+UsuarioStore.filterMap.idade = '>';
+UsuarioStore.filter.idade = 10;
+UsuarioStore.load();
 ```
-Uma outra utilidade do filterMap é aplicar funções de conversão em um atributo antes que ele seja enviado como filtro para a função find no backend. 
+Uma outra utilidade do filterMap é aplicar funções de conversão em um atributo antes que ele seja enviado como filtro 
+para a função find no backend. 
 
 ```javascript
 /* Script UserStore.js */
@@ -370,17 +453,36 @@ me.filterMap = {
 
 ### Fazendo a chamada de métodos customizados
 
-Embora, a maioria da comunicação entre o frontend e backend seja a chamada de métodos CRUD, eles não resolvem 100% dos problemas, e, frequentemente é necessário fazer a chamada de métodos customizados no controlador do backend anotados com __@Route__. Isso pode ser feito utilizando a chamada ao serviço $http, mas o Service store possui um método auxiliar que simplifica e torna fácil a chamada e recuperação de resultado de métodos customizados no backend: o método __call__.
+Embora, a maioria da comunicação entre o frontend e backend seja a chamada de métodos CRUD, eles não resolvem 100% dos 
+problemas, e, frequentemente é necessário fazer a chamada de métodos customizados no controlador do backend anotados com 
+<destak>@Route</destak>. Isso pode ser feito utilizando a chamada ao serviço <destak>$http</destak> do AngularJS, mas o 
+Service store possui um método auxiliar que simplifica e torna fácil a chamada e recuperação de resultado de métodos 
+customizados no backend. O método <destak>call</destak>.
 
-O método call recebe quatro parâmetros:
+!!!note "Parâmetros do método call"
+    <span>method (string)</span> nome do método que será chamado no backend<br>
+    <span>params (object)</span> objeto que contém a relação de chaves e valor dos parâmetros que serão enviados para 
+    o método customizado no backend, pode ser enviado um objeto vazio<br>
+    <span>callback (function)</span> função de callback que será executada quando a chamada ao método do backend retornar<br>
+    <span>config (object: opcional)</span> objeto que contém a configuração da chamada remota. Por padrão, ao chamar o 
+    método call, sempre é executada uma chamada ao método <span>post</span>, mas isso pode ser alterado mudando o valor 
+    da propriedade method do objeto de configuração para <span>get</span>, também podem ser passados parâmetros na URL 
+    através da propriedade urlParams no formato string: 
 
-+ __method (string)__: nome do método que será chamado no backend;
-+ __params (object)__: objeto que contém a relação de chaves e valor dos parâmetros que serão enviados para o método customizado no backend, pode ser enviado um objeto vazio;
-+ __callback (function)__: função de callback que será executada quando a chamada ao método do backend retornar;
-+ __config (object: opcional)__: objeto que contém a configuração da chamada remota. Por padrão, ao chamar o método call, sempre é executada uma chamada ao método __post__, mas isso pode ser alterado mudando o valor da propriedade method do objeto de configuração para __get__, também podem ser passados parâmetros na URL através da propriedade urlParams no formato string, por exemplo: 
+Exemplo:
 
 ```javascript
-me.call('meuMetodoGet', {}, function(response){...}, {method: 'get', urlParams: '/10'});
+// POST
+UsuarioStore.call('metodoCustomizadoPost', {id: 1}, function(response){
+    if (response.success){
+        $scope.data = response.results;
+    }
+});
+
+// GET
+UsuarioStore.call('metodoCustomizadoGet', {}, function(response){
+    
+}, {method: 'get', urlParams: '/10'});
 ```
 
 ## Views
